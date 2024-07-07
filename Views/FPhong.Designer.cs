@@ -34,18 +34,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTinhTrang = new System.Windows.Forms.TextBox();
+            this.txtGiaTien = new System.Windows.Forms.TextBox();
+            this.txtSoPhong = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnNhapMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLoaiPhong = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lsvDSPhong = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -60,6 +60,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label5
             // 
@@ -106,26 +107,26 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã phòng";
             // 
-            // textBox5
+            // txtTinhTrang
             // 
-            this.textBox5.Location = new System.Drawing.Point(205, 188);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(745, 38);
-            this.textBox5.TabIndex = 4;
+            this.txtTinhTrang.Location = new System.Drawing.Point(205, 188);
+            this.txtTinhTrang.Name = "txtTinhTrang";
+            this.txtTinhTrang.Size = new System.Drawing.Size(745, 38);
+            this.txtTinhTrang.TabIndex = 4;
             // 
-            // textBox4
+            // txtGiaTien
             // 
-            this.textBox4.Location = new System.Drawing.Point(689, 126);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(261, 38);
-            this.textBox4.TabIndex = 3;
+            this.txtGiaTien.Location = new System.Drawing.Point(689, 126);
+            this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.Size = new System.Drawing.Size(261, 38);
+            this.txtGiaTien.TabIndex = 3;
             // 
-            // textBox3
+            // txtSoPhong
             // 
-            this.textBox3.Location = new System.Drawing.Point(689, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 38);
-            this.textBox3.TabIndex = 2;
+            this.txtSoPhong.Location = new System.Drawing.Point(689, 58);
+            this.txtSoPhong.Name = "txtSoPhong";
+            this.txtSoPhong.Size = new System.Drawing.Size(261, 38);
+            this.txtSoPhong.TabIndex = 2;
             // 
             // btnExit
             // 
@@ -139,7 +140,7 @@
             // 
             // btnNhapMoi
             // 
-            this.btnNhapMoi.Location = new System.Drawing.Point(35, 362);
+            this.btnNhapMoi.Location = new System.Drawing.Point(35, 370);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(239, 96);
             this.btnNhapMoi.TabIndex = 3;
@@ -177,16 +178,17 @@
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtLoaiPhong
             // 
-            this.textBox2.Location = new System.Drawing.Point(205, 122);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 38);
-            this.textBox2.TabIndex = 1;
+            this.txtLoaiPhong.Location = new System.Drawing.Point(205, 122);
+            this.txtLoaiPhong.Name = "txtLoaiPhong";
+            this.txtLoaiPhong.Size = new System.Drawing.Size(261, 38);
+            this.txtLoaiPhong.TabIndex = 1;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lsvDSPhong);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(101, 328);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1034, 301);
@@ -196,51 +198,56 @@
             // 
             // lsvDSPhong
             // 
+            this.lsvDSPhong.BackColor = System.Drawing.Color.LightGray;
             this.lsvDSPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvDSPhong.HideSelection = false;
-            this.lsvDSPhong.Location = new System.Drawing.Point(3, 18);
+            this.lsvDSPhong.Location = new System.Drawing.Point(3, 34);
             this.lsvDSPhong.Name = "lsvDSPhong";
-            this.lsvDSPhong.Size = new System.Drawing.Size(1028, 280);
+            this.lsvDSPhong.Size = new System.Drawing.Size(1028, 264);
             this.lsvDSPhong.TabIndex = 0;
             this.lsvDSPhong.UseCompatibleStateImageBehavior = false;
+            this.lsvDSPhong.SelectedIndexChanged += new System.EventHandler(this.lsvDSPhong_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtMaPhong
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 38);
-            this.textBox1.TabIndex = 0;
+            this.txtMaPhong.Location = new System.Drawing.Point(205, 54);
+            this.txtMaPhong.Name = "txtMaPhong";
+            this.txtMaPhong.Size = new System.Drawing.Size(261, 38);
+            this.txtMaPhong.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.RosyBrown;
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtTinhTrang);
+            this.groupBox1.Controls.Add(this.txtGiaTien);
+            this.groupBox1.Controls.Add(this.txtSoPhong);
+            this.groupBox1.Controls.Add(this.txtLoaiPhong);
+            this.groupBox1.Controls.Add(this.txtMaPhong);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(101, 9);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1034, 301);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Thông tin phòng";
             // 
             // FPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1590, 670);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FPhong";
             this.Text = "FPhong";
+            this.Load += new System.EventHandler(this.FPhong_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -257,18 +264,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTinhTrang;
+        private System.Windows.Forms.TextBox txtGiaTien;
+        private System.Windows.Forms.TextBox txtSoPhong;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnNhapMoi;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCapNhat;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLoaiPhong;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lsvDSPhong;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.GroupBox groupBox1;
     }
 }
