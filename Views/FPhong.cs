@@ -30,6 +30,10 @@ namespace QL_KHACHSAN.Views
             lsvDSPhong.FullRowSelect = true;
         }
 
+        private void capNhatSoLuongPhong()
+        {
+            txtTongSo.Text = dsPhong.Count.ToString();
+        }
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -49,6 +53,7 @@ namespace QL_KHACHSAN.Views
                 ListViewItem item = new ListViewItem(obj);
                 lsvDSPhong.Items.Add(item);
             }
+            capNhatSoLuongPhong();
         }
 
         private void lsvDSPhong_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,6 +108,16 @@ namespace QL_KHACHSAN.Views
             {
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
+        }
+
+        private void btnNhapMoi_Click(object sender, EventArgs e)
+        {
+            txtGiaTien.Text = string.Empty;
+            txtLoaiPhong.Text = string.Empty;
+            txtMaPhong.Text = string.Empty;
+            txtSoPhong.Text = string.Empty;
+            txtTinhTrang.Text = string.Empty;
+            txtMaPhong.Focus();
         }
     }
 }

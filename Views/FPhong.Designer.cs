@@ -49,7 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnTongSo = new System.Windows.Forms.Button();
+            this.txtTongSo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -154,6 +154,7 @@
             this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = true;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
             // 
             // btnXoa
             // 
@@ -249,7 +250,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Silver;
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.btnTongSo);
+            this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(1162, 362);
             this.groupBox3.Name = "groupBox3";
@@ -267,13 +268,13 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Tổng số ";
             // 
-            // btnTongSo
+            // txtTongSo
             // 
-            this.btnTongSo.Location = new System.Drawing.Point(6, 63);
-            this.btnTongSo.Name = "btnTongSo";
-            this.btnTongSo.Size = new System.Drawing.Size(287, 36);
-            this.btnTongSo.TabIndex = 0;
-            this.btnTongSo.UseVisualStyleBackColor = true;
+            this.txtTongSo.Location = new System.Drawing.Point(6, 63);
+            this.txtTongSo.Name = "txtTongSo";
+            this.txtTongSo.Size = new System.Drawing.Size(287, 36);
+            this.txtTongSo.TabIndex = 0;
+            this.txtTongSo.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -356,7 +357,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnTongSo;
+        private System.Windows.Forms.Button txtTongSo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label6;
     }
