@@ -319,6 +319,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FPhong";
             this.Load += new System.EventHandler(this.FPhong_Load);
             this.panel1.ResumeLayout(false);
