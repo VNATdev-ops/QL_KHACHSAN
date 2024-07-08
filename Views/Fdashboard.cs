@@ -48,5 +48,13 @@ namespace QL_KHACHSAN.Views
         {
             Application.Exit();
         }
+
+        private void Fdashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
