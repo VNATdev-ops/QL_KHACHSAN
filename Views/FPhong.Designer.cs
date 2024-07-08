@@ -48,11 +48,11 @@
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnTongSo = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -200,7 +200,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(101, 328);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1034, 301);
+            this.groupBox2.Size = new System.Drawing.Size(1034, 332);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách phòng";
@@ -212,7 +212,7 @@
             this.lsvDSPhong.HideSelection = false;
             this.lsvDSPhong.Location = new System.Drawing.Point(3, 34);
             this.lsvDSPhong.Name = "lsvDSPhong";
-            this.lsvDSPhong.Size = new System.Drawing.Size(1028, 264);
+            this.lsvDSPhong.Size = new System.Drawing.Size(1028, 295);
             this.lsvDSPhong.TabIndex = 0;
             this.lsvDSPhong.UseCompatibleStateImageBehavior = false;
             this.lsvDSPhong.SelectedIndexChanged += new System.EventHandler(this.lsvDSPhong_SelectedIndexChanged);
@@ -258,29 +258,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thống kê";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.BackColor = System.Drawing.Color.Silver;
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(1162, 517);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(299, 109);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tìm kiếm";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(56, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 29);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Tìm kiếm phòng";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -298,6 +275,19 @@
             this.btnTongSo.TabIndex = 0;
             this.btnTongSo.UseVisualStyleBackColor = true;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.Silver;
+            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(1162, 517);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(299, 109);
+            this.groupBox4.TabIndex = 8;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tìm kiếm";
+            // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,6 +295,16 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(287, 34);
             this.textBox1.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(56, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(187, 29);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Tìm kiếm phòng";
             // 
             // FPhong
             // 

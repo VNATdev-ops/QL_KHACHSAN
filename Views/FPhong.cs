@@ -81,19 +81,28 @@ namespace QL_KHACHSAN.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    string phongID = txtMaPhong.Text;
-            //    string soPhong = txtSoPhong.Text;
-            //    string loaiPhong = txtLoaiPhong.Text;
-            //    string giaTien = txtGiaTien.Text;
-            //    string tinhTrang = txtTinhTrang.Text;
+            try
+            {
+                int phongID = int.Parse(txtMaPhong.Text);
+                string soPhong = txtSoPhong.Text;
+                string loaiPhong = txtLoaiPhong.Text;
+                decimal giaTien = decimal.Parse(txtGiaTien.Text);
+                string tinhTrang = txtTinhTrang.Text;
 
-                
+                CPhong phong = new CPhong(phongID, soPhong, loaiPhong, giaTien, tinhTrang);
 
-            //    CPhong phong = new CPhong(phongID, soPhong, loaiPhong, giaTien, tinhTrang);
-            //}
-            //catch { }
+                // Add your logic to save the `phong` object to the database or collection
+
+                MessageBox.Show("Thêm phòng thành công!");
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Dữ liệu nhập vào không hợp lệ: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
     }
 }
