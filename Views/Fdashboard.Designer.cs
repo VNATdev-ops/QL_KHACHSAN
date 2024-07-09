@@ -37,8 +37,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLichLamViec = new System.Windows.Forms.Button();
+            this.btnNhanVien = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer_Body = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -58,8 +58,8 @@
             this.panel_Left.Controls.Add(this.button7);
             this.panel_Left.Controls.Add(this.button5);
             this.panel_Left.Controls.Add(this.button4);
-            this.panel_Left.Controls.Add(this.button3);
-            this.panel_Left.Controls.Add(this.button2);
+            this.panel_Left.Controls.Add(this.btnLichLamViec);
+            this.panel_Left.Controls.Add(this.btnNhanVien);
             this.panel_Left.Controls.Add(this.button1);
             this.panel_Left.Location = new System.Drawing.Point(4, 2);
             this.panel_Left.Name = "panel_Left";
@@ -168,35 +168,36 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnLichLamViec
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button3.Location = new System.Drawing.Point(3, 434);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(459, 50);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Lịch làm việc";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnLichLamViec.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.btnLichLamViec.FlatAppearance.BorderSize = 0;
+            this.btnLichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichLamViec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichLamViec.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLichLamViec.Location = new System.Drawing.Point(3, 434);
+            this.btnLichLamViec.Name = "btnLichLamViec";
+            this.btnLichLamViec.Size = new System.Drawing.Size(459, 50);
+            this.btnLichLamViec.TabIndex = 4;
+            this.btnLichLamViec.Text = "Lịch làm việc";
+            this.btnLichLamViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichLamViec.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnNhanVien
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.button2.Location = new System.Drawing.Point(3, 378);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(459, 50);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Nhân viên";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.btnNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnNhanVien.Location = new System.Drawing.Point(3, 378);
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Size = new System.Drawing.Size(459, 50);
+            this.btnNhanVien.TabIndex = 3;
+            this.btnNhanVien.Text = "Nhân viên";
+            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhanVien.UseVisualStyleBackColor = false;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // button1
             // 
@@ -212,6 +213,7 @@
             this.button1.Text = "Đặt Phòng";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // splitContainer_Body
             // 
@@ -253,6 +255,7 @@
             this.Name = "Fdashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fdashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fdashboard_FormClosing);
             this.panel_Left.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -266,14 +269,14 @@
 
         private System.Windows.Forms.Panel panel_Left;
         private System.Windows.Forms.Panel splitContainer_Body;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNhanVien;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLichLamViec;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnPhong;
         private System.Windows.Forms.Panel panel1;

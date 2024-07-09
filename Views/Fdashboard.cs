@@ -56,5 +56,19 @@ namespace QL_KHACHSAN.Views
                 e.Cancel = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDatPhong());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý đặt phòng";
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FNhanVien());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý nhân viên";
+        }
     }
 }
