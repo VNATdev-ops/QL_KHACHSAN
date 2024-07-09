@@ -16,15 +16,5 @@ namespace QL_KHACHSAN.Views
         {
             InitializeComponent();
         }
-
-        private void FDatPhong_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
