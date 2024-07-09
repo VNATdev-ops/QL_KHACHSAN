@@ -70,5 +70,12 @@ namespace QL_KHACHSAN.Views
             Tittle.Visible = true;
             Tittle.Text = "Quản lý nhân viên";
         }
+
+        private void btnLichLamViec_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FLichLamViec());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch làm việc";
+        }
     }
 }

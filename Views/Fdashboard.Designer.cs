@@ -182,6 +182,7 @@
             this.btnLichLamViec.Text = "Lịch làm việc";
             this.btnLichLamViec.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLichLamViec.UseVisualStyleBackColor = false;
+            this.btnLichLamViec.Click += new System.EventHandler(this.btnLichLamViec_Click);
             // 
             // btnNhanVien
             // 
