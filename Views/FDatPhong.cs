@@ -58,7 +58,7 @@ namespace QL_KHACHSAN.Views
         private void LoadData()
         {
             lsvDatPhong.Items.Clear();
-            using (SqlConnection conn = new SqlConnection("Data Source = ANHTUAN; " +
+            using (SqlConnection conn = new SqlConnection("Data Source = DESKTOP-45GKJAU\\SQLEXPRESS; " +
                    "Initial Catalog = QL_KHACH_SAN ; Integrated Security = true"))
             {
                 conn.Open();
