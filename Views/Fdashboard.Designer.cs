@@ -63,7 +63,7 @@
             this.panel_Left.Controls.Add(this.button1);
             this.panel_Left.Location = new System.Drawing.Point(4, 2);
             this.panel_Left.Name = "panel_Left";
-            this.panel_Left.Size = new System.Drawing.Size(407, 899);
+            this.panel_Left.Size = new System.Drawing.Size(407, 959);
             this.panel_Left.TabIndex = 0;
             // 
             // btnPhong
@@ -220,7 +220,7 @@
             // 
             this.splitContainer_Body.Location = new System.Drawing.Point(417, 141);
             this.splitContainer_Body.Name = "splitContainer_Body";
-            this.splitContainer_Body.Size = new System.Drawing.Size(1835, 760);
+            this.splitContainer_Body.Size = new System.Drawing.Size(1835, 812);
             this.splitContainer_Body.TabIndex = 1;
             // 
             // panel1
@@ -249,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1864, 903);
+            this.ClientSize = new System.Drawing.Size(1864, 965);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer_Body);
             this.Controls.Add(this.panel_Left);
