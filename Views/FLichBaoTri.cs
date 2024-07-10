@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QL_KHACHSAN.Views
 {
-    public partial class LichBaoTri : Form
+    public partial class FLichBaoTri : Form
     {
-        public LichBaoTri()
+        public FLichBaoTri()
         {
             InitializeComponent();
         }

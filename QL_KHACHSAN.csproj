@@ -69,6 +69,12 @@
     <Compile Include="Views\FDatPhong.Designer.cs">
       <DependentUpon>FDatPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FLichBaoTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FLichBaoTri.Designer.cs">
+      <DependentUpon>FLichBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FLichLamViec.cs">
       <SubType>Form</SubType>
     </Compile>
