@@ -80,17 +80,23 @@ namespace QL_KHACHSAN.Views
 
         private void btnBaoCaoSuCo_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FBaoCaoSuCo());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch làm việc";
         }
 
         private void btnLichSuBaoTri_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FLichBaoTri());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch làm việc";
         }
 
-        private void btnLich_Click(object sender, EventArgs e)
+        private void btnHoaDon_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FHoaDon());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch làm việc";
         }
     }
 }

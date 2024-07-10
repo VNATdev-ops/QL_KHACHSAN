@@ -57,6 +57,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\ConnectDB.cs" />
+    <Compile Include="Views\FBaoCaoSuCo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FBaoCaoSuCo.Designer.cs">
+      <DependentUpon>FBaoCaoSuCo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Fdashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="Views\FDatPhong.Designer.cs">
       <DependentUpon>FDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FHoaDon.Designer.cs">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FLichBaoTri.cs">
       <SubType>Form</SubType>

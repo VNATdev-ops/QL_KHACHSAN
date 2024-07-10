@@ -45,6 +45,7 @@
             this.splitContainer_Body = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Tittle = new System.Windows.Forms.Label();
+            this.btnHoaDon = new System.Windows.Forms.Button();
             this.panel_Left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -53,6 +54,7 @@
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.panel_Left.Controls.Add(this.btnHoaDon);
             this.panel_Left.Controls.Add(this.btnBaoCaoSuCo);
             this.panel_Left.Controls.Add(this.btnLichSuBaoTri);
             this.panel_Left.Controls.Add(this.btnPhong);
@@ -281,6 +283,22 @@
             this.Tittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.Tittle.Visible = false;
             // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.btnHoaDon.FlatAppearance.BorderSize = 0;
+            this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnHoaDon.Location = new System.Drawing.Point(8, 901);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(459, 50);
+            this.btnHoaDon.TabIndex = 14;
+            this.btnHoaDon.Text = "Hóa đơn";
+            this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.UseVisualStyleBackColor = false;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
+            // 
             // Fdashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -320,5 +338,6 @@
         private System.Windows.Forms.Label Tittle;
         private System.Windows.Forms.Button btnBaoCaoSuCo;
         private System.Windows.Forms.Button btnLichSuBaoTri;
+        private System.Windows.Forms.Button btnHoaDon;
     }
 }
