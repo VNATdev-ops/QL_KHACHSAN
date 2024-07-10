@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fdashboard));
             this.panel_Left = new System.Windows.Forms.Panel();
+            this.btnBaoCaoSuCo = new System.Windows.Forms.Button();
+            this.btnLichSuBaoTri = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
@@ -51,6 +53,8 @@
             // panel_Left
             // 
             this.panel_Left.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.panel_Left.Controls.Add(this.btnBaoCaoSuCo);
+            this.panel_Left.Controls.Add(this.btnLichSuBaoTri);
             this.panel_Left.Controls.Add(this.btnPhong);
             this.panel_Left.Controls.Add(this.pictureBox1);
             this.panel_Left.Controls.Add(this.btnExit);
@@ -63,8 +67,40 @@
             this.panel_Left.Controls.Add(this.button1);
             this.panel_Left.Location = new System.Drawing.Point(4, 2);
             this.panel_Left.Name = "panel_Left";
-            this.panel_Left.Size = new System.Drawing.Size(407, 959);
+            this.panel_Left.Size = new System.Drawing.Size(407, 1057);
             this.panel_Left.TabIndex = 0;
+            // 
+            // btnBaoCaoSuCo
+            // 
+            this.btnBaoCaoSuCo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.btnBaoCaoSuCo.FlatAppearance.BorderSize = 0;
+            this.btnBaoCaoSuCo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCaoSuCo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoSuCo.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnBaoCaoSuCo.Location = new System.Drawing.Point(4, 809);
+            this.btnBaoCaoSuCo.Name = "btnBaoCaoSuCo";
+            this.btnBaoCaoSuCo.Size = new System.Drawing.Size(459, 50);
+            this.btnBaoCaoSuCo.TabIndex = 13;
+            this.btnBaoCaoSuCo.Text = "Báo cáo sự cố";
+            this.btnBaoCaoSuCo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoCaoSuCo.UseVisualStyleBackColor = false;
+            this.btnBaoCaoSuCo.Click += new System.EventHandler(this.btnBaoCaoSuCo_Click);
+            // 
+            // btnLichSuBaoTri
+            // 
+            this.btnLichSuBaoTri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
+            this.btnLichSuBaoTri.FlatAppearance.BorderSize = 0;
+            this.btnLichSuBaoTri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLichSuBaoTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichSuBaoTri.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLichSuBaoTri.Location = new System.Drawing.Point(4, 753);
+            this.btnLichSuBaoTri.Name = "btnLichSuBaoTri";
+            this.btnLichSuBaoTri.Size = new System.Drawing.Size(459, 50);
+            this.btnLichSuBaoTri.TabIndex = 12;
+            this.btnLichSuBaoTri.Text = "Lịch bảo trì";
+            this.btnLichSuBaoTri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLichSuBaoTri.UseVisualStyleBackColor = false;
+            this.btnLichSuBaoTri.Click += new System.EventHandler(this.btnLichSuBaoTri_Click);
             // 
             // btnPhong
             // 
@@ -99,7 +135,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnExit.Location = new System.Drawing.Point(3, 839);
+            this.btnExit.Location = new System.Drawing.Point(0, 997);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(459, 50);
             this.btnExit.TabIndex = 9;
@@ -249,7 +285,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1864, 965);
+            this.ClientSize = new System.Drawing.Size(1864, 1061);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer_Body);
             this.Controls.Add(this.panel_Left);
@@ -282,5 +318,7 @@
         private System.Windows.Forms.Button btnPhong;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label Tittle;
+        private System.Windows.Forms.Button btnBaoCaoSuCo;
+        private System.Windows.Forms.Button btnLichSuBaoTri;
     }
 }

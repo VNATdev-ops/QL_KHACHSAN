@@ -77,5 +77,20 @@ namespace QL_KHACHSAN.Views
             Tittle.Visible = true;
             Tittle.Text = "Quản lý lịch làm việc";
         }
+
+        private void btnBaoCaoSuCo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLichSuBaoTri_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLich_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
