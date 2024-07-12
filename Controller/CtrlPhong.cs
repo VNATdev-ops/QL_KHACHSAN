@@ -62,5 +62,42 @@ namespace QL_KHACHSAN.Controller
                 return false;
             }
         }
+        public bool delete(CPhong obj) 
+        {
+            try
+            {
+                string sql = "delete from phong where phongID=@phongID";
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Parameters.AddWithValue("@phongID", obj.PhongId);
+                cmd.Connection = cnn;
+                int n = cmd.ExecuteNonQuery();
+                return (n > 0);
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool update(CPhong obj)
+        {
+            try
+            {
+                string sql = "update phong set sophong=@sophong, loaiphong=@loaiphong, giatien=@giatien, tinhtrang=@tinhtrang, where phongid=@phongid";
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Parameters.AddWithValue("@sophong", obj.SoPhong);
+                cmd.Parameters.AddWithValue("@loaiphong", obj.LoaiPhong);
+                cmd.Parameters.AddWithValue("@giatien", obj.GiaTien);
+                cmd.Parameters.AddWithValue("@tinhtrang", obj.TinhTrang);
+                cmd.Parameters.AddWithValue("@phongid", obj.PhongId);
+
+                cmd.Connection = cnn;
+                int n = cmd.ExecuteNonQuery();
+                return (n > 0);
+            }
+            catch { return false; }
+
+        }
     }
 }

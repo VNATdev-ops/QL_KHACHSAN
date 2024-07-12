@@ -20,7 +20,10 @@ namespace QL_KHACHSAN.Utils
         {
             if (connection == null)
             {
-                connection = new SqlConnection("Data Source = DESKTOP-45GKJAU\\SQLEXPRESS; " +
+                //connection = new SqlConnection("Data Source = DESKTOP-45GKJAU\\SQLEXPRESS; " +
+                //   "Initial Catalog = QL_KHACH_SAN ; Integrated Security = true");
+
+                connection = new SqlConnection("Data Source = ANHTUAN; " +
                    "Initial Catalog = QL_KHACH_SAN ; Integrated Security = true");
                 //ktra kết nối
                 if (connection.State == System.Data.ConnectionState.Closed)

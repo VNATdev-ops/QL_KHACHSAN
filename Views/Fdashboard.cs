@@ -89,12 +89,19 @@ namespace QL_KHACHSAN.Views
         {
             OpenChildForm(new FLichBaoTri());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch làm việc";
+            Tittle.Text = "Quản lý lịch bảo trì";
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FHoaDon());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch làm việc";
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FKhachHang());
             Tittle.Visible = true;
             Tittle.Text = "Quản lý lịch làm việc";
         }

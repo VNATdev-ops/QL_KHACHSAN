@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CtrlDatPhong.cs" />
     <Compile Include="Controller\CtrlPhong.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -53,6 +54,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CDatPhong.cs" />
     <Compile Include="Models\CPhong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +82,12 @@
     </Compile>
     <Compile Include="Views\FHoaDon.Designer.cs">
       <DependentUpon>FHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FKhachHang.Designer.cs">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FLichBaoTri.cs">
       <SubType>Form</SubType>
@@ -120,6 +128,12 @@
     <EmbeddedResource Include="Views\FDatPhong.resx">
       <DependentUpon>FDatPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FKhachHang.resx">
+      <DependentUpon>FKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FLichBaoTri.resx">
+      <DependentUpon>FLichBaoTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FLichLamViec.resx">
       <DependentUpon>FLichLamViec.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +156,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="NewFolder1\QL_KhachSan.sql" />
+    <Content Include="NewFolder1\QL_KhachSan_Insert.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

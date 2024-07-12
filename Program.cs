@@ -17,7 +17,7 @@ namespace QL_KHACHSAN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Fdashboard());
+            Application.Run(new FPhong());
         }
     }
 }

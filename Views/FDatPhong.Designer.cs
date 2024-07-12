@@ -35,28 +35,28 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtIDdatphong = new System.Windows.Forms.TextBox();
-            this.txtIDkhachhang = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtIDphong = new System.Windows.Forms.TextBox();
             this.txtTinhtrang = new System.Windows.Forms.TextBox();
+            this.txtIDphong = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNgayTra = new System.Windows.Forms.DateTimePicker();
+            this.txtNgayNhan = new System.Windows.Forms.DateTimePicker();
+            this.txtNgayDat = new System.Windows.Forms.DateTimePicker();
+            this.txtIDkhachhang = new System.Windows.Forms.TextBox();
+            this.txtIDdatphong = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lsvDatPhong = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTongSo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.lsvDatPhong = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,7 +73,7 @@
             this.panel1.Controls.Add(this.btnCapNhat);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(920, 12);
+            this.panel1.Location = new System.Drawing.Point(910, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(306, 326);
             this.panel1.TabIndex = 6;
@@ -95,6 +95,7 @@
             this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = true;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
             // 
             // btnXoa
             // 
@@ -136,9 +137,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dateTimePicker3);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.txtNgayTra);
+            this.groupBox1.Controls.Add(this.txtNgayNhan);
+            this.groupBox1.Controls.Add(this.txtNgayDat);
             this.groupBox1.Controls.Add(this.txtIDkhachhang);
             this.groupBox1.Controls.Add(this.txtIDdatphong);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,104 +151,19 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
+            // txtTinhtrang
             // 
-            this.groupBox2.Controls.Add(this.lsvDatPhong);
-            this.groupBox2.Location = new System.Drawing.Point(12, 344);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(892, 403);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.txtTinhtrang.Location = new System.Drawing.Point(631, 270);
+            this.txtTinhtrang.Name = "txtTinhtrang";
+            this.txtTinhtrang.Size = new System.Drawing.Size(185, 34);
+            this.txtTinhtrang.TabIndex = 15;
             // 
-            // txtIDdatphong
+            // txtIDphong
             // 
-            this.txtIDdatphong.Location = new System.Drawing.Point(229, 59);
-            this.txtIDdatphong.Name = "txtIDdatphong";
-            this.txtIDdatphong.Size = new System.Drawing.Size(185, 34);
-            this.txtIDdatphong.TabIndex = 0;
-            // 
-            // txtIDkhachhang
-            // 
-            this.txtIDkhachhang.Location = new System.Drawing.Point(229, 270);
-            this.txtIDkhachhang.Name = "txtIDkhachhang";
-            this.txtIDkhachhang.Size = new System.Drawing.Size(185, 34);
-            this.txtIDkhachhang.TabIndex = 2;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(229, 117);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(587, 34);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(229, 164);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(587, 34);
-            this.dateTimePicker2.TabIndex = 5;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(229, 217);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(587, 34);
-            this.dateTimePicker3.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 29);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "ID đặt phòng";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(490, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 29);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "ID phòng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 275);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 29);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "ID khách hàng";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(470, 273);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 29);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Tình trạng";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 117);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 29);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Ngày đặt";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 169);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 29);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Ngày nhận";
+            this.txtIDphong.Location = new System.Drawing.Point(631, 59);
+            this.txtIDphong.Name = "txtIDphong";
+            this.txtIDphong.Size = new System.Drawing.Size(185, 34);
+            this.txtIDphong.TabIndex = 14;
             // 
             // label7
             // 
@@ -258,19 +174,116 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Ngày trả";
             // 
-            // txtIDphong
+            // label6
             // 
-            this.txtIDphong.Location = new System.Drawing.Point(631, 59);
-            this.txtIDphong.Name = "txtIDphong";
-            this.txtIDphong.Size = new System.Drawing.Size(185, 34);
-            this.txtIDphong.TabIndex = 14;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 169);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 29);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Ngày nhận";
             // 
-            // txtTinhtrang
+            // label5
             // 
-            this.txtTinhtrang.Location = new System.Drawing.Point(631, 270);
-            this.txtTinhtrang.Name = "txtTinhtrang";
-            this.txtTinhtrang.Size = new System.Drawing.Size(185, 34);
-            this.txtTinhtrang.TabIndex = 15;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(54, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 29);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Ngày đặt";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(470, 273);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(121, 29);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Tình trạng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(54, 275);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(164, 29);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "ID khách hàng";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(490, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 29);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "ID phòng";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 29);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "ID đặt phòng";
+            // 
+            // txtNgayTra
+            // 
+            this.txtNgayTra.Location = new System.Drawing.Point(229, 217);
+            this.txtNgayTra.Name = "txtNgayTra";
+            this.txtNgayTra.Size = new System.Drawing.Size(587, 34);
+            this.txtNgayTra.TabIndex = 6;
+            // 
+            // txtNgayNhan
+            // 
+            this.txtNgayNhan.Location = new System.Drawing.Point(229, 164);
+            this.txtNgayNhan.Name = "txtNgayNhan";
+            this.txtNgayNhan.Size = new System.Drawing.Size(587, 34);
+            this.txtNgayNhan.TabIndex = 5;
+            // 
+            // txtNgayDat
+            // 
+            this.txtNgayDat.Location = new System.Drawing.Point(229, 117);
+            this.txtNgayDat.Name = "txtNgayDat";
+            this.txtNgayDat.Size = new System.Drawing.Size(587, 34);
+            this.txtNgayDat.TabIndex = 4;
+            // 
+            // txtIDkhachhang
+            // 
+            this.txtIDkhachhang.Location = new System.Drawing.Point(229, 270);
+            this.txtIDkhachhang.Name = "txtIDkhachhang";
+            this.txtIDkhachhang.Size = new System.Drawing.Size(185, 34);
+            this.txtIDkhachhang.TabIndex = 2;
+            // 
+            // txtIDdatphong
+            // 
+            this.txtIDdatphong.Location = new System.Drawing.Point(229, 59);
+            this.txtIDdatphong.Name = "txtIDdatphong";
+            this.txtIDdatphong.Size = new System.Drawing.Size(185, 34);
+            this.txtIDdatphong.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lsvDatPhong);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(12, 344);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1372, 403);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // lsvDatPhong
+            // 
+            this.lsvDatPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvDatPhong.HideSelection = false;
+            this.lsvDatPhong.Location = new System.Drawing.Point(3, 30);
+            this.lsvDatPhong.Name = "lsvDatPhong";
+            this.lsvDatPhong.Size = new System.Drawing.Size(1366, 370);
+            this.lsvDatPhong.TabIndex = 0;
+            this.lsvDatPhong.UseCompatibleStateImageBehavior = false;
+            this.lsvDatPhong.SelectedIndexChanged += new System.EventHandler(this.lsvDatPhong_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -278,7 +291,7 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(920, 391);
+            this.groupBox3.Location = new System.Drawing.Point(1222, 26);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(306, 105);
             this.groupBox3.TabIndex = 9;
@@ -308,7 +321,7 @@
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(920, 536);
+            this.groupBox4.Location = new System.Drawing.Point(1222, 154);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(306, 109);
             this.groupBox4.TabIndex = 10;
@@ -333,21 +346,11 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Tìm kiếm phòng";
             // 
-            // lsvDatPhong
-            // 
-            this.lsvDatPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lsvDatPhong.HideSelection = false;
-            this.lsvDatPhong.Location = new System.Drawing.Point(3, 18);
-            this.lsvDatPhong.Name = "lsvDatPhong";
-            this.lsvDatPhong.Size = new System.Drawing.Size(886, 382);
-            this.lsvDatPhong.TabIndex = 0;
-            this.lsvDatPhong.UseCompatibleStateImageBehavior = false;
-            // 
             // FDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 759);
+            this.ClientSize = new System.Drawing.Size(1542, 759);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -380,9 +383,9 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker txtNgayTra;
+        private System.Windows.Forms.DateTimePicker txtNgayNhan;
+        private System.Windows.Forms.DateTimePicker txtNgayDat;
         private System.Windows.Forms.TextBox txtIDkhachhang;
         private System.Windows.Forms.TextBox txtIDdatphong;
         private System.Windows.Forms.Label label7;

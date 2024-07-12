@@ -14,6 +14,7 @@ namespace QL_KHACHSAN.Models
         private decimal giaTien;
         private string tinhTrang;
 
+
         public CPhong()
         {
         }
@@ -37,23 +38,12 @@ namespace QL_KHACHSAN.Models
 
         public override bool Equals(object obj)
         {
-            return obj is CPhong phong &&
-                   phongId == phong.phongId &&
-                   soPhong == phong.soPhong &&
-                   loaiPhong == phong.loaiPhong &&
-                   giaTien == phong.giaTien &&
-                   tinhTrang == phong.tinhTrang;
+            return obj is CPhong phong && phongId == phong.phongId;
         }
 
         public override int GetHashCode()
         {
-            int hashCode = -728507763;
-            hashCode = hashCode * -1521134295 + phongId.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(soPhong);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(loaiPhong);
-            hashCode = hashCode * -1521134295 + giaTien.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(tinhTrang);
-            return hashCode;
+            return phongId.GetHashCode();
         }
     }
 }

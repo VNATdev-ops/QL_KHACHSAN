@@ -14,7 +14,7 @@ namespace QL_KHACHSAN.Views
 {
     public partial class FPhong : Form
     {
-        CtrlPhong ctrlPhong = new CtrlPhong();
+        CtrlPhong ctrPhong = new CtrlPhong();
         private List<CPhong> dsPhong = new List<CPhong>();
         public FPhong()
         {
@@ -41,7 +41,7 @@ namespace QL_KHACHSAN.Views
 
         private void FPhong_Load(object sender, EventArgs e)
         {
-            dsPhong = ctrlPhong.findall();
+            dsPhong = ctrPhong.findall();
             foreach (CPhong s in dsPhong)
             {
                 string[] obj = { 
@@ -88,17 +88,29 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                int phongID = int.Parse(txtMaPhong.Text);
-                string soPhong = txtSoPhong.Text;
-                string loaiPhong = txtLoaiPhong.Text;
-                decimal giaTien = decimal.Parse(txtGiaTien.Text);
-                string tinhTrang = txtTinhTrang.Text;
+                CPhong s = new CPhong();
+                s.PhongId = int.Parse(txtMaPhong.Text);
+                s.SoPhong = txtSoPhong.Text;
+                s.LoaiPhong = txtLoaiPhong.Text;
+                s.GiaTien = decimal.Parse(txtGiaTien.Text);
+                s.TinhTrang = txtTinhTrang.Text;
 
-                CPhong phong = new CPhong(phongID, soPhong, loaiPhong, giaTien, tinhTrang);
-
-                // Add your logic to save the `phong` object to the database or collection
-
-                MessageBox.Show("Thêm phòng thành công!");
+                if (ctrPhong.insert(s))
+                {
+                    string[] objPhong =
+                    {
+                        s.PhongId.ToString(),
+                        s.SoPhong,
+                        s.LoaiPhong,
+                        s.GiaTien.ToString(),
+                        s.TinhTrang
+                    };
+                    ListViewItem item = new ListViewItem(objPhong);
+                    lsvDSPhong.Items.Add(item);
+                    dsPhong.Add(s);
+                    txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
+                    MessageBox.Show("Thêm thành công");
+                }
             }
             catch (FormatException ex)
             {
@@ -118,6 +130,70 @@ namespace QL_KHACHSAN.Views
             txtSoPhong.Text = string.Empty;
             txtTinhTrang.Text = string.Empty;
             txtMaPhong.Focus();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (lsvDSPhong.SelectedItems.Count > 0)
+            //    {
+            //        ListViewItem item = lsvDSPhong.SelectedItems[0];
+            //        CPhong phong = new CPhong();
+            //        phong.PhongId = item.SubItems[0].Text;
+            //        int index = dsPhong.IndexOf(phong);
+            //        if (index < 0)
+            //        {
+            //            return;
+            //        }
+            //        phong = dsPhong[index];
+            //        if (ctrlPhong.delete(phong))
+            //        {
+            //            MessageBox.Show("Xóa thành công");
+            //            dsPhong.Remove(phong);
+            //            lsvDSPhong.Items.Remove(item);
+            //            txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+
+            //}
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                ListViewItem item = lsvDSPhong.SelectedItems[0];
+                CPhong phong = new CPhong();
+                phong.PhongId = int.Parse(item.SubItems[0].Text);
+                int index = dsPhong.IndexOf(phong);
+                if (index < 0) return;
+                phong = dsPhong[index];
+
+                phong.PhongId = int.Parse(txtMaPhong.Text);
+                phong.LoaiPhong = txtLoaiPhong.Text;
+                phong.SoPhong = txtSoPhong.Text;
+                phong.GiaTien = int.Parse(txtGiaTien.Text);
+                phong.TinhTrang = txtTinhTrang.Text;
+
+                if (ctrPhong.update(phong))
+                {
+                    MessageBox.Show("Cập nhật thông tin sản phẩm thành công.");
+                    item.SubItems[1].Text = phong.PhongId.ToString();
+                    item.SubItems[2].Text = phong.LoaiPhong;
+                    item.SubItems[3].Text = phong.SoPhong;
+                    item.SubItems[4].Text = phong.GiaTien.ToString();
+                    item.SubItems[5].Text = phong.TinhTrang;
+
+                }
+                else
+                    MessageBox.Show("Cập nhật thông tin sản phẩm thất bại.");
+                capNhatSoLuongPhong();
+            }
+            catch { }
         }
     }
 }
