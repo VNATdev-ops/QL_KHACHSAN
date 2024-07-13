@@ -66,16 +66,21 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "delete from phong where phongID=@phongID";
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Parameters.AddWithValue("@phongID", obj.PhongId);
-                cmd.Connection = cnn;
-                int n = cmd.ExecuteNonQuery();
-                return (n > 0);
-
+                string sql = "DELETE FROM Phong WHERE PhongID = @PhongID";
+                using (SqlConnection connection = new ConnectDB().getConnection())
+                {
+                    using (SqlCommand cmd = new SqlCommand(sql, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@PhongID", obj.PhongId);
+                        int n = cmd.ExecuteNonQuery();
+                        return (n > 0);
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                // Log exception or show message for debugging
+                Console.WriteLine("Error: " + ex.Message);
                 return false;
             }
         }

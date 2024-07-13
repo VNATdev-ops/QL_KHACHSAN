@@ -49,7 +49,8 @@ namespace QL_KHACHSAN.Views
                     s.SoPhong, 
                     s.LoaiPhong, 
                     s.GiaTien.ToString(), 
-                    s.TinhTrang };
+                    s.TinhTrang 
+                };
                 ListViewItem item = new ListViewItem(obj);
                 lsvDSPhong.Items.Add(item);
             }
@@ -134,66 +135,81 @@ namespace QL_KHACHSAN.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (lsvDSPhong.SelectedItems.Count > 0)
-            //    {
-            //        ListViewItem item = lsvDSPhong.SelectedItems[0];
-            //        CPhong phong = new CPhong();
-            //        phong.PhongId = item.SubItems[0].Text;
-            //        int index = dsPhong.IndexOf(phong);
-            //        if (index < 0)
-            //        {
-            //            return;
-            //        }
-            //        phong = dsPhong[index];
-            //        if (ctrlPhong.delete(phong))
-            //        {
-            //            MessageBox.Show("Xóa thành công");
-            //            dsPhong.Remove(phong);
-            //            lsvDSPhong.Items.Remove(item);
-            //            txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
-            //        }
-            //    }
-            //}
-            //catch
-            //{
+            try
+            {
+                if (lsvDSPhong.SelectedItems.Count > 0)
+                {
+                    ListViewItem item = lsvDSPhong.SelectedItems[0];
+                    int phongId = int.Parse(item.SubItems[0].Text);
 
-            //}
+                    // Tìm đối tượng CPhong tương ứng trong danh sách dsPhong
+                    CPhong phong = dsPhong.FirstOrDefault(p => p.PhongId == phongId);
+
+                    if (phong != null)
+                    {
+                        // Xóa khỏi cơ sở dữ liệu
+                        if (ctrPhong.delete(phong))
+                        {
+                            MessageBox.Show("Xóa thành công");
+
+                            // Xóa khỏi danh sách dsPhong và ListView
+                            dsPhong.Remove(phong);
+                            lsvDSPhong.Items.Remove(item);
+
+                            // Cập nhật số lượng phòng
+                            txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn phòng để xóa");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 ListViewItem item = lsvDSPhong.SelectedItems[0];
-                CPhong phong = new CPhong();
-                phong.PhongId = int.Parse(item.SubItems[0].Text);
-                int index = dsPhong.IndexOf(phong);
-                if (index < 0) return;
-                phong = dsPhong[index];
+                int phongId = int.Parse(item.SubItems[0].Text);
+                CPhong phong = dsPhong.FirstOrDefault(p => p.PhongId == phongId);
 
-                phong.PhongId = int.Parse(txtMaPhong.Text);
-                phong.LoaiPhong = txtLoaiPhong.Text;
-                phong.SoPhong = txtSoPhong.Text;
-                phong.GiaTien = int.Parse(txtGiaTien.Text);
-                phong.TinhTrang = txtTinhTrang.Text;
-
-                if (ctrPhong.update(phong))
+                if (phong != null)
                 {
-                    MessageBox.Show("Cập nhật thông tin sản phẩm thành công.");
-                    item.SubItems[1].Text = phong.PhongId.ToString();
-                    item.SubItems[2].Text = phong.LoaiPhong;
-                    item.SubItems[3].Text = phong.SoPhong;
-                    item.SubItems[4].Text = phong.GiaTien.ToString();
-                    item.SubItems[5].Text = phong.TinhTrang;
+                    phong.LoaiPhong = txtLoaiPhong.Text;
+                    phong.SoPhong = txtSoPhong.Text;
+                    phong.GiaTien = decimal.Parse(txtGiaTien.Text);
+                    phong.TinhTrang = txtTinhTrang.Text;
 
+                    if (ctrPhong.update(phong))
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thành công.");
+                        item.SubItems[1].Text = phong.SoPhong;
+                        item.SubItems[2].Text = phong.LoaiPhong;
+                        item.SubItems[3].Text = phong.GiaTien.ToString();
+                        item.SubItems[4].Text = phong.TinhTrang;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thất bại.");
+                    }
+                    capNhatSoLuongPhong();
                 }
-                else
-                    MessageBox.Show("Cập nhật thông tin sản phẩm thất bại.");
-                capNhatSoLuongPhong();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
     }
 }
