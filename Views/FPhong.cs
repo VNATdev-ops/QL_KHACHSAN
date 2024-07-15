@@ -174,6 +174,7 @@ namespace QL_KHACHSAN.Views
             {
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
+
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
