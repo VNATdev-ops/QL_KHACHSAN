@@ -38,19 +38,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTongSo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIDNhanVien = new System.Windows.Forms.TextBox();
+            this.txtTenNhanVien = new System.Windows.Forms.TextBox();
+            this.txtViTri = new System.Windows.Forms.TextBox();
+            this.txtLuong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lsvDsNhanVien = new System.Windows.Forms.ListView();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -89,6 +89,7 @@
             this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = true;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
             // 
             // btnXoa
             // 
@@ -98,6 +99,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -107,6 +109,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThem
             // 
@@ -116,6 +119,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox3
             // 
@@ -160,14 +164,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(6, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 34);
-            this.textBox1.TabIndex = 11;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -177,37 +173,45 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "tìm kiếm nhân viên";
             // 
-            // textBox2
+            // textBox1
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(331, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(358, 34);
-            this.textBox2.TabIndex = 0;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(6, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(287, 34);
+            this.textBox1.TabIndex = 11;
             // 
-            // textBox3
+            // txtIDNhanVien
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(331, 130);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 34);
-            this.textBox3.TabIndex = 1;
+            this.txtIDNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDNhanVien.Location = new System.Drawing.Point(331, 50);
+            this.txtIDNhanVien.Name = "txtIDNhanVien";
+            this.txtIDNhanVien.Size = new System.Drawing.Size(358, 34);
+            this.txtIDNhanVien.TabIndex = 0;
             // 
-            // textBox4
+            // txtTenNhanVien
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(331, 209);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(358, 34);
-            this.textBox4.TabIndex = 2;
+            this.txtTenNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNhanVien.Location = new System.Drawing.Point(331, 130);
+            this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.Size = new System.Drawing.Size(358, 34);
+            this.txtTenNhanVien.TabIndex = 1;
             // 
-            // textBox5
+            // txtViTri
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(331, 279);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(358, 34);
-            this.textBox5.TabIndex = 3;
+            this.txtViTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtViTri.Location = new System.Drawing.Point(331, 209);
+            this.txtViTri.Name = "txtViTri";
+            this.txtViTri.Size = new System.Drawing.Size(358, 34);
+            this.txtViTri.TabIndex = 2;
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLuong.Location = new System.Drawing.Point(331, 279);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(358, 34);
+            this.txtLuong.TabIndex = 3;
             // 
             // label2
             // 
@@ -252,12 +256,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtIDNhanVien);
+            this.groupBox1.Controls.Add(this.txtLuong);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtTenNhanVien);
+            this.groupBox1.Controls.Add(this.txtViTri);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
@@ -269,7 +273,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.lsvDsNhanVien);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 374);
             this.groupBox2.Name = "groupBox2";
@@ -278,15 +282,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách nhân viên";
             // 
-            // listView1
+            // lsvDsNhanVien
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1051, 339);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lsvDsNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvDsNhanVien.HideSelection = false;
+            this.lsvDsNhanVien.Location = new System.Drawing.Point(3, 30);
+            this.lsvDsNhanVien.Name = "lsvDsNhanVien";
+            this.lsvDsNhanVien.Size = new System.Drawing.Size(1051, 339);
+            this.lsvDsNhanVien.TabIndex = 0;
+            this.lsvDsNhanVien.UseCompatibleStateImageBehavior = false;
+            this.lsvDsNhanVien.SelectedIndexChanged += new System.EventHandler(this.lsvDsNhanVien_SelectedIndexChanged);
             // 
             // FNhanVien
             // 
@@ -300,6 +305,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "FNhanVien";
             this.Text = "FNhanVien";
+            this.Load += new System.EventHandler(this.FNhanVien_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -325,16 +331,16 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtIDNhanVien;
+        private System.Windows.Forms.TextBox txtTenNhanVien;
+        private System.Windows.Forms.TextBox txtViTri;
+        private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lsvDsNhanVien;
     }
 }

@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CtrlDatPhong.cs" />
+    <Compile Include="Controller\CtrlLichLamViec.cs" />
+    <Compile Include="Controller\CtrlNhanVien.cs" />
     <Compile Include="Controller\CtrlPhong.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -55,6 +57,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CDatPhong.cs" />
+    <Compile Include="Models\CLichLamViec.cs" />
+    <Compile Include="Models\CNhanVien.cs" />
     <Compile Include="Models\CPhong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
