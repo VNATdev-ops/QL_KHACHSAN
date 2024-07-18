@@ -47,7 +47,45 @@ namespace QL_KHACHSAN.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (lsvDatPhong.SelectedItems.Count > 0)
+                {
+                    ListViewItem item = lsvDatPhong.SelectedItems[0];
+                    int datPhongID = int.Parse(item.SubItems[0].Text);
 
+                    // Tìm đối tượng CPhong tương ứng trong danh sách dsPhong
+                    CDatPhong datphong = dsDatPhong.FirstOrDefault(p => p.DatPhongID == datPhongID);
+
+                    if (datphong != null)
+                    {
+                        // Xóa khỏi cơ sở dữ liệu
+                        if (ctrlDatPhong.delete(datphong))
+                        {
+                            MessageBox.Show("Xóa thành công");
+
+                            // Xóa khỏi danh sách dsPhong và ListView
+                            dsDatPhong.Remove(datphong);
+                            lsvDatPhong.Items.Remove(item);
+
+                            // Cập nhật số lượng phòng
+                            txtTongSo.Text = lsvDatPhong.Items.Count.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn phòng để xóa");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -150,6 +188,11 @@ namespace QL_KHACHSAN.Views
             txtNgayTra.Text = string.Empty;
             txtTinhtrang.Text = string.Empty;
             txtIDphong.Focus();
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

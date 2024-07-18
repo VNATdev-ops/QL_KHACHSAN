@@ -35,22 +35,22 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCaLam = new System.Windows.Forms.TextBox();
+            this.txtIDNhanVien = new System.Windows.Forms.TextBox();
+            this.txtIDlichlamviec = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lsvDsLichLamViec = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTongSo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtIDlichlamviec = new System.Windows.Forms.TextBox();
-            this.txtIDNhanVien = new System.Windows.Forms.TextBox();
-            this.txtNgayLam = new System.Windows.Forms.TextBox();
-            this.txtCaLam = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.dtpNgayLam = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -89,6 +89,7 @@
             this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = true;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
             // 
             // btnXoa
             // 
@@ -116,15 +117,16 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpNgayLam);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtCaLam);
-            this.groupBox1.Controls.Add(this.txtNgayLam);
             this.groupBox1.Controls.Add(this.txtIDNhanVien);
             this.groupBox1.Controls.Add(this.txtIDlichlamviec);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,9 +138,69 @@
             this.groupBox1.Text = "Thông tin lịch làm việc";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(748, 209);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 29);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Ca làm";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(79, 207);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Ngày làm";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(748, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 29);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ID Nhân viên";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(79, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 29);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "ID Lịch làm việc";
+            // 
+            // txtCaLam
+            // 
+            this.txtCaLam.Location = new System.Drawing.Point(922, 204);
+            this.txtCaLam.Name = "txtCaLam";
+            this.txtCaLam.Size = new System.Drawing.Size(176, 34);
+            this.txtCaLam.TabIndex = 3;
+            this.txtCaLam.TextChanged += new System.EventHandler(this.txtCaLam_TextChanged);
+            // 
+            // txtIDNhanVien
+            // 
+            this.txtIDNhanVien.Location = new System.Drawing.Point(922, 115);
+            this.txtIDNhanVien.Name = "txtIDNhanVien";
+            this.txtIDNhanVien.Size = new System.Drawing.Size(176, 34);
+            this.txtIDNhanVien.TabIndex = 1;
+            this.txtIDNhanVien.TextChanged += new System.EventHandler(this.txtIDNhanVien_TextChanged);
+            // 
+            // txtIDlichlamviec
+            // 
+            this.txtIDlichlamviec.Location = new System.Drawing.Point(274, 113);
+            this.txtIDlichlamviec.Name = "txtIDlichlamviec";
+            this.txtIDlichlamviec.Size = new System.Drawing.Size(386, 34);
+            this.txtIDlichlamviec.TabIndex = 0;
+            this.txtIDlichlamviec.TextChanged += new System.EventHandler(this.txtIDlichlamviec_TextChanged);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Controls.Add(this.lsvDsLichLamViec);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 344);
             this.groupBox2.Name = "groupBox2";
@@ -146,6 +208,17 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách lịch làm việc";
+            // 
+            // lsvDsLichLamViec
+            // 
+            this.lsvDsLichLamViec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lsvDsLichLamViec.HideSelection = false;
+            this.lsvDsLichLamViec.Location = new System.Drawing.Point(3, 30);
+            this.lsvDsLichLamViec.Name = "lsvDsLichLamViec";
+            this.lsvDsLichLamViec.Size = new System.Drawing.Size(1163, 293);
+            this.lsvDsLichLamViec.TabIndex = 0;
+            this.lsvDsLichLamViec.UseCompatibleStateImageBehavior = false;
+            this.lsvDsLichLamViec.SelectedIndexChanged += new System.EventHandler(this.lsvDsLichLamViec_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -207,83 +280,12 @@
             this.textBox1.Size = new System.Drawing.Size(287, 34);
             this.textBox1.TabIndex = 11;
             // 
-            // txtIDlichlamviec
+            // dtpNgayLam
             // 
-            this.txtIDlichlamviec.Location = new System.Drawing.Point(274, 113);
-            this.txtIDlichlamviec.Name = "txtIDlichlamviec";
-            this.txtIDlichlamviec.Size = new System.Drawing.Size(176, 34);
-            this.txtIDlichlamviec.TabIndex = 0;
-            this.txtIDlichlamviec.TextChanged += new System.EventHandler(this.txtIDlichlamviec_TextChanged);
-            // 
-            // txtIDNhanVien
-            // 
-            this.txtIDNhanVien.Location = new System.Drawing.Point(646, 113);
-            this.txtIDNhanVien.Name = "txtIDNhanVien";
-            this.txtIDNhanVien.Size = new System.Drawing.Size(176, 34);
-            this.txtIDNhanVien.TabIndex = 1;
-            this.txtIDNhanVien.TextChanged += new System.EventHandler(this.txtIDNhanVien_TextChanged);
-            // 
-            // txtNgayLam
-            // 
-            this.txtNgayLam.Location = new System.Drawing.Point(274, 204);
-            this.txtNgayLam.Name = "txtNgayLam";
-            this.txtNgayLam.Size = new System.Drawing.Size(176, 34);
-            this.txtNgayLam.TabIndex = 2;
-            this.txtNgayLam.TextChanged += new System.EventHandler(this.txtNgayLam_TextChanged);
-            // 
-            // txtCaLam
-            // 
-            this.txtCaLam.Location = new System.Drawing.Point(646, 202);
-            this.txtCaLam.Name = "txtCaLam";
-            this.txtCaLam.Size = new System.Drawing.Size(176, 34);
-            this.txtCaLam.TabIndex = 3;
-            this.txtCaLam.TextChanged += new System.EventHandler(this.txtCaLam_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(79, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 29);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ID Lịch làm việc";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(472, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 29);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "ID Nhân viên";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(79, 207);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Ngày làm";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(472, 207);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 29);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Ca làm";
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1163, 293);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.dtpNgayLam.Location = new System.Drawing.Point(274, 207);
+            this.dtpNgayLam.Name = "dtpNgayLam";
+            this.dtpNgayLam.Size = new System.Drawing.Size(386, 34);
+            this.dtpNgayLam.TabIndex = 8;
             // 
             // FLichLamViec
             // 
@@ -297,6 +299,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "FLichLamViec";
             this.Text = "FLichLamViec";
+            this.Load += new System.EventHandler(this.FLichLamViec_Load);
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -326,13 +329,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtCaLam;
-        private System.Windows.Forms.TextBox txtNgayLam;
         private System.Windows.Forms.TextBox txtIDNhanVien;
         private System.Windows.Forms.TextBox txtIDlichlamviec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lsvDsLichLamViec;
+        private System.Windows.Forms.DateTimePicker dtpNgayLam;
     }
 }

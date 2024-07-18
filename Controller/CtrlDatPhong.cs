@@ -66,5 +66,22 @@ namespace QL_KHACHSAN.Controller
                 return false;
             }
         }
+
+        public bool delete(CDatPhong obj)
+        {
+            try
+            {
+                string sql = "delete from datphong where datphongid = @datphongid";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@datphongid", obj.DatPhongID);
+                int n = cmd.ExecuteNonQuery();
+                return n > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi xóa phòng khỏi cơ sở dữ liệu: " + ex.Message);
+                return false;
+            }
+        }
     }
 }
