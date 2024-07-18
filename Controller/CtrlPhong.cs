@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QL_KHACHSAN.Controller
 {
@@ -62,23 +63,76 @@ namespace QL_KHACHSAN.Controller
                 return false;
             }
         }
-        public bool delete(CPhong obj) 
+        public bool delete(CPhong obj)
         {
             try
             {
-                string sql = "delete from phong where phongID=@phongID";
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Parameters.AddWithValue("@phongID", obj.PhongId);
-                cmd.Connection = cnn;
-                int n = cmd.ExecuteNonQuery();
-                return (n > 0);
+                using (SqlConnection connection = new ConnectDB().getConnection())
+                {
+                    SqlTransaction transaction = connection.BeginTransaction();
 
+                    try
+                    {
+                        // Xóa các bản ghi liên quan trong bảng DatDichVu
+                        string deleteDatDichVuSql = "DELETE FROM DatDichVu WHERE DatPhongID IN (SELECT DatPhongID FROM DatPhong WHERE PhongID = @PhongId)";
+                        using (SqlCommand cmd = new SqlCommand(deleteDatDichVuSql, connection, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@PhongId", obj.PhongId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Xóa các bản ghi liên quan trong bảng HoaDon
+                        string deleteHoaDonSql = "DELETE FROM HoaDon WHERE DatPhongID IN (SELECT DatPhongID FROM DatPhong WHERE PhongID = @PhongId)";
+                        using (SqlCommand cmd = new SqlCommand(deleteHoaDonSql, connection, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@PhongId", obj.PhongId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Xóa các bản ghi liên quan trong bảng DatPhong
+                        string deleteDatPhongSql = "DELETE FROM DatPhong WHERE PhongID = @PhongId";
+                        using (SqlCommand cmd = new SqlCommand(deleteDatPhongSql, connection, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@PhongId", obj.PhongId);
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        // Xóa bản ghi trong bảng Phong
+                        string deletePhongSql = "DELETE FROM Phong WHERE PhongId = @PhongId";
+                        using (SqlCommand cmd = new SqlCommand(deletePhongSql, connection, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@PhongId", obj.PhongId);
+                            int n = cmd.ExecuteNonQuery();
+                            transaction.Commit();
+                            return (n > 0);
+                        }
+
+                        // Xóa bản ghi trong bảng Phong
+                        string deleteLichSuKhachHangSql = "DELETE FROM LichSuKhachHang WHERE PhongId = @PhongId";
+                        using (SqlCommand cmd = new SqlCommand(deleteLichSuKhachHangSql, connection, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@PhongId", obj.PhongId);
+                            int n = cmd.ExecuteNonQuery();
+                            transaction.Commit();
+                            return (n > 0);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                // Log lỗi chi tiết
+                Console.WriteLine("Error in delete method: " + ex.Message);
+                MessageBox.Show("Error in delete method: " + ex.Message);
                 return false;
             }
         }
+       
 
         public bool update(CPhong obj)
         {
