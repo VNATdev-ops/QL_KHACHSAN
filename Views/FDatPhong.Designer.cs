@@ -231,6 +231,7 @@
             // 
             // txtNgayTra
             // 
+            this.txtNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayTra.Location = new System.Drawing.Point(229, 217);
             this.txtNgayTra.Name = "txtNgayTra";
             this.txtNgayTra.Size = new System.Drawing.Size(587, 34);
@@ -238,6 +239,7 @@
             // 
             // txtNgayNhan
             // 
+            this.txtNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayNhan.Location = new System.Drawing.Point(229, 164);
             this.txtNgayNhan.Name = "txtNgayNhan";
             this.txtNgayNhan.Size = new System.Drawing.Size(587, 34);
@@ -245,6 +247,7 @@
             // 
             // txtNgayDat
             // 
+            this.txtNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayDat.Location = new System.Drawing.Point(229, 117);
             this.txtNgayDat.Name = "txtNgayDat";
             this.txtNgayDat.Size = new System.Drawing.Size(587, 34);

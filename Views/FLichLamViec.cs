@@ -147,6 +147,7 @@ namespace QL_KHACHSAN.Views
             txtIDlichlamviec.Clear();
             txtIDNhanVien.Clear();
             txtCaLam.Clear();
+            
 
         }
     }

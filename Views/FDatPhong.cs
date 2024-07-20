@@ -183,9 +183,9 @@ namespace QL_KHACHSAN.Views
             txtIDdatphong.Text = string.Empty;
             txtIDphong.Text = string.Empty;
             txtIDkhachhang.Text = string.Empty;
-            txtNgayDat.Text = string.Empty;
-            txtNgayNhan.Text = string.Empty;
-            txtNgayTra.Text = string.Empty;
+            txtNgayDat.Value = DateTime.Today;
+            txtNgayNhan.Value = DateTime.Today;
+            txtNgayTra.Value = DateTime.Today;
             txtTinhtrang.Text = string.Empty;
             txtIDphong.Focus();
         }
