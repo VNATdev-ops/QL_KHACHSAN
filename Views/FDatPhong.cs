@@ -42,9 +42,6 @@ namespace QL_KHACHSAN.Views
         {
 
         }
-
-    
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -92,6 +89,7 @@ namespace QL_KHACHSAN.Views
         {
             try 
             {
+
                 CDatPhong s = new CDatPhong();
                 s.DatPhongID = int.Parse(txtIDdatphong.Text);
                 s.PhongID = int.Parse(txtIDphong.Text);

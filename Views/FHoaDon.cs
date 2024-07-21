@@ -16,5 +16,17 @@ namespace QL_KHACHSAN.Views
         {
             InitializeComponent();
         }
+
+        private void txtIDdatphong_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIDHoaDon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

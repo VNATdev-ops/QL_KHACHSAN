@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Models\CBaoCaoSuCo.cs" />
     <Compile Include="Models\CDatPhong.cs" />
+    <Compile Include="Models\CHoaDon.cs" />
     <Compile Include="Models\CLichBaoTri.cs" />
     <Compile Include="Models\CLichLamViec.cs" />
     <Compile Include="Models\CNhanVien.cs" />
@@ -144,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FDatPhong.resx">
       <DependentUpon>FDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FHoaDon.resx">
+      <DependentUpon>FHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FKhachHang.resx">
       <DependentUpon>FKhachHang.cs</DependentUpon>
