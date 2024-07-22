@@ -41,5 +41,20 @@ namespace QL_KHACHSAN.Views
         {
 
         }
+
+        private void btnNhapMoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FLichLamViec_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

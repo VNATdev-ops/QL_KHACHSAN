@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SQLConnection, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\SqlConnection.1.0.4\lib\netstandard2.0\SQLConnection.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,7 +52,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CtrlDatDichVu.cs" />
+    <Compile Include="Controller\CtrlDichvu.cs" />
     <Compile Include="Controller\CtrlPhong.cs" />
+    <Compile Include="Models\CDatDichVu.cs" />
+    <Compile Include="Models\CDichvu.cs" />
+    <Compile Include="Views\FDatdichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FDatdichvu.Designer.cs">
+      <DependentUpon>FDatdichvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FDichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FDichvu.Designer.cs">
+      <DependentUpon>FDichvu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +127,12 @@
     <Compile Include="Views\FPhong.Designer.cs">
       <DependentUpon>FPhong.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FDatdichvu.resx">
+      <DependentUpon>FDatdichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FDichvu.resx">
+      <DependentUpon>FDichvu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -129,6 +157,7 @@
     <EmbeddedResource Include="Views\FPhong.resx">
       <DependentUpon>FPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,4 +1,4 @@
-﻿namespace QL_KHACHSAN.Views
+﻿ namespace QL_KHACHSAN.Views
 {
     partial class FNhanVien
     {

@@ -98,5 +98,19 @@ namespace QL_KHACHSAN.Views
             Tittle.Visible = true;
             Tittle.Text = "Quản lý lịch làm việc";
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDichvu());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý Dịch vụ";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FDatdichvu());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý Dịch vụ";
+        }
     }
 }
