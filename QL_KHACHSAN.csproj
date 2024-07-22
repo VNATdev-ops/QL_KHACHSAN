@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CtrlBaoCaoSuCo.cs" />
+    <Compile Include="Controller\CtrlKhachHang.cs" />
     <Compile Include="Controller\CtrlDatPhong.cs" />
     <Compile Include="Controller\CtrlLichBaoTri.cs" />
     <Compile Include="Controller\CtrlLichLamViec.cs" />
@@ -59,6 +60,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CBaoCaoSuCo.cs" />
+    <Compile Include="Models\CKhachHang.cs" />
     <Compile Include="Models\CDatPhong.cs" />
     <Compile Include="Models\CHoaDon.cs" />
     <Compile Include="Models\CLichBaoTri.cs" />
