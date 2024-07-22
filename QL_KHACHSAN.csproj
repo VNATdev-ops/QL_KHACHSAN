@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controller\CtrlBaoCaoSuCo.cs" />
     <Compile Include="Controller\CtrlDatPhong.cs" />
+    <Compile Include="Controller\CtrlHoaDon.cs" />
     <Compile Include="Controller\CtrlLichBaoTri.cs" />
     <Compile Include="Controller\CtrlLichLamViec.cs" />
     <Compile Include="Controller\CtrlNhanVien.cs" />
