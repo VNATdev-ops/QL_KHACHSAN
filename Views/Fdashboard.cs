@@ -103,7 +103,19 @@ namespace QL_KHACHSAN.Views
         {
             OpenChildForm(new FKhachHang());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch làm việc";
+            Tittle.Text = "Quản lý khách hàng";
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FLichSu());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch sử khách hàng";
         }
     }
 }
