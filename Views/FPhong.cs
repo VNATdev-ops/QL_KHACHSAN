@@ -14,7 +14,7 @@ namespace QL_KHACHSAN.Views
 {
     public partial class FPhong : Form
     {
-        CtrlPhong ctrlPhong = new CtrlPhong();
+        CtrlPhong ctrPhong = new CtrlPhong();
         private List<CPhong> dsPhong = new List<CPhong>();
         public FPhong()
         {
@@ -41,7 +41,7 @@ namespace QL_KHACHSAN.Views
 
         private void FPhong_Load(object sender, EventArgs e)
         {
-            dsPhong = ctrlPhong.findall();
+            dsPhong = ctrPhong.findall();
             foreach (CPhong s in dsPhong)
             {
                 string[] obj = { 
@@ -49,7 +49,8 @@ namespace QL_KHACHSAN.Views
                     s.SoPhong, 
                     s.LoaiPhong, 
                     s.GiaTien.ToString(), 
-                    s.TinhTrang };
+                    s.TinhTrang 
+                };
                 ListViewItem item = new ListViewItem(obj);
                 lsvDSPhong.Items.Add(item);
             }
@@ -88,17 +89,29 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                int phongID = int.Parse(txtMaPhong.Text);
-                string soPhong = txtSoPhong.Text;
-                string loaiPhong = txtLoaiPhong.Text;
-                decimal giaTien = decimal.Parse(txtGiaTien.Text);
-                string tinhTrang = txtTinhTrang.Text;
+                CPhong s = new CPhong();
+                s.PhongId = int.Parse(txtMaPhong.Text);
+                s.SoPhong = txtSoPhong.Text;
+                s.LoaiPhong = txtLoaiPhong.Text;
+                s.GiaTien = decimal.Parse(txtGiaTien.Text);
+                s.TinhTrang = txtTinhTrang.Text;
 
-                CPhong phong = new CPhong(phongID, soPhong, loaiPhong, giaTien, tinhTrang);
-
-                // Add your logic to save the `phong` object to the database or collection
-
-                MessageBox.Show("Thêm phòng thành công!");
+                if (ctrPhong.insert(s))
+                {
+                    string[] objPhong =
+                    {
+                        s.PhongId.ToString(),
+                        s.SoPhong,
+                        s.LoaiPhong,
+                        s.GiaTien.ToString(),
+                        s.TinhTrang
+                    };
+                    ListViewItem item = new ListViewItem(objPhong);
+                    lsvDSPhong.Items.Add(item);
+                    dsPhong.Add(s);
+                    txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
+                    MessageBox.Show("Thêm thành công");
+                }
             }
             catch (FormatException ex)
             {
@@ -118,6 +131,86 @@ namespace QL_KHACHSAN.Views
             txtSoPhong.Text = string.Empty;
             txtTinhTrang.Text = string.Empty;
             txtMaPhong.Focus();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lsvDSPhong.SelectedItems.Count > 0)
+                {
+                    ListViewItem item = lsvDSPhong.SelectedItems[0];
+                    int phongId = int.Parse(item.SubItems[0].Text);
+
+                    // Tìm đối tượng CPhong tương ứng trong danh sách dsPhong
+                    CPhong phong = dsPhong.FirstOrDefault(p => p.PhongId == phongId);
+
+                    if (phong != null)
+                    {
+                        // Xóa khỏi cơ sở dữ liệu
+                        if (ctrPhong.delete(phong))
+                        {
+                            MessageBox.Show("Xóa thành công");
+
+                            // Xóa khỏi danh sách dsPhong và ListView
+                            dsPhong.Remove(phong);
+                            lsvDSPhong.Items.Remove(item);
+
+                            // Cập nhật số lượng phòng
+                            txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thất bại");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn phòng để xóa");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem item = lsvDSPhong.SelectedItems[0];
+                int phongId = int.Parse(item.SubItems[0].Text);
+                CPhong phong = dsPhong.FirstOrDefault(p => p.PhongId == phongId);
+
+                if (phong != null)
+                {
+                    phong.LoaiPhong = txtLoaiPhong.Text;
+                    phong.SoPhong = txtSoPhong.Text;
+                    phong.GiaTien = decimal.Parse(txtGiaTien.Text);
+                    phong.TinhTrang = txtTinhTrang.Text;
+
+                    if (ctrPhong.update(phong))
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thành công.");
+                        item.SubItems[1].Text = phong.SoPhong;
+                        item.SubItems[2].Text = phong.LoaiPhong;
+                        item.SubItems[3].Text = phong.GiaTien.ToString();
+                        item.SubItems[4].Text = phong.TinhTrang;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thất bại.");
+                    }
+                    capNhatSoLuongPhong();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
     }
 }
