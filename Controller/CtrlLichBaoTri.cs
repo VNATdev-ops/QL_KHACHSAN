@@ -93,6 +93,11 @@ namespace QL_KHACHSAN.Controller
             }
         }
 
+        ////public List<CLichBaoTri> findCriteria(string DK)
+        ////{
+            
+        ////}
+
 
 
     }

@@ -77,5 +77,34 @@ namespace QL_KHACHSAN.Controller
                 return false;
             }
         }
+        public List<CLichLamViec> findCriteria(string DK)
+        {
+            string sql = "select * from lichlamviec where lichlamviecid like @dk " +
+                "or nhanvienid like @dk " +
+                "or ngaylam like @dk " +
+                "or calam like @dk ";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@dk", "%" + DK + "%");
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CLichLamViec> arrs = new List<CLichLamViec>();
+            while (reader.Read())
+            {
+                
+                CLichLamViec lichLamViec = new CLichLamViec();
+                lichLamViec.LichLamViecID = reader.GetInt32(0);
+
+                int nhanVienId = reader.GetInt32(1); // Assuming NhanVienID is an int
+                CNhanVien nhanVien = new CNhanVien { NhanvienID = nhanVienId };
+                lichLamViec.NhanVienID = nhanVien;
+
+                lichLamViec.NgayLam = reader.GetDateTime(2);
+                lichLamViec.CaLam = reader.GetString(3);
+                // thêm vào ds
+                arrs.Add(lichLamViec);
+            }
+            reader.Close();
+            return arrs;
+        }
     }
 }

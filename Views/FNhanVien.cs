@@ -195,5 +195,28 @@ namespace QL_KHACHSAN.Views
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string dkFind = txtTimKiem.Text;
+                dsNhanVien = ctrNhanVien.findCriteria(dkFind);
+
+                lsvDsNhanVien.Items.Clear();
+                foreach (CNhanVien s in dsNhanVien)
+                {
+
+                    string[] obj = { s.NhanvienID.ToString(), s.TenNhanVien, s.ViTri, s.Luong.ToString() };
+                    ListViewItem item = new ListViewItem(obj);
+                    lsvDsNhanVien.Items.Add(item);
+                }
+                txtTongSo.Text = lsvDsNhanVien.Items.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
     }
 }

@@ -139,25 +139,29 @@ namespace QL_KHACHSAN.Views
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int hoaDonID = int.Parse(txtIDdatphong.Text);
-                CHoaDon hoaDon = ctrlHoaDon.FindByID(hoaDonID);
-                if (hoaDon != null)
-                {
-                    txtIDdatphong.Text = hoaDon.IdDatphong.DatPhongID.ToString();
-                    dtpNgayLap.Value = hoaDon.NgayLap;
-                    txtTongTien.Text = hoaDon.TongTien.ToString("N2");
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy hóa đơn với ID đã nhập");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
-            }
+            //try
+            //{
+            //    string dkFind = txtTimKiem.Text;
+            //    dsHoaDon = ctrlHoaDon.findCriteria(dkFind);
+
+            //    listViewHoaDon.Items.Clear();
+            //    foreach (CHoaDon hoaDon in dsHoaDon)
+            //    {
+            //        string[] row = {
+            //        hoaDon.IDHoaDon.ToString(),
+            //        hoaDon.IdDatphong.DatPhongID.ToString(),
+            //        hoaDon.NgayLap.ToString("dd/MM/yyyy"),
+            //        hoaDon.TongTien.ToString("N2")
+            //    };
+            //        ListViewItem item = new ListViewItem(row);
+            //        listViewHoaDon.Items.Add(item);
+            //    }
+            //    txtTongSo.Text = listViewHoaDon.Items.Count.ToString();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi: " + ex.Message);
+            //}
         }
     }
 }
