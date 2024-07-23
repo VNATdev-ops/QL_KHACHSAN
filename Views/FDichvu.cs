@@ -184,6 +184,20 @@ namespace QL_KHACHSAN
 
         private void lsvDanhSachDichVu_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+            if(lsvDanhSachDichVu.SelectedItems.Count>0)
+            {
+            txtIDDichvu.Text = lsvDanhSachDichVu.SelectedItems[0].SubItems[0].Text;
+            txtTendichvu.Text = lsvDanhSachDichVu.SelectedItems[0].SubItems[1].Text;
+            txtGiatien.Text = lsvDanhSachDichVu.SelectedItems[0].SubItems[2].Text;
+
+            }
+            
+                
+                
+                
+
+            
+
 
         }
 
@@ -202,6 +216,11 @@ namespace QL_KHACHSAN
                 lsvDanhSachDichVu.Items.Add(item);
 
             }
+        }
+
+        private void txtGiatien_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

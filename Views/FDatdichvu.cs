@@ -236,5 +236,27 @@ namespace QL_KHACHSAN
 
             txtTongSo.Text = lsvDSDVDaDat.Items.Count.ToString();
         }
+
+        private void lsvDSDVDaDat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsvDSDVDaDat.SelectedItems.Count > 0)
+            {
+                cmbDV.Text = lsvDSDVDaDat.SelectedItems[0].SubItems[0].Text;
+                txtIDDatDichVu.Text = lsvDSDVDaDat.SelectedItems[0].SubItems[1].Text;
+                cmbPhong.Text = lsvDSDVDaDat.SelectedItems[0].SubItems[2].Text;
+                dtpTimeDV.Text = lsvDSDVDaDat.SelectedItems[0].SubItems[3].Text;
+
+            }
+        }
+
+        private void cmbDV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpTimeDV_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

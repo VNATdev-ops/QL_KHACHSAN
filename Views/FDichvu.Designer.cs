@@ -109,6 +109,7 @@
             this.txtGiatien.Name = "txtGiatien";
             this.txtGiatien.Size = new System.Drawing.Size(185, 28);
             this.txtGiatien.TabIndex = 2;
+            this.txtGiatien.TextChanged += new System.EventHandler(this.txtGiatien_TextChanged);
             // 
             // txtTendichvu
             // 
@@ -158,7 +159,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(32, 112);
+            this.btnXoa.Location = new System.Drawing.Point(32, 55);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(165, 35);
@@ -169,7 +170,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(32, 61);
+            this.btnCapNhat.Location = new System.Drawing.Point(32, 104);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(165, 35);

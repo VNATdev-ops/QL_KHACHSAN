@@ -109,6 +109,7 @@
             this.lsvDSDVDaDat.Size = new System.Drawing.Size(873, 178);
             this.lsvDSDVDaDat.TabIndex = 0;
             this.lsvDSDVDaDat.UseCompatibleStateImageBehavior = false;
+            this.lsvDSDVDaDat.SelectedIndexChanged += new System.EventHandler(this.lsvDSDVDaDat_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -147,6 +148,7 @@
             this.cmbDV.Name = "cmbDV";
             this.cmbDV.Size = new System.Drawing.Size(209, 30);
             this.cmbDV.TabIndex = 15;
+            this.cmbDV.SelectedIndexChanged += new System.EventHandler(this.cmbDV_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -164,6 +166,7 @@
             this.dtpTimeDV.Name = "dtpTimeDV";
             this.dtpTimeDV.Size = new System.Drawing.Size(222, 28);
             this.dtpTimeDV.TabIndex = 13;
+            this.dtpTimeDV.ValueChanged += new System.EventHandler(this.dtpTimeDV_ValueChanged);
             // 
             // label5
             // 
