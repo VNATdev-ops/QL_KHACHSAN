@@ -142,5 +142,27 @@ namespace QL_KHACHSAN.Views
             txtIDNhanVien.Clear();
             txtMoTa.Clear();
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    string dkFind = txtTimKiem.Text;
+            //    dsLichBaoTri = dsLichBaoTri.findCriteria(dkFind);
+
+            //    lsvLichBaoTri.Items.Clear();
+            //    foreach (CLichBaoTri s in dsLichBaoTri)
+            //    {
+            //        string[] obj = { s.LichBaoTriID.ToString(), s.PhongID.PhongId.ToString(), s.NhanvienID.NhanvienID.ToString(), s.NgayBaoTri.ToString(), s.MoTa };
+            //        ListViewItem item = new ListViewItem(obj);
+            //        lsvLichBaoTri.Items.Add(item);
+            //    }
+            //    txtTongSo.Text = lsvLichBaoTri.Items.Count.ToString();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi: " + ex.Message);
+            //}
+        }
     }
 }

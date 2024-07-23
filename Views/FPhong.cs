@@ -212,5 +212,30 @@ namespace QL_KHACHSAN.Views
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
+
+        
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string dkFind = txtTimKiem.Text;
+                dsPhong = ctrPhong.findCriteria(dkFind);
+
+                lsvDSPhong.Items.Clear();
+                foreach (CPhong s in dsPhong)
+                {
+                    
+                    string[] obj = { s.PhongId.ToString(), s.SoPhong, s.LoaiPhong, s.GiaTien.ToString(), s.TinhTrang };
+                    ListViewItem item = new ListViewItem(obj);
+                    lsvDSPhong.Items.Add(item);
+                }
+                txtTongSo.Text = lsvDSPhong.Items.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
     }
 }

@@ -157,7 +157,7 @@
             this.groupBox1.Size = new System.Drawing.Size(669, 265);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Thông tin";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtTinhtrang
@@ -300,7 +300,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1029, 327);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Danh sách";
             // 
             // lsvDatPhong
             // 
@@ -369,8 +369,9 @@
             this.txtTimKiem.Location = new System.Drawing.Point(4, 56);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(216, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(287, 34);
             this.txtTimKiem.TabIndex = 11;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // label9
             // 

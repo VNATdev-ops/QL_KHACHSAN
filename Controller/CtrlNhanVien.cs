@@ -103,5 +103,30 @@ namespace QL_KHACHSAN.Controller
             }
         }
 
+        public List<CNhanVien> findCriteria(string DK)
+        {
+            string sql = "select * from nhanvien where nhanvienid like @dk " +
+                "or tennhanvien like @dk " +
+                "or vitri like @dk " +
+                "or luong like @dk ";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@dk", "%" + DK + "%");
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CNhanVien> arrs = new List<CNhanVien>();
+            while (reader.Read())
+            {
+                CNhanVien s = new CNhanVien();
+                s.NhanvienID = reader.GetInt32(0);
+                s.TenNhanVien = reader.GetString(1);
+                s.ViTri = reader.GetString(2);
+                s.Luong = reader.GetDecimal(3);
+                // thêm vào ds
+                arrs.Add(s);
+            }
+            reader.Close();
+            return arrs;
+        }
+
     }
 }

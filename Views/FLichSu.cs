@@ -171,5 +171,10 @@ namespace QL_KHACHSAN.Views
             txtNgayTra.Value = DateTime.Today;
             txtNgayNhan.Value = DateTime.Today;
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

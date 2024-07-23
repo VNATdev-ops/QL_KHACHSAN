@@ -87,31 +87,6 @@ namespace QL_KHACHSAN.Controller
             return hoaDons;
         }
 
-        public CHoaDon FindByID(int id)
-        {
-            CHoaDon hoaDon = null;
-            try
-            {
-                string sql = "SELECT * FROM HoaDon WHERE HoaDonID = @HoaDonID";
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Connection = cnn;
-                cmd.Parameters.AddWithValue("@HoaDonID", id);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    hoaDon = new CHoaDon();
-                    hoaDon.IDHoaDon = reader.GetInt32(0);
-                    hoaDon.IdDatphong = new CDatPhong() { DatPhongID = reader.GetInt32(1) }; // Giả sử bạn chỉ cần DatPhongID
-                    hoaDon.NgayLap = reader.GetDateTime(2);
-                    hoaDon.TongTien = reader.GetDecimal(3);
-                }
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                // Log error
-            }
-            return hoaDon;
-        }
+        
     }
 }

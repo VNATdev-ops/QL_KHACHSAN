@@ -153,5 +153,28 @@ namespace QL_KHACHSAN.Controller
             catch { return false; }
 
         }
+
+        public List<CPhong> findCriteria(string DK)
+        {
+            string sql = "select * from phong where phongid like @dk or sophong like @dk or loaiphong like @dk or giatien like @dk or tinhtrang like @dk";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@dk", "%" + DK + "%");
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CPhong> arrs = new List<CPhong>();
+            while (reader.Read())
+            {
+                CPhong s = new CPhong();
+                s.PhongId = reader.GetInt32(0);
+                s.SoPhong = reader.GetString(1);
+                s.LoaiPhong = reader.GetString(2);
+                s.GiaTien = reader.GetDecimal(3);
+                s.TinhTrang = reader.GetString(4);
+                // thêm vào ds
+                arrs.Add(s);
+            }
+            reader.Close();
+            return arrs;
+        }
     }
 }

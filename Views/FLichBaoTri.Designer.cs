@@ -35,6 +35,7 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayBaoTri = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,8 +52,7 @@
             this.txtTongSo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dtpNgayBaoTri = new System.Windows.Forms.DateTimePicker();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -140,7 +140,14 @@
             this.groupBox1.Size = new System.Drawing.Size(1256, 424);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Thông tin";
+            // 
+            // dtpNgayBaoTri
+            // 
+            this.dtpNgayBaoTri.Location = new System.Drawing.Point(724, 215);
+            this.dtpNgayBaoTri.Name = "dtpNgayBaoTri";
+            this.dtpNgayBaoTri.Size = new System.Drawing.Size(381, 34);
+            this.dtpNgayBaoTri.TabIndex = 10;
             // 
             // label5
             // 
@@ -224,7 +231,7 @@
             this.groupBox2.Size = new System.Drawing.Size(1256, 331);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Danh sách";
             // 
             // lsvLichBaoTri
             // 
@@ -271,7 +278,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Silver;
             this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(1274, 568);
             this.groupBox4.Name = "groupBox4";
@@ -289,20 +296,14 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "tìm kiếm nhân viên";
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(6, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 34);
-            this.textBox1.TabIndex = 11;
-            // 
-            // dtpNgayBaoTri
-            // 
-            this.dtpNgayBaoTri.Location = new System.Drawing.Point(724, 215);
-            this.dtpNgayBaoTri.Name = "dtpNgayBaoTri";
-            this.dtpNgayBaoTri.Size = new System.Drawing.Size(381, 34);
-            this.dtpNgayBaoTri.TabIndex = 10;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 69);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(287, 34);
+            this.txtTimKiem.TabIndex = 11;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // FLichBaoTri
             // 
@@ -354,7 +355,7 @@
         private System.Windows.Forms.Button txtTongSo;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DateTimePicker dtpNgayBaoTri;
     }
 }
