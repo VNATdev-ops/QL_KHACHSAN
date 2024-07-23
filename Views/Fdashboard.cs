@@ -7,20 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.AccessControl;
+using System.Runtime.InteropServices;
+
 
 namespace QL_KHACHSAN.Views
 {
     public partial class Fdashboard : Form
     {
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreaterRoundRectRgn")]
+        private static extern IntPtr CreaterRoundRectRgn
+        (
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeighEllipse
+        );
         public Fdashboard()
         {
             InitializeComponent();
+            pnlNav.Height = btnPhong.Height;
+
+            
+
         }
 
         private Form currentFormChild;
-
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                
+            }
+        }
         private void btnPhong_Click(object sender, EventArgs e)
         {
+            btnPhong.BackColor = Color.FromArgb(46, 51, 73);
             OpenChildForm(new FPhong());
             Tittle.Visible = true;
             Tittle.Text = "Quản lý phòng";
@@ -44,10 +69,7 @@ namespace QL_KHACHSAN.Views
             childFrom.Show();
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+       
 
         private void Fdashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -56,16 +78,83 @@ namespace QL_KHACHSAN.Views
                 e.Cancel = true;
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void Fdashboard_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnPhong_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPhong_Click_1(object sender, EventArgs e)
+        {
+
+            btnPhong.BackColor = Color.FromArgb(46, 51, 73);
+            OpenChildForm(new FPhong());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý phòng";
+        }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            btnDatPhong.BackColor = Color.FromArgb(46, 51, 73);
             OpenChildForm(new FDatPhong());
             Tittle.Visible = true;
             Tittle.Text = "Quản lý đặt phòng";
         }
 
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            btnKhachHang.BackColor = Color.FromArgb(46, 51, 73);
+
+            OpenChildForm(new FKhachHang());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý phòng";
+        }
+
+        private void btnLichSuKhachHang_Click(object sender, EventArgs e)
+        {
+            btnLichSuKhachHang.BackColor = Color.FromArgb(46, 51, 73);
+
+            OpenChildForm(new FLichSu());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch sử khách hàng";
+        }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            btnDichVu.BackColor = Color.FromArgb(46, 51, 73);
+
+
+            //OpenChildForm(new FKhachHang());
+            //Tittle.Visible = true;
+            //Tittle.Text = "Quản lý phòng";
+        }
+
+        private void btnDatDichVu_Click(object sender, EventArgs e)
+        {
+            btnDatDichVu.BackColor = Color.FromArgb(46, 51, 73);
+
+            ////OpenChildForm(new ());
+            ////Tittle.Visible = true;
+            ////Tittle.Text = "Quản lý phòng";
+        }
+
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
+            btnNhanVien.BackColor = Color.FromArgb(46, 51, 73);
+
             OpenChildForm(new FNhanVien());
             Tittle.Visible = true;
             Tittle.Text = "Quản lý nhân viên";
@@ -73,49 +162,112 @@ namespace QL_KHACHSAN.Views
 
         private void btnLichLamViec_Click(object sender, EventArgs e)
         {
+            btnLichLamViec.BackColor = Color.FromArgb(46, 51, 73);
+
             OpenChildForm(new FLichLamViec());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch làm việc";
+            Tittle.Text = "Quản lý phòng";
         }
 
-        private void btnBaoCaoSuCo_Click(object sender, EventArgs e)
+        private void btnLichBaoTri_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FBaoCaoSuCo());
-            Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch làm việc";
-        }
+            btnLichBaoTri.BackColor = Color.FromArgb(46, 51, 73);
 
-        private void btnLichSuBaoTri_Click(object sender, EventArgs e)
-        {
             OpenChildForm(new FLichBaoTri());
             Tittle.Visible = true;
             Tittle.Text = "Quản lý lịch bảo trì";
         }
 
+        private void btnBaoCaoSuCo_Click(object sender, EventArgs e)
+        {
+            btnBaoCaoSuCo.BackColor = Color.FromArgb(46, 51, 73);
+
+            OpenChildForm(new FBaoCaoSuCo());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý báo cáo sự cố";
+        }
+
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
+            btnHoaDon.BackColor = Color.FromArgb(46, 51, 73);
+
             OpenChildForm(new FHoaDon());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch làm việc";
+            Tittle.Text = "Quản lý phòng";
         }
 
-        private void btnKhachHang_Click(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FKhachHang());
-            Tittle.Visible = true;
-            Tittle.Text = "Quản lý khách hàng";
+            Application.Exit();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnPhong_Leave_1(object sender, EventArgs e)
         {
+            btnPhong.BackColor = Color.FromArgb(24, 30, 54);
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnPhong_MouseClick(object sender, MouseEventArgs e)
         {
-            OpenChildForm(new FLichSu());
-            Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch sử khách hàng";
+        }
+
+        private void btnDatPhong_Leave(object sender, EventArgs e)
+        {
+            btnDatPhong.BackColor = Color.FromArgb(24, 30, 54);
+        }
+
+        private void btnKhachHang_Leave(object sender, EventArgs e)
+        {
+            btnKhachHang.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnLichSuKhachHang_Leave(object sender, EventArgs e)
+        {
+            btnLichSuKhachHang.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnDichVu_Leave(object sender, EventArgs e)
+        {
+            btnDichVu.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnDatDichVu_Leave(object sender, EventArgs e)
+        {
+            btnDatDichVu.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnNhanVien_Leave(object sender, EventArgs e)
+        {
+            btnNhanVien.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnLichLamViec_Leave(object sender, EventArgs e)
+        {
+            btnLichLamViec.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnLichBaoTri_Leave(object sender, EventArgs e)
+        {
+            btnLichBaoTri.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnBaoCaoSuCo_Leave(object sender, EventArgs e)
+        {
+            btnBaoCaoSuCo.BackColor = Color.FromArgb(24, 30, 54);
+
+        }
+
+        private void btnHoaDon_Leave(object sender, EventArgs e)
+        {
+            btnHoaDon.BackColor = Color.FromArgb(24, 30, 54);
+
         }
     }
 }
