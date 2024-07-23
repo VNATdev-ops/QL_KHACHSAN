@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.AccessControl;
 using System.Runtime.InteropServices;
+using QL_KHACHSAN.Controller;
 
 
 namespace QL_KHACHSAN.Views
@@ -136,7 +137,9 @@ namespace QL_KHACHSAN.Views
         {
             btnDichVu.BackColor = Color.FromArgb(46, 51, 73);
 
-
+            OpenChildForm(new FDichvu());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch sử khách hàng";
             //OpenChildForm(new FKhachHang());
             //Tittle.Visible = true;
             //Tittle.Text = "Quản lý phòng";
@@ -145,7 +148,9 @@ namespace QL_KHACHSAN.Views
         private void btnDatDichVu_Click(object sender, EventArgs e)
         {
             btnDatDichVu.BackColor = Color.FromArgb(46, 51, 73);
-
+            OpenChildForm(new FDatdichvu());
+            Tittle.Visible = true;
+            Tittle.Text = "Quản lý lịch sử khách hàng";
             ////OpenChildForm(new ());
             ////Tittle.Visible = true;
             ////Tittle.Text = "Quản lý phòng";
