@@ -1,6 +1,5 @@
 ﻿using QL_KHACHSAN.Models;
 using QL_KHACHSAN.Utils;
-using QL_KHACHSAN.Views;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -35,7 +34,7 @@ namespace QL_KHACHSAN.Controller
                 // thêm vào ds
                 arrs.Add(s);
             }
-
+            
             reader.Close();
             return arrs;
         }

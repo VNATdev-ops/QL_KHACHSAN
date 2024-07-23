@@ -41,5 +41,11 @@ namespace QL_KHACHSAN.Models
         {
             return 1077831890 + datDichVuID.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return datDichVuID.ToString();
+        }
     }
+
 }

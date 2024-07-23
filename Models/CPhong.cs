@@ -45,5 +45,10 @@ namespace QL_KHACHSAN.Models
         {
             return phongId.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return phongId.ToString();
+        }
     }
 }

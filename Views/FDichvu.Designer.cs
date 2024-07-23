@@ -1,4 +1,4 @@
-﻿namespace QL_KHACHSAN.Views
+﻿namespace QL_KHACHSAN
 {
     partial class FDichvu
     {
@@ -57,6 +57,7 @@
             this.lsvDanhSachDichVu.Size = new System.Drawing.Size(873, 240);
             this.lsvDanhSachDichVu.TabIndex = 0;
             this.lsvDanhSachDichVu.UseCompatibleStateImageBehavior = false;
+            this.lsvDanhSachDichVu.SelectedIndexChanged += new System.EventHandler(this.lsvDanhSachDichVu_SelectedIndexChanged_1);
             // 
             // groupBox2
             // 
@@ -116,6 +117,7 @@
             this.txtTendichvu.Name = "txtTendichvu";
             this.txtTendichvu.Size = new System.Drawing.Size(185, 28);
             this.txtTendichvu.TabIndex = 1;
+            this.txtTendichvu.TextChanged += new System.EventHandler(this.txtTendichvu_TextChanged);
             // 
             // txtIDDichvu
             // 
@@ -124,6 +126,7 @@
             this.txtIDDichvu.Name = "txtIDDichvu";
             this.txtIDDichvu.Size = new System.Drawing.Size(185, 28);
             this.txtIDDichvu.TabIndex = 0;
+            this.txtIDDichvu.TextChanged += new System.EventHandler(this.txtIDDichvu_TextChanged);
             // 
             // groupBox1
             // 
@@ -162,6 +165,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -172,6 +176,7 @@
             this.btnCapNhat.TabIndex = 1;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThem
             // 
@@ -182,6 +187,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel2
             // 
@@ -207,6 +213,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "FDichvu";
             this.Text = "FDichvu";
+            this.Load += new System.EventHandler(this.FDichvu_Load_2);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

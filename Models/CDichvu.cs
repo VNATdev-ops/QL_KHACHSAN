@@ -12,10 +12,8 @@ namespace QL_KHACHSAN.Models
         private string TenDichVu;
         private double GiaTien;
 
-        public int DichVuID1 { get => DichVuID; set => DichVuID = value; }
-        public string TenDichVu1 { get => TenDichVu; set => TenDichVu = value; }
-        public double GiaTien1 { get => GiaTien; set => GiaTien = value; }
-
+  public CDichvu()
+        { }
         public CDichvu(int DichVuID, string TenDichVu, double GiaTien)
         {
             this.DichVuID = DichVuID;
@@ -23,26 +21,33 @@ namespace QL_KHACHSAN.Models
             this.GiaTien = GiaTien;
 
         }
-        public CDichvu()
-        { }
+        public int DichVuID1 { get => DichVuID; set => DichVuID = value; }
+        public string TenDichVu1 { get => TenDichVu; set => TenDichVu = value; }
+        public double GiaTien1 { get => GiaTien; set => GiaTien = value; }
 
-
+      
 
         public override bool Equals(object obj)
         {
             return obj is CDichvu dichvu &&
-                   DichVuID == dichvu.DichVuID;
+                   DichVuID == dichvu.DichVuID &&
+                   TenDichVu == dichvu.TenDichVu &&
+                   GiaTien == dichvu.GiaTien;
         }
 
         public override int GetHashCode()
         {
-            return 136591833 + DichVuID.GetHashCode();
-        }
-        public override string ToString()
-        {
-            return TenDichVu1 + "(" + DichVuID + ")";
+            int hashCode = 1733738890;
+            hashCode = hashCode * -1521134295 + DichVuID.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(TenDichVu);
+            hashCode = hashCode * -1521134295 + GiaTien.GetHashCode();
+            return hashCode;
         }
 
+        public override string ToString()
+        {
+            return DichVuID.ToString();
+        }
     }
 
 }

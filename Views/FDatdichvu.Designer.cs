@@ -1,4 +1,4 @@
-﻿namespace QL_KHACHSAN.Controller
+﻿namespace QL_KHACHSAN
 {
     partial class FDatdichvu
     {
@@ -202,6 +202,7 @@
             this.txtIDDatDichVu.Name = "txtIDDatDichVu";
             this.txtIDDatDichVu.Size = new System.Drawing.Size(185, 28);
             this.txtIDDatDichVu.TabIndex = 1;
+            this.txtIDDatDichVu.TextChanged += new System.EventHandler(this.txtIDDatDichVu_TextChanged);
             // 
             // panel2
             // 
@@ -235,6 +236,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -245,8 +247,9 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // FDatdichvu1
+            // FDatdichvu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -255,8 +258,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Name = "FDatdichvu1";
+            this.Name = "FDatdichvu";
             this.Text = "FĐatichvu1";
+            this.Load += new System.EventHandler(this.FDatdichvu_Load_1);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
