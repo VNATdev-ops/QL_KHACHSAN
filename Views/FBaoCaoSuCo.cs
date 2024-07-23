@@ -31,6 +31,11 @@ namespace QL_KHACHSAN.Views
             lsvDsBaoCaoSuCo.FullRowSelect = true;
         }
 
+        private void capNhatSoLuongPhong()
+        {
+            txtTongSo.Text = dsBaoCaoSuCo.Count.ToString();
+        }
+
         private void FBaoCaoSuCo_Load(object sender, EventArgs e)
         {
             lsvDsBaoCaoSuCo.Items.Clear();
@@ -41,6 +46,7 @@ namespace QL_KHACHSAN.Views
                 ListViewItem item = new ListViewItem(obj);
                 lsvDsBaoCaoSuCo.Items.Add(item);
             }
+            capNhatSoLuongPhong();
         }
 
         private void lsvDsBaoCaoSuCo_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,6 +130,8 @@ namespace QL_KHACHSAN.Views
                 {
                     MessageBox.Show("Cập nhật thất bại");
                 }
+                capNhatSoLuongPhong();
+
             }
             catch (Exception ex)
             {
