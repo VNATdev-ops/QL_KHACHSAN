@@ -18,7 +18,7 @@ namespace QL_KHACHSAN.Controller
             ConnectDB cnnDB = new ConnectDB();
             cnn = cnnDB.getConnection();
         }
-        //ádas
+
         public List<CDatPhong> findall()
         {
             string sql = "select * from datphong";
