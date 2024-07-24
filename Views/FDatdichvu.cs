@@ -258,5 +258,20 @@ namespace QL_KHACHSAN
         {
 
         }
+
+        private void cmbPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IDDatDichVu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
