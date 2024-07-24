@@ -35,7 +35,7 @@ namespace QL_KHACHSAN.Views
 
         private void capNhatSoLuongPhong()
         {
-            txtTongSo.Text = dsDatPhong.Count.ToString();
+            txtTongSo.Text = lsvDatPhong.Items.Count.ToString();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -247,18 +247,23 @@ namespace QL_KHACHSAN.Views
             foreach (CDatPhong s in dsDatPhong)
             {
                 string[] obj = {
-                    s.DatPhongID.ToString(),
-                    s.PhongID.ToString(),
-                    s.KhachHangID.ToString(),
-                    s.NgayDat1.ToShortDateString(),
-                    s.NgayNhan1.ToShortDateString(),
-                    s.NgayTra1.ToShortTimeString(),
-                    s.TinhTrang1.ToString(),
-                };
+            s.DatPhongID.ToString(),
+            s.PhongID.ToString(),
+            s.KhachHangID.ToString(),
+            s.NgayDat1.ToShortDateString(),
+            s.NgayNhan1.ToShortDateString(),
+            s.NgayTra1.ToShortTimeString(),
+            s.TinhTrang1.ToString(),
+        };
                 ListViewItem item = new ListViewItem(obj);
                 lsvDatPhong.Items.Add(item);
             }
             capNhatSoLuongPhong();
+        }
+
+        private void txtTongSo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
