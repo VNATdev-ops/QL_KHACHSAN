@@ -190,5 +190,34 @@ namespace QL_KHACHSAN.Views
             txtemail.Text = string.Empty;
             txtIDkhachhang.Focus();
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string dkFind = txtTimKiem.Text;
+                dsKhachHang = ctrlKhachhang.findCriteria(dkFind);
+
+                lsvKhachHang.Items.Clear();
+                foreach (CKhachHang s in dsKhachHang)
+                {
+
+                    string[] obj = {
+                    s.KhachHangID1.ToString(),
+                    s.TenKhachHang1.ToString(),
+                    s.SoDienThoai1.ToString(),
+                    s.DiaChi1.ToString(),
+                    s.Email1.ToString(),
+                };
+                    ListViewItem item = new ListViewItem(obj);
+                    lsvKhachHang.Items.Add(item);
+                }
+                txtTongSo.Text = lsvKhachHang.Items.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
     }
 }
