@@ -79,5 +79,32 @@ namespace QL_KHACHSAN.Controller
                 return false;
             }
         }
+
+        public List<CLichSu> findCriteria(string DK)
+        {
+            string sql = "select * from lichsukhachhang where lichsuid like @dk " +
+                "or khachhangid like @dk " +
+                "or phongid like @dk " +
+                "or ngaynhan like @dk " +
+                "or ngaytra like @dk ";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@dk", "%" + DK + "%");
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CLichSu> arrs = new List<CLichSu>();
+            while (reader.Read())
+            {
+                CLichSu s = new CLichSu();
+                s.LichSuID1 = reader.GetInt32(0);
+                s.KhachHangID1 = reader.GetInt32(1);
+                s.PhongID1 = reader.GetInt32(2);
+                s.NgayNhan1 = reader.GetDateTime(3);
+                s.NgayTra1 = reader.GetDateTime(4);
+                // thêm vào ds
+                arrs.Add(s);
+            }
+            reader.Close();
+            return arrs;
+        }
     }
 }

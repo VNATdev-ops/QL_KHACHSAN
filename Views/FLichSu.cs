@@ -174,7 +174,31 @@ namespace QL_KHACHSAN.Views
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                string dkFind = txtTimKiem.Text;
+                dsLichSu = ctrlLichSu.findCriteria(dkFind);
+
+                lsvLichSu.Items.Clear();
+                foreach (CLichSu s in dsLichSu)
+                {
+
+                    string[] obj = {
+                    s.LichSuID1.ToString(),
+                    s.KhachHangID1.ToString(),
+                    s.PhongID1.ToString(),
+                    s.NgayNhan1.ToShortDateString(),
+                    s.NgayTra1.ToShortDateString(),
+                };
+                    ListViewItem item = new ListViewItem(obj);
+                    lsvLichSu.Items.Add(item);
+                }
+                txtTongSo.Text = lsvLichSu.Items.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }
