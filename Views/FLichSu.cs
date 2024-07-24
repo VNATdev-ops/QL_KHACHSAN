@@ -20,11 +20,11 @@ namespace QL_KHACHSAN.Views
         {
             InitializeComponent();
             int width = lsvLichSu.Width;
-            lsvLichSu.Columns.Add("Mã lịch sử", 90);
-            lsvLichSu.Columns.Add("Mã khách hàng", 90);
-            lsvLichSu.Columns.Add("Mã phòng", 90);
-            lsvLichSu.Columns.Add("Ngày nhận", 150);
-            lsvLichSu.Columns.Add("Ngày trả", 150);
+            lsvLichSu.Columns.Add("Mã lịch sử", 150);
+            lsvLichSu.Columns.Add("Mã khách hàng", 150);
+            lsvLichSu.Columns.Add("Mã phòng", 150);
+            lsvLichSu.Columns.Add("Ngày nhận", 250);
+            lsvLichSu.Columns.Add("Ngày trả", 250);
 
             lsvLichSu.View = View.Details;
             lsvLichSu.FullRowSelect = true;
