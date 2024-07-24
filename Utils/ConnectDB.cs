@@ -20,7 +20,7 @@ namespace QL_KHACHSAN.Utils
         {
             if (connection == null)
             {
-                connection = new SqlConnection("Data Source = DESKTOP-45GKJAU\\SQLEXPRESS; " +
+                connection = new SqlConnection("Data Source = DESKTOP-H769H47\\SQLEXPRESS; " +
                    "Initial Catalog = QL_KHACH_SAN ; Integrated Security = true");
 
                 //connection = new SqlConnection("Data Source = ANHTUAN; " +

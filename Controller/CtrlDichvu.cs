@@ -34,7 +34,7 @@ namespace QL_KHACHSAN.Controller
                 // thêm vào ds
                 arrs.Add(s);
             }
-            
+
             reader.Close();
             return arrs;
         }
@@ -90,6 +90,28 @@ namespace QL_KHACHSAN.Controller
             {
                 return false;
             }
+        }
+        public List<CDichvu> findCriteria(string DK)
+        {
+            string sql = "select * from Dichvu where DichVuID like @dk " +
+                "or TenDichVu like @dk " +
+                "or GiaTien like @dk ";
+            SqlCommand cmd = new SqlCommand(sql);
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@dk", "%" + DK + "%");
+            SqlDataReader reader = cmd.ExecuteReader();
+            List<CDichvu> arrs = new List<CDichvu>();
+            while (reader.Read())
+            {
+                CDichvu s = new CDichvu();
+                s.DichVuID1 = reader.GetInt32(0);
+                s.TenDichVu1 = reader.GetString(1);
+                s.GiaTien1 = (double)reader.GetDecimal(2);
+                // thêm vào ds
+                arrs.Add(s);
+            }
+            reader.Close();
+            return arrs;
         }
 
     }
