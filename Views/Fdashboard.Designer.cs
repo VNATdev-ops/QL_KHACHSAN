@@ -83,8 +83,8 @@
             this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHoaDon.FlatAppearance.BorderSize = 0;
             this.btnHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoaDon.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnHoaDon.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHoaDon.ForeColor = System.Drawing.SystemColors.Window;
             this.btnHoaDon.Location = new System.Drawing.Point(0, 807);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(393, 62);
@@ -99,8 +99,8 @@
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThoat.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnThoat.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
             this.btnThoat.Location = new System.Drawing.Point(0, 993);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(393, 62);
@@ -114,8 +114,8 @@
             this.btnBaoCaoSuCo.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBaoCaoSuCo.FlatAppearance.BorderSize = 0;
             this.btnBaoCaoSuCo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBaoCaoSuCo.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCaoSuCo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnBaoCaoSuCo.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoSuCo.ForeColor = System.Drawing.SystemColors.Window;
             this.btnBaoCaoSuCo.Location = new System.Drawing.Point(0, 745);
             this.btnBaoCaoSuCo.Name = "btnBaoCaoSuCo";
             this.btnBaoCaoSuCo.Size = new System.Drawing.Size(393, 62);
@@ -130,8 +130,8 @@
             this.btnLichBaoTri.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLichBaoTri.FlatAppearance.BorderSize = 0;
             this.btnLichBaoTri.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichBaoTri.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichBaoTri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLichBaoTri.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichBaoTri.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLichBaoTri.Location = new System.Drawing.Point(0, 683);
             this.btnLichBaoTri.Name = "btnLichBaoTri";
             this.btnLichBaoTri.Size = new System.Drawing.Size(393, 62);
@@ -146,8 +146,8 @@
             this.btnLichLamViec.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLichLamViec.FlatAppearance.BorderSize = 0;
             this.btnLichLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichLamViec.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichLamViec.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLichLamViec.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichLamViec.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLichLamViec.Location = new System.Drawing.Point(0, 621);
             this.btnLichLamViec.Name = "btnLichLamViec";
             this.btnLichLamViec.Size = new System.Drawing.Size(393, 62);
@@ -162,8 +162,8 @@
             this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNhanVien.FlatAppearance.BorderSize = 0;
             this.btnNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhanVien.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnNhanVien.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.ForeColor = System.Drawing.SystemColors.Window;
             this.btnNhanVien.Location = new System.Drawing.Point(0, 559);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(393, 62);
@@ -178,8 +178,8 @@
             this.btnDatDichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDatDichVu.FlatAppearance.BorderSize = 0;
             this.btnDatDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatDichVu.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDatDichVu.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatDichVu.ForeColor = System.Drawing.SystemColors.Window;
             this.btnDatDichVu.Location = new System.Drawing.Point(0, 497);
             this.btnDatDichVu.Name = "btnDatDichVu";
             this.btnDatDichVu.Size = new System.Drawing.Size(393, 62);
@@ -194,8 +194,8 @@
             this.btnDichVu.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDichVu.FlatAppearance.BorderSize = 0;
             this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDichVu.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDichVu.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichVu.ForeColor = System.Drawing.SystemColors.Window;
             this.btnDichVu.Location = new System.Drawing.Point(0, 435);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.Size = new System.Drawing.Size(393, 62);
@@ -210,8 +210,8 @@
             this.btnLichSuKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnLichSuKhachHang.FlatAppearance.BorderSize = 0;
             this.btnLichSuKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLichSuKhachHang.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLichSuKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLichSuKhachHang.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLichSuKhachHang.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLichSuKhachHang.Location = new System.Drawing.Point(0, 373);
             this.btnLichSuKhachHang.Name = "btnLichSuKhachHang";
             this.btnLichSuKhachHang.Size = new System.Drawing.Size(393, 62);
@@ -226,8 +226,8 @@
             this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnKhachHang.FlatAppearance.BorderSize = 0;
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKhachHang.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnKhachHang.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachHang.ForeColor = System.Drawing.SystemColors.Window;
             this.btnKhachHang.Location = new System.Drawing.Point(0, 311);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(393, 62);
@@ -242,8 +242,8 @@
             this.btnDatPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnDatPhong.FlatAppearance.BorderSize = 0;
             this.btnDatPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatPhong.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDatPhong.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatPhong.ForeColor = System.Drawing.SystemColors.Window;
             this.btnDatPhong.Location = new System.Drawing.Point(0, 249);
             this.btnDatPhong.Name = "btnDatPhong";
             this.btnDatPhong.Size = new System.Drawing.Size(393, 62);
@@ -258,8 +258,8 @@
             this.btnPhong.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPhong.FlatAppearance.BorderSize = 0;
             this.btnPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPhong.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPhong.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhong.ForeColor = System.Drawing.SystemColors.Window;
             this.btnPhong.Location = new System.Drawing.Point(0, 187);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(393, 62);
@@ -324,11 +324,11 @@
             this.Tittle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.Tittle.AutoSize = true;
-            this.Tittle.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tittle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.Tittle.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Tittle.ForeColor = System.Drawing.SystemColors.Window;
             this.Tittle.Location = new System.Drawing.Point(795, 49);
             this.Tittle.Name = "Tittle";
-            this.Tittle.Size = new System.Drawing.Size(118, 42);
+            this.Tittle.Size = new System.Drawing.Size(80, 28);
             this.Tittle.TabIndex = 0;
             this.Tittle.Text = "label1";
             this.Tittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
