@@ -105,9 +105,7 @@ namespace QL_KHACHSAN.Controller
                             int n = cmd.ExecuteNonQuery();
                             transaction.Commit();
                             return (n > 0);
-                        }
-
-                        
+                        }          
 
                     }
                     catch (Exception ex)
