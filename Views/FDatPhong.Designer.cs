@@ -53,10 +53,10 @@
             this.lsvDatPhong = new System.Windows.Forms.ListView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtTongSo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtTongSo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -339,8 +339,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtTongSo);
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox3.Location = new System.Drawing.Point(1428, 71);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -361,18 +361,6 @@
             this.label8.Size = new System.Drawing.Size(95, 28);
             this.label8.TabIndex = 11;
             this.label8.Text = "Tổng số ";
-            // 
-            // txtTongSo
-            // 
-            this.txtTongSo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTongSo.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.txtTongSo.Location = new System.Drawing.Point(12, 63);
-            this.txtTongSo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTongSo.Name = "txtTongSo";
-            this.txtTongSo.Size = new System.Drawing.Size(287, 36);
-            this.txtTongSo.TabIndex = 0;
-            this.txtTongSo.UseVisualStyleBackColor = false;
-            this.txtTongSo.Click += new System.EventHandler(this.txtTongSo_Click);
             // 
             // groupBox4
             // 
@@ -410,6 +398,14 @@
             this.label9.Size = new System.Drawing.Size(178, 28);
             this.label9.TabIndex = 10;
             this.label9.Text = "Tìm kiếm phòng";
+            // 
+            // txtTongSo
+            // 
+            this.txtTongSo.Location = new System.Drawing.Point(12, 61);
+            this.txtTongSo.Name = "txtTongSo";
+            this.txtTongSo.Size = new System.Drawing.Size(287, 35);
+            this.txtTongSo.TabIndex = 12;
+            this.txtTongSo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FDatPhong
             // 
@@ -465,10 +461,10 @@
         private System.Windows.Forms.TextBox txtTinhtrang;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button txtTongSo;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListView lsvDatPhong;
+        private System.Windows.Forms.TextBox txtTongSo;
     }
 }
