@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,7 @@ namespace QL_KHACHSAN.Models
         {
             return TenDichVu1 + "(" + DichVuID + ")";
         }
+
 
     }
 
