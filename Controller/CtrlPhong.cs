@@ -107,15 +107,8 @@ namespace QL_KHACHSAN.Controller
                             return (n > 0);
                         }
 
-                        // Xóa bản ghi trong bảng Phong
-                        string deleteLichSuKhachHangSql = "DELETE FROM LichSuKhachHang WHERE PhongId = @PhongId";
-                        using (SqlCommand cmd = new SqlCommand(deleteLichSuKhachHangSql, connection, transaction))
-                        {
-                            cmd.Parameters.AddWithValue("@PhongId", obj.PhongId);
-                            int n = cmd.ExecuteNonQuery();
-                            transaction.Commit();
-                            return (n > 0);
-                        }
+                        
+
                     }
                     catch (Exception ex)
                     {
