@@ -89,6 +89,23 @@ namespace QL_KHACHSAN.Views
         {
             try 
             {
+                DateTime ngayDat = txtNgayDat.Value;
+                DateTime ngayNhan = txtNgayNhan.Value;
+                DateTime ngayTra = txtNgayTra.Value;
+
+                // Kiểm tra hợp lệ
+                if (ngayNhan < ngayDat)
+                {
+                    MessageBox.Show("Ngày nhận không được sớm hơn ngày đặt.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (ngayTra <= ngayNhan)
+                {
+                    MessageBox.Show("Ngày trả phải sau ngày nhận.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 CDatPhong s = new CDatPhong();
                 s.DatPhongID = int.Parse(txtIDdatphong.Text);

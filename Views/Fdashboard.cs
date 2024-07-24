@@ -160,6 +160,7 @@ namespace QL_KHACHSAN.Views
         {
             btnNhanVien.BackColor = Color.FromArgb(46, 51, 73);
 
+
             OpenChildForm(new FNhanVien());
             Tittle.Visible = true;
             Tittle.Text = "Quản lý nhân viên";
