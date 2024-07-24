@@ -121,7 +121,7 @@ namespace QL_KHACHSAN.Views
 
             OpenChildForm(new FKhachHang());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý phòng";
+            Tittle.Text = "Quản lý khách hàng";
         }
 
         private void btnLichSuKhachHang_Click(object sender, EventArgs e)
@@ -139,7 +139,7 @@ namespace QL_KHACHSAN.Views
 
             OpenChildForm(new FDichvu());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch sử khách hàng";
+            Tittle.Text = "Quản lý dịch vụ";
             //OpenChildForm(new FKhachHang());
             //Tittle.Visible = true;
             //Tittle.Text = "Quản lý phòng";
@@ -150,7 +150,7 @@ namespace QL_KHACHSAN.Views
             btnDatDichVu.BackColor = Color.FromArgb(46, 51, 73);
             OpenChildForm(new FDatdichvu());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý lịch sử khách hàng";
+            Tittle.Text = "Quản lý đặt dịch vụ";
             ////OpenChildForm(new ());
             ////Tittle.Visible = true;
             ////Tittle.Text = "Quản lý phòng";
@@ -172,7 +172,7 @@ namespace QL_KHACHSAN.Views
 
             OpenChildForm(new FLichLamViec());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý phòng";
+            Tittle.Text = "Quản lý lịch làm việc";
         }
 
         private void btnLichBaoTri_Click(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace QL_KHACHSAN.Views
 
             OpenChildForm(new FHoaDon());
             Tittle.Visible = true;
-            Tittle.Text = "Quản lý phòng";
+            Tittle.Text = "Quản lý hóa đơn";
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
