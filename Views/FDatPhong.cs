@@ -90,7 +90,7 @@ namespace QL_KHACHSAN.Views
             try 
             {
                 DateTime ngayDat = txtNgayDat.Value;
-                DateTime ngayNhan = txtNgayNhan.Value;
+                DateTime ngayNhan = txtNgayDat.Value;
                 DateTime ngayTra = txtNgayTra.Value;
 
                 // Kiểm tra hợp lệ
@@ -173,25 +173,25 @@ namespace QL_KHACHSAN.Views
             }
         }
 
-        private void FDatPhong_Load(object sender, EventArgs e)
-        {
-            dsDatPhong = ctrlDatPhong.findall();
-            foreach (CDatPhong s in dsDatPhong)
-            {
-                string[] obj = {
-                    s.DatPhongID.ToString(),
-                    s.PhongID.ToString(),
-                    s.KhachHangID.ToString(),
-                    s.NgayDat1.ToShortDateString(),
-                    s.NgayNhan1.ToShortDateString(),
-                    s.NgayTra1.ToShortTimeString(),
-                    s.TinhTrang1.ToString(),
-                };
-                ListViewItem item = new ListViewItem(obj);
-                lsvDatPhong.Items.Add(item);
-            }
-            capNhatSoLuongPhong();
-        }
+        //private void FDatPhong_Load(object sender, EventArgs e)
+        //{
+        //    dsDatPhong = ctrlDatPhong.findall();
+        //    foreach (CDatPhong s in dsDatPhong)
+        //    {
+        //        string[] obj = {
+        //            s.DatPhongID.ToString(),
+        //            s.PhongID.ToString(),
+        //            s.KhachHangID.ToString(),
+        //            s.NgayDat1.ToShortDateString(),
+        //            s.NgayNhan1.ToShortDateString(),
+        //            s.NgayTra1.ToShortTimeString(),
+        //            s.TinhTrang1.ToString(),
+        //        };
+        //        ListViewItem item = new ListViewItem(obj);
+        //        lsvDatPhong.Items.Add(item);
+        //    }
+        //    capNhatSoLuongPhong();
+        //}
 
         private void btnNhapMoi_Click(object sender, EventArgs e)
         {
