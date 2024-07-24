@@ -21,10 +21,10 @@ namespace QL_KHACHSAN.Views
             InitializeComponent();
             
             int width = listViewHoaDon.Width;
-            listViewHoaDon.Columns.Add("Mã sự cố", 25 * width / 100);
-            listViewHoaDon.Columns.Add("Mã phòng", 25 * width / 100);
-            listViewHoaDon.Columns.Add("Mã nhân viên", 25 * width / 100);
-            listViewHoaDon.Columns.Add("Mô tả", 25 * width / 100);
+            listViewHoaDon.Columns.Add("Mã hóa đơn", 25 * width / 100);
+            listViewHoaDon.Columns.Add("Mã đặt phòng", 25 * width / 100);
+            listViewHoaDon.Columns.Add("Ngày lập", 25 * width / 100);
+            listViewHoaDon.Columns.Add("Tổng tiền", 25 * width / 100);
             
 
             listViewHoaDon.View = View.Details;
