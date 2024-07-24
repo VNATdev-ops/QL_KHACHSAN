@@ -163,5 +163,10 @@ namespace QL_KHACHSAN.Views
             //    MessageBox.Show("Lỗi: " + ex.Message);
             //}
         }
+
+        private void FHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
