@@ -20,11 +20,11 @@ namespace QL_KHACHSAN.Views
         {
             InitializeComponent();
             int width = lsvKhachHang.Width;
-            lsvKhachHang.Columns.Add("Mã khách hàng", 90);
-            lsvKhachHang.Columns.Add("Tên khách hàng", 130);
-            lsvKhachHang.Columns.Add("Số Điện Thoại", 90);
-            lsvKhachHang.Columns.Add("Địa Chỉ", 150);
-            lsvKhachHang.Columns.Add("Email", 150);
+            lsvKhachHang.Columns.Add("Mã khách hàng", 150);
+            lsvKhachHang.Columns.Add("Tên khách hàng", 220);
+            lsvKhachHang.Columns.Add("Số Điện Thoại", 170);
+            lsvKhachHang.Columns.Add("Địa Chỉ", 250);
+            lsvKhachHang.Columns.Add("Email", 250);
 
             lsvKhachHang.View = View.Details;
             lsvKhachHang.FullRowSelect = true;
