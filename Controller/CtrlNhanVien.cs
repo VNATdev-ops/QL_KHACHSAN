@@ -67,16 +67,31 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "delete from nhanvien where nhanvienid = @nhanvienid";
+                // Giả sử 'cnn' là SqlConnection đã được khởi tạo và mở trước đó
+                if (cnn.State != System.Data.ConnectionState.Open)
+                {
+                    cnn.Open();
+                }
+
+                string sql = "DELETE FROM nhanvien WHERE nhanvienid = @nhanvienid";
                 SqlCommand cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.AddWithValue("@nhanvienid", obj.NhanvienID);
+
                 int n = cmd.ExecuteNonQuery();
                 return n > 0;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi xóa phòng chiếu khỏi cơ sở dữ liệu: " + ex.Message);
+                Console.WriteLine("Lỗi khi xóa nhân viên khỏi cơ sở dữ liệu: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                // Đảm bảo kết nối được đóng sau khi hoàn tất
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
             }
         }
 
@@ -84,8 +99,8 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "update nhanvien set tennhanvien = @tennhanvien, vitri = @vitri, luong = @luong, mota = @mota, " +
-                             "where idnhanvien = @idnhanvien";
+                string sql = "update nhanvien set tennhanvien = @tennhanvien, vitri = @vitri, luong = @luong " +
+                     "where idnhanvien = @idnhanvien";
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Connection = cnn;
                 cmd.Parameters.AddWithValue("@tennhanvien", obj.TenNhanVien);

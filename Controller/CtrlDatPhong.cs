@@ -1,5 +1,6 @@
 ﻿using QL_KHACHSAN.Models;
 using QL_KHACHSAN.Utils;
+using QL_KHACHSAN.Views;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -82,6 +83,31 @@ namespace QL_KHACHSAN.Controller
                 Console.WriteLine("Lỗi khi xóa phòng khỏi cơ sở dữ liệu: " + ex.Message);
                 return false;
             }
+        }
+
+        public bool update(CDatPhong obj)
+        {
+            try
+            {
+                string sql = "UPDATE DatPhong SET PhongID = @PhongID, KhachHangID = @KhachHangID, NgayDat = @NgayDat, NgayNhan = @NgayNhan, NgayTra = @NgayTra, TinhTrang = @TinhTrang WHERE DatPhongID = @DatPhongID";
+
+                SqlCommand cmd = new SqlCommand(sql);
+
+                // Thêm các tham số cho câu lệnh SQL
+                cmd.Parameters.AddWithValue("@DatPhongID", obj.DatPhongID);
+                cmd.Parameters.AddWithValue("@PhongID", obj.PhongID);
+                cmd.Parameters.AddWithValue("@KhachHangID", obj.KhachHangID);
+                cmd.Parameters.AddWithValue("@NgayDat", obj.NgayDat1);
+                cmd.Parameters.AddWithValue("@NgayNhan", obj.NgayNhan1);
+                cmd.Parameters.AddWithValue("@NgayTra", obj.NgayTra1);
+                cmd.Parameters.AddWithValue("@TinhTrang", obj.TinhTrang1);
+
+                cmd.Connection = cnn;
+                int n = cmd.ExecuteNonQuery();
+                return (n > 0);
+            }
+            catch { return false; }
+
         }
         public List<CDatPhong> findCriteria(string DK)
         {
