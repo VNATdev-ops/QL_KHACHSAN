@@ -164,30 +164,49 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                ListViewItem item = lsvDsNhanVien.SelectedItems[0];
-                int nhanvienid = int.Parse(item.SubItems[0].Text);
-                CNhanVien nhanVien = dsNhanVien.FirstOrDefault(p => p.NhanvienID == nhanvienid);
-
-                if (nhanVien != null)
+                // Kiểm tra xem có mục nào được chọn trong ListView hay không
+                if (lsvDsNhanVien.SelectedItems.Count > 0)
                 {
-                    nhanVien.NhanvienID = int.Parse(txtIDNhanVien.Text);
-                    nhanVien.TenNhanVien = txtTenNhanVien.Text;
-                    nhanVien.ViTri = txtViTri.Text;
-                    nhanVien.Luong = decimal.Parse(txtLuong.Text);
+                    ListViewItem item = lsvDsNhanVien.SelectedItems[0];
+                    int nhanvienid = int.Parse(item.SubItems[0].Text);
 
-                    if (ctrNhanVien.update(nhanVien))
+                    // Tìm đối tượng CNhanVien tương ứng trong danh sách dsNhanVien
+                    CNhanVien nhanVien = dsNhanVien.FirstOrDefault(p => p.NhanvienID == nhanvienid);
+
+                    if (nhanVien != null)
                     {
-                        MessageBox.Show("Cập nhật thông tin nhân viên thành công.");
-                        item.SubItems[1].Text = nhanVien.NhanvienID.ToString();
-                        item.SubItems[2].Text = nhanVien.TenNhanVien;
-                        item.SubItems[4].Text = nhanVien.ViTri;
-                        item.SubItems[3].Text = nhanVien.Luong.ToString();
+                        // Cập nhật thông tin nhân viên từ các điều khiển đầu vào
+                        nhanVien.NhanvienID = int.Parse(txtIDNhanVien.Text); // Bạn nên kiểm tra trước để đảm bảo ID không bị thay đổi hoặc trùng lặp
+                        nhanVien.TenNhanVien = txtTenNhanVien.Text;
+                        nhanVien.ViTri = txtViTri.Text;
+                        nhanVien.Luong = decimal.Parse(txtLuong.Text);
+
+                        // Gọi phương thức update để cập nhật thông tin trong cơ sở dữ liệu
+                        if (ctrNhanVien.update(nhanVien))
+                        {
+                            MessageBox.Show("Cập nhật thông tin nhân viên thành công.");
+
+                            // Cập nhật thông tin trong ListView
+                            item.SubItems[1].Text = nhanVien.TenNhanVien;
+                            item.SubItems[2].Text = nhanVien.ViTri;
+                            item.SubItems[3].Text = nhanVien.Luong.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật thông tin nhân viên thất bại.");
+                        }
+
+                        // Cập nhật danh sách hiển thị trong ListView
+                        capNhatDSNhanVien();
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thông tin nhân viên thất bại.");
+                        MessageBox.Show("Không tìm thấy nhân viên với ID đã chọn.");
                     }
-                    capNhatDSNhanVien();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn nhân viên để cập nhật.");
                 }
             }
             catch (Exception ex)

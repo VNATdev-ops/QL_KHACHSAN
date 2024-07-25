@@ -99,22 +99,35 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "update nhanvien set tennhanvien = @tennhanvien, vitri = @vitri, luong = @luong " +
-                     "where idnhanvien = @idnhanvien";
+                string sql = "UPDATE nhanvien SET tennhanvien = @tennhanvien, vitri = @vitri, luong = @luong WHERE nhanvienid = @nhanvienid";
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Connection = cnn;
                 cmd.Parameters.AddWithValue("@tennhanvien", obj.TenNhanVien);
                 cmd.Parameters.AddWithValue("@vitri", obj.ViTri);
                 cmd.Parameters.AddWithValue("@luong", obj.Luong);
-                cmd.Parameters.AddWithValue("@idnhanvien", obj.NhanvienID);
+                cmd.Parameters.AddWithValue("@nhanvienid", obj.NhanvienID);
 
-                cmd.Connection = cnn;
+                // Đảm bảo kết nối mở trước khi thực hiện lệnh
+                if (cnn.State != System.Data.ConnectionState.Open)
+                {
+                    cnn.Open();
+                }
+
                 int n = cmd.ExecuteNonQuery();
                 return n > 0;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine("Lỗi khi cập nhật nhân viên trong cơ sở dữ liệu: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                // Đảm bảo kết nối được đóng sau khi hoàn tất
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
             }
         }
 
