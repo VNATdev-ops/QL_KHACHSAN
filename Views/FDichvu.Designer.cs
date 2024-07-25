@@ -172,6 +172,7 @@
             this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = true;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click_1);
             // 
             // btnXoa
             // 

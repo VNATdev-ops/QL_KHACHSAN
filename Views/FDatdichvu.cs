@@ -23,8 +23,8 @@ namespace QL_KHACHSAN
         {
             InitializeComponent();
             int width = lsvDSDVDaDat.Width;
-            lsvDSDVDaDat.Columns.Add("ID Dịch Vụ", 25 * width / 100);
             lsvDSDVDaDat.Columns.Add("ID Đặt Dịch Vụ", 25 * width / 100);
+            lsvDSDVDaDat.Columns.Add("ID Dịch Vụ", 25 * width / 100);
             lsvDSDVDaDat.Columns.Add("Số Phòng", 25 * width / 100);
             lsvDSDVDaDat.Columns.Add("Ngày Đặt", 25 * width / 100);
             lsvDSDVDaDat.View = View.Details;
@@ -308,7 +308,8 @@ namespace QL_KHACHSAN
 
         private void btnNhapMoi_Click_1(object sender, EventArgs e)
         {
-
+            txtIDDatDichVu.Text = string.Empty;
+            txtIDDatDichVu.Focus();
         }
     }
 }

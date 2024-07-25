@@ -251,5 +251,13 @@ namespace QL_KHACHSAN
                 }
             }
         }
+
+        private void btnNhapMoi_Click_1(object sender, EventArgs e)
+        {
+            txtIDDichvu.Text = string.Empty;
+            txtGiatien.Text = string.Empty;
+            txtTendichvu.Text = string.Empty;
+            txtIDDichvu.Focus();
+        }
     }
 }
