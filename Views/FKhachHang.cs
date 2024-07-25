@@ -219,5 +219,43 @@ namespace QL_KHACHSAN.Views
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem item = lsvKhachHang.SelectedItems[0];
+                int khachId = int.Parse(item.SubItems[0].Text);
+                CKhachHang khach = dsKhachHang.FirstOrDefault(p => p.KhachHangID1 == khachId);
+
+                if (khach != null)
+                {
+                    khach.KhachHangID1 = int.Parse(txtIDkhachhang.Text);
+                    khach.TenKhachHang1 = txtIDkhachhang.Text;
+                    khach.SoDienThoai1 = txtsdt.Text;
+                    khach.DiaChi1 = txtdiachi.Text;
+                    khach.Email1 = txtemail.Text;
+
+                    if (ctrlKhachhang.update(khach))
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thành công.");
+                        item.SubItems[1].Text = khach.KhachHangID1.ToString();
+                        item.SubItems[2].Text = khach.TenKhachHang1;
+                        item.SubItems[3].Text = khach.SoDienThoai1;
+                        item.SubItems[4].Text = khach.DiaChi1;
+                        item.SubItems[5].Text = khach.Email1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thất bại.");
+                    }
+                    capNhatSoLuongKhach();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
     }
 }

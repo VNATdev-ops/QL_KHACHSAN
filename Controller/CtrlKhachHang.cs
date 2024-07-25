@@ -105,5 +105,24 @@ namespace QL_KHACHSAN.Controller
             reader.Close();
             return arrs;
         }
+        public bool update(CKhachHang obj)
+        {
+            try
+            {
+                string sql = "update khach set khachhangid=@khachhangid, tenkhachhang=@tenkhachhang, sodienthoai=@sodienthoai, diachi=@diachi, where email=@email";
+                SqlCommand cmd = new SqlCommand(sql);
+                cmd.Parameters.AddWithValue("@khachhangid", obj.KhachHangID1);
+                cmd.Parameters.AddWithValue("@tenkhachhang", obj.TenKhachHang1);
+                cmd.Parameters.AddWithValue("@sodienthoai", obj.SoDienThoai1);
+                cmd.Parameters.AddWithValue("@diachi", obj.DiaChi1);
+                cmd.Parameters.AddWithValue("@email", obj.Email1);
+
+                cmd.Connection = cnn;
+                int n = cmd.ExecuteNonQuery();
+                return (n > 0);
+            }
+            catch { return false; }
+
+        }
     }
 }
