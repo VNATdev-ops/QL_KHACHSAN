@@ -74,34 +74,7 @@ namespace QL_KHACHSAN.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CNhanVien nhanVien = new CNhanVien { NhanvienID = int.Parse(txtIDNhanVien.Text) };
-                CPhong phong = new CPhong { PhongId = int.Parse(txtIDPhong.Text) };
-                CBaoCaoSuCo baoCaoSuCo = new CBaoCaoSuCo
-                {
-                    PhongID = phong,
-                    NhanVienID = nhanVien,
-                    MoTa = txtMoTa.Text,
-                    NgayBaoCao = dtpNgayBaoCao.Value
-                };
-
-                CtrlBaoCaoSuCo ctrlBaoCaoSuCo = new CtrlBaoCaoSuCo();
-
-                if (ctrlBaoCaoSuCo.Insert(baoCaoSuCo))
-                {
-                    MessageBox.Show("Thêm mới thành công");
-                    // Refresh the ListView or other control
-                }
-                else
-                {
-                    MessageBox.Show("Thêm mới thất bại");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
-            }
+            
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)

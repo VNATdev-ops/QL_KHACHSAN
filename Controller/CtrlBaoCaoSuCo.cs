@@ -43,26 +43,48 @@ namespace QL_KHACHSAN.Controller
             return baoCaoSuCoList;
         }
 
-        public bool Insert(CBaoCaoSuCo baoCaoSuCo)
+        public bool insert(CBaoCaoSuCo obj)
         {
             try
             {
-                string sql = "INSERT INTO BaoCaoSuCo (PhongID, NhanVienID, MoTa, NgayBaoCao) VALUES (@PhongID, @NhanVienID, @MoTa, @NgayBaoCao)";
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Connection = cnn;
-                cmd.Parameters.AddWithValue("@PhongID", baoCaoSuCo.PhongID.PhongId);
-                cmd.Parameters.AddWithValue("@NhanVienID", baoCaoSuCo.NhanVienID.NhanvienID);
-                cmd.Parameters.AddWithValue("@MoTa", baoCaoSuCo.MoTa);
-                cmd.Parameters.AddWithValue("@NgayBaoCao", baoCaoSuCo.NgayBaoCao);
-                int rowsAffected = cmd.ExecuteNonQuery();
-                return rowsAffected > 0;
+                // Xây dựng câu lệnh SQL để thêm dữ liệu
+                string sql = "INSERT INTO baocaosuco (suCoID, phongID, nhanVienID, moTa, ngayBaoCao) " +
+                             "VALUES (@suCoID, @phongID, @nhanVienID, @moTa, @ngayBaoCao)";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@suCoID", obj.SuCoID);
+                cmd.Parameters.AddWithValue("@phongID", obj.PhongID.PhongId); // 
+                cmd.Parameters.AddWithValue("@nhanVienID", obj.NhanVienID.NhanvienID);
+                cmd.Parameters.AddWithValue("@moTa", obj.MoTa);
+                cmd.Parameters.AddWithValue("@ngayBaoCao", obj.NgayBaoCao);
+
+                // Mở kết nối nếu chưa mở
+                if (cnn.State != System.Data.ConnectionState.Open)
+                {
+                    cnn.Open();
+                }
+
+                // Thực thi lệnh SQL
+                int n = cmd.ExecuteNonQuery();
+                return n > 0;
             }
             catch (Exception ex)
             {
-                // Handle exception (e.g., log the error)
+                // In lỗi ra console để kiểm tra
+                Console.WriteLine("Lỗi khi thêm báo cáo sự cố: " + ex.Message);
                 return false;
             }
+            finally
+            {
+                // Đảm bảo kết nối được đóng
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
         }
+
 
         public bool Update(CBaoCaoSuCo baoCaoSuCo)
         {
