@@ -35,10 +35,10 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtTongSo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lsvDsBaoCaoSuCo = new System.Windows.Forms.ListView();
             this.txtIDSuCo = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.dtpNgayBaoCao = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMoTa = new System.Windows.Forms.TextBox();
-            this.txtTongSo = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -146,6 +146,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thống kê";
             // 
+            // txtTongSo
+            // 
+            this.txtTongSo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTongSo.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.txtTongSo.Location = new System.Drawing.Point(6, 62);
+            this.txtTongSo.Name = "txtTongSo";
+            this.txtTongSo.Size = new System.Drawing.Size(287, 36);
+            this.txtTongSo.TabIndex = 12;
+            this.txtTongSo.UseVisualStyleBackColor = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -159,8 +169,8 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(1393, 586);
             this.groupBox4.Name = "groupBox4";
@@ -173,19 +183,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 37);
+            this.label1.Location = new System.Drawing.Point(60, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 28);
+            this.label1.Size = new System.Drawing.Size(193, 28);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Tìm kiếm nhân viên";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 35);
-            this.textBox1.TabIndex = 11;
+            this.label1.Text = "Tìm kiếm báo cáo";
             // 
             // groupBox2
             // 
@@ -329,15 +331,14 @@
             this.txtMoTa.TabIndex = 11;
             this.txtMoTa.TextChanged += new System.EventHandler(this.txtMoTa_TextChanged);
             // 
-            // txtTongSo
+            // txtTimKiem
             // 
-            this.txtTongSo.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTongSo.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.txtTongSo.Location = new System.Drawing.Point(6, 62);
-            this.txtTongSo.Name = "txtTongSo";
-            this.txtTongSo.Size = new System.Drawing.Size(287, 36);
-            this.txtTongSo.TabIndex = 12;
-            this.txtTongSo.UseVisualStyleBackColor = false;
+            this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.txtTimKiem.Location = new System.Drawing.Point(7, 62);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(293, 35);
+            this.txtTimKiem.TabIndex = 13;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // FBaoCaoSuCo
             // 
@@ -375,7 +376,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lsvDsBaoCaoSuCo;
         private System.Windows.Forms.TextBox txtIDSuCo;
@@ -392,5 +392,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnNhapMoi;
         private System.Windows.Forms.Button txtTongSo;
+        private System.Windows.Forms.TextBox txtTimKiem;
     }
 }

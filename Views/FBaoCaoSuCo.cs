@@ -31,6 +31,20 @@ namespace QL_KHACHSAN.Views
             lsvDsBaoCaoSuCo.FullRowSelect = true;
         }
 
+        private void LoadBaoCaoSuCo()
+        {
+            List<CBaoCaoSuCo> danhSachBaoCaoSuCo = ctrlBaoCaoSuCo.FindAll();
+            lsvDsBaoCaoSuCo.Items.Clear();
+            foreach (var baoCao in danhSachBaoCaoSuCo)
+            {
+                ListViewItem item = new ListViewItem(baoCao.SuCoID.ToString());
+                item.SubItems.Add(baoCao.PhongID.PhongId.ToString());
+                item.SubItems.Add(baoCao.NhanVienID.NhanvienID.ToString());
+                item.SubItems.Add(baoCao.MoTa);
+                item.SubItems.Add(baoCao.NgayBaoCao.ToString("dd/MM/yyyy"));
+                lsvDsBaoCaoSuCo.Items.Add(item);
+            }
+        }
         private void capNhatSoLuongPhong()
         {
             txtTongSo.Text = dsBaoCaoSuCo.Count.ToString();
@@ -74,7 +88,33 @@ namespace QL_KHACHSAN.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                // Lấy dữ liệu từ các điều khiển nhập liệu
+                int suCoID = int.Parse(txtIDSuCo.Text);
+                int phongID = int.Parse(txtIDPhong.Text);
+                int nhanVienID = int.Parse(txtIDNhanVien.Text);
+                string moTa = txtMoTa.Text;
+                DateTime ngayBaoCao = dtpNgayBaoCao.Value;
+
+                // Tạo đối tượng CBaoCaoSuCo
+                CBaoCaoSuCo baoCaoSuCo = new CBaoCaoSuCo(suCoID, new CPhong { PhongId = phongID }, new CNhanVien { NhanvienID = nhanVienID }, moTa, ngayBaoCao);
+
+                // Gọi phương thức thêm từ lớp điều khiển
+                if (ctrlBaoCaoSuCo.Insert(baoCaoSuCo))
+                {
+                    MessageBox.Show("Thêm báo cáo sự cố thành công");
+                    LoadBaoCaoSuCo(); // Tải lại danh sách báo cáo sự cố sau khi thêm
+                }
+                else
+                {
+                    MessageBox.Show("Thêm báo cáo sự cố thất bại");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
@@ -97,7 +137,7 @@ namespace QL_KHACHSAN.Views
                 if (ctrlBaoCaoSuCo.Update(baoCaoSuCo))
                 {
                     MessageBox.Show("Cập nhật thành công");
-                    // Refresh the ListView or other control
+                    LoadBaoCaoSuCo();
                 }
                 else
                 {
@@ -129,6 +169,74 @@ namespace QL_KHACHSAN.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Kiểm tra xem có mục nào được chọn trong danh sách hay không
+                if (lsvDsBaoCaoSuCo.SelectedItems.Count > 0)
+                {
+                    // Lấy SuCoID từ mục được chọn
+                    int suCoID = int.Parse(lsvDsBaoCaoSuCo.SelectedItems[0].SubItems[0].Text);
+
+                    // Xác nhận việc xóa
+                    DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa báo cáo sự cố này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        // Gọi phương thức xóa từ lớp điều khiển
+                        if (ctrlBaoCaoSuCo.Delete(suCoID))
+                        {
+                            MessageBox.Show("Xóa báo cáo sự cố thành công");
+                            LoadBaoCaoSuCo(); // Tải lại danh sách báo cáo sự cố sau khi xóa
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa báo cáo sự cố thất bại");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một báo cáo sự cố để xóa");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy từ khóa tìm kiếm từ TextBox
+                string tuKhoa = txtTimKiem.Text.Trim();
+
+                if (!string.IsNullOrEmpty(tuKhoa))
+                {
+                    // Gọi phương thức tìm kiếm từ lớp điều khiển
+                    List<CBaoCaoSuCo> ketQuaTimKiem = ctrlBaoCaoSuCo.FindCriteria(tuKhoa);
+
+                    // Hiển thị kết quả tìm kiếm
+                    lsvDsBaoCaoSuCo.Items.Clear();
+                    foreach (var baoCao in ketQuaTimKiem)
+                    {
+                        ListViewItem item = new ListViewItem(baoCao.SuCoID.ToString());
+                        item.SubItems.Add(baoCao.PhongID.PhongId.ToString());
+                        item.SubItems.Add(baoCao.NhanVienID.NhanvienID.ToString());
+                        item.SubItems.Add(baoCao.MoTa);
+                        item.SubItems.Add(baoCao.NgayBaoCao.ToString("dd/MM/yyyy"));
+                        lsvDsBaoCaoSuCo.Items.Add(item);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
 
         }
     }
