@@ -54,33 +54,40 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                CPhong phong = new CPhong { PhongId = int.Parse(txtIDPhong.Text) };
-                CNhanVien nhanVien = new CNhanVien { NhanvienID = int.Parse(txtIDNhanVien.Text) };
-                CLichBaoTri lichBaoTri = new CLichBaoTri
-                {
-                    LichBaoTriID = int.Parse(txtIDLichBaoTri.Text),
-                    PhongID = phong,
-                    NhanvienID = nhanVien,
-                    NgayBaoTri = dtpNgayBaoTri.Value,
-                    MoTa = txtMoTa.Text
-                };
+                // Tạo đối tượng CLichBaoTri từ thông tin nhập vào
+                CLichBaoTri lichBaoTri = new CLichBaoTri();
+                lichBaoTri.LichBaoTriID = int.Parse(txtIDLichBaoTri.Text);
+                lichBaoTri.PhongID = new CPhong { PhongId = int.Parse(txtIDPhong.Text) }; 
+                lichBaoTri.NhanvienID = new CNhanVien { NhanvienID = int.Parse(txtIDNhanVien.Text) }; // 
+                lichBaoTri.NgayBaoTri = DateTime.Parse(dtpNgayBaoTri.Text);
+                lichBaoTri.MoTa = txtMoTa.Text;
 
+                // Thêm đối tượng vào cơ sở dữ liệu
                 if (ctrLichBaoTri.insert(lichBaoTri))
                 {
-                    MessageBox.Show("Thêm thành công");
-                    dsLichBaoTri.Add(lichBaoTri);
-                    string[] obj = { lichBaoTri.LichBaoTriID.ToString(), lichBaoTri.PhongID.PhongId.ToString(), lichBaoTri.NhanvienID.NhanvienID.ToString(), lichBaoTri.NgayBaoTri.ToString(), lichBaoTri.MoTa };
+                    // Tạo một mảng chuỗi chứa thông tin để thêm vào ListView
+                    string[] obj =
+                    {
+                lichBaoTri.LichBaoTriID.ToString(),
+                lichBaoTri.PhongID.PhongId.ToString(), 
+                lichBaoTri.NhanvienID.NhanvienID.ToString(), 
+                lichBaoTri.NgayBaoTri.ToString("dd/MM/yyyy"),
+                lichBaoTri.MoTa
+            };
                     ListViewItem item = new ListViewItem(obj);
                     lsvLichBaoTri.Items.Add(item);
+                    dsLichBaoTri.Add(lichBaoTri); 
+                    txtTongSo.Text = lsvLichBaoTri.Items.Count.ToString();
+                    MessageBox.Show("Thêm thành công.");
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Thêm không thành công.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+                MessageBox.Show("Lỗi khi thêm: " + ex.Message);
             }
         }
 
@@ -103,35 +110,46 @@ namespace QL_KHACHSAN.Views
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            if (lsvLichBaoTri.SelectedItems.Count > 0)
+            try
             {
-                try
+                if (lsvLichBaoTri.SelectedItems.Count > 0)
                 {
-                    ListViewItem item = lsvLichBaoTri.SelectedItems[0];
-                    CLichBaoTri lichBaoTri = dsLichBaoTri.Find(x => x.LichBaoTriID == int.Parse(item.SubItems[0].Text));
-                    lichBaoTri.PhongID = new CPhong { PhongId = int.Parse(txtIDPhong.Text) };
+                    // Lấy đối tượng CLichBaoTri từ thông tin nhập vào
+                    CLichBaoTri lichBaoTri = new CLichBaoTri();
+                    lichBaoTri.LichBaoTriID = int.Parse(txtIDLichBaoTri.Text);
+                    lichBaoTri.PhongID = new CPhong { PhongId = int.Parse(txtIDPhong.Text) }; 
                     lichBaoTri.NhanvienID = new CNhanVien { NhanvienID = int.Parse(txtIDNhanVien.Text) };
-                    lichBaoTri.NgayBaoTri = dtpNgayBaoTri.Value;
+                    lichBaoTri.NgayBaoTri = DateTime.Parse(dtpNgayBaoTri.Text);
                     lichBaoTri.MoTa = txtMoTa.Text;
 
-                    if (ctrLichBaoTri.Update(lichBaoTri))
+                    // Cập nhật đối tượng vào cơ sở dữ liệu
+                    if (ctrLichBaoTri.update(lichBaoTri))
                     {
-                        MessageBox.Show("Cập nhật thành công");
-                        item.SubItems[1].Text = lichBaoTri.LichBaoTriID.ToString();
-                        item.SubItems[2].Text = lichBaoTri.PhongID.ToString();
-                        item.SubItems[3].Text = lichBaoTri.NhanvienID.ToString();
-                        item.SubItems[4].Text = lichBaoTri.NgayBaoTri.ToString();
-                        item.SubItems[5].Text = lichBaoTri.MoTa.ToString();
+                        MessageBox.Show("Cập nhật thành công.");
+
+                        // Cập nhật thông tin trong ListView
+                        ListViewItem item = lsvLichBaoTri.SelectedItems[0];
+                        item.SubItems[1].Text = lichBaoTri.PhongID.PhongId.ToString(); // Cập nhật ID phòng
+                        item.SubItems[2].Text = lichBaoTri.NhanvienID.NhanvienID.ToString(); // Cập nhật ID nhân viên
+                        item.SubItems[3].Text = lichBaoTri.NgayBaoTri.ToString("dd/MM/yyyy");
+                        item.SubItems[4].Text = lichBaoTri.MoTa;
+
+                        // Cập nhật số lượng
+                        txtTongSo.Text = lsvLichBaoTri.Items.Count.ToString();
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại");
+                        MessageBox.Show("Cập nhật không thành công.");
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+                    MessageBox.Show("Vui lòng chọn một mục để cập nhật.");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
             }
         }
 
@@ -147,24 +165,89 @@ namespace QL_KHACHSAN.Views
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    string dkFind = txtTimKiem.Text;
-            //    dsLichBaoTri = dsLichBaoTri.findCriteria(dkFind);
+            try
+            {
+                string keyword = txtTimKiem.Text.Trim();
 
-            //    lsvLichBaoTri.Items.Clear();
-            //    foreach (CLichBaoTri s in dsLichBaoTri)
-            //    {
-            //        string[] obj = { s.LichBaoTriID.ToString(), s.PhongID.PhongId.ToString(), s.NhanvienID.NhanvienID.ToString(), s.NgayBaoTri.ToString(), s.MoTa };
-            //        ListViewItem item = new ListViewItem(obj);
-            //        lsvLichBaoTri.Items.Add(item);
-            //    }
-            //    txtTongSo.Text = lsvLichBaoTri.Items.Count.ToString();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi: " + ex.Message);
-            //}
+                // Kiểm tra từ khóa tìm kiếm
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.");
+                    return;
+                }
+
+                // Tìm kiếm trong cơ sở dữ liệu
+                List<CLichBaoTri> ketQuaTimKiem = ctrLichBaoTri.findCriteria(keyword);
+
+                // Cập nhật ListView với kết quả tìm kiếm
+                lsvLichBaoTri.Items.Clear();
+                foreach (var lichBaoTri in ketQuaTimKiem)
+                {
+                    string[] obj =
+                    {
+                lichBaoTri.LichBaoTriID.ToString(),
+                lichBaoTri.PhongID.ToString(),  // Giả sử bạn đã cài đặt đúng việc chuyển đổi để lấy thông tin từ đối tượng
+                lichBaoTri.NhanvienID.ToString(),  // Giả sử bạn đã cài đặt đúng việc chuyển đổi để lấy thông tin từ đối tượng
+                lichBaoTri.NgayBaoTri.ToString("dd/MM/yyyy"),
+                lichBaoTri.MoTa
+            };
+                    ListViewItem item = new ListViewItem(obj);
+                    lsvLichBaoTri.Items.Add(item);
+                }
+
+                // Cập nhật số lượng kết quả
+                txtTongSo.Text = lsvLichBaoTri.Items.Count.ToString();
+
+                if (ketQuaTimKiem.Count == 0)
+                {
+                    MessageBox.Show("Không tìm thấy kết quả.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lsvLichBaoTri.SelectedItems.Count > 0)
+                {
+                    // Lấy ID từ mục được chọn trong ListView
+                    ListViewItem item = lsvLichBaoTri.SelectedItems[0];
+                    int lichBaoTriID = int.Parse(item.SubItems[0].Text);
+
+                    // Tạo đối tượng CLichBaoTri với ID cần xóa
+                    CLichBaoTri lichBaoTri = new CLichBaoTri { LichBaoTriID = lichBaoTriID };
+
+                    // Xóa đối tượng khỏi cơ sở dữ liệu
+                    if (ctrLichBaoTri.delete(lichBaoTri))
+                    {
+                        MessageBox.Show("Xóa thành công.");
+
+                        // Xóa khỏi danh sách và ListView
+                        lsvLichBaoTri.Items.Remove(item);
+                        dsLichBaoTri.Remove(lichBaoTri);
+
+                        // Cập nhật số lượng
+                        txtTongSo.Text = lsvLichBaoTri.Items.Count.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một mục để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+            }
         }
     }
 }
