@@ -141,6 +141,8 @@ namespace QL_KHACHSAN.Views
             txtIDPhong.Clear();
             txtIDNhanVien.Clear();
             txtMoTa.Clear();
+            dtpNgayBaoTri.Value = DateTime.Today;
+
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)

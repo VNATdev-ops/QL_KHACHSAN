@@ -158,6 +158,7 @@
             this.dtpNgayLam.Name = "dtpNgayLam";
             this.dtpNgayLam.Size = new System.Drawing.Size(329, 35);
             this.dtpNgayLam.TabIndex = 8;
+            this.dtpNgayLam.ValueChanged += new System.EventHandler(this.dtpNgayLam_ValueChanged);
             // 
             // label5
             // 
