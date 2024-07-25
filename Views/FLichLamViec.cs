@@ -147,7 +147,8 @@ namespace QL_KHACHSAN.Views
             txtIDlichlamviec.Clear();
             txtIDNhanVien.Clear();
             txtCaLam.Clear();
-            
+            dtpNgayLam.Value = DateTime.Today;
+
 
         }
 
@@ -177,6 +178,11 @@ namespace QL_KHACHSAN.Views
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void dtpNgayLam_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
