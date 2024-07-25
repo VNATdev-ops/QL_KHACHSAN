@@ -153,9 +153,10 @@
             // dtpNgayLam
             // 
             this.dtpNgayLam.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.dtpNgayLam.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayLam.Location = new System.Drawing.Point(274, 207);
             this.dtpNgayLam.Name = "dtpNgayLam";
-            this.dtpNgayLam.Size = new System.Drawing.Size(329, 30);
+            this.dtpNgayLam.Size = new System.Drawing.Size(329, 35);
             this.dtpNgayLam.TabIndex = 8;
             // 
             // label5
@@ -164,7 +165,7 @@
             this.label5.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label5.Location = new System.Drawing.Point(732, 209);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 22);
+            this.label5.Size = new System.Drawing.Size(82, 28);
             this.label5.TabIndex = 7;
             this.label5.Text = "Ca làm";
             // 
@@ -174,7 +175,7 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label4.Location = new System.Drawing.Point(79, 207);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 22);
+            this.label4.Size = new System.Drawing.Size(108, 28);
             this.label4.TabIndex = 6;
             this.label4.Text = "Ngày làm";
             // 
@@ -184,7 +185,7 @@
             this.label3.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label3.Location = new System.Drawing.Point(732, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 22);
+            this.label3.Size = new System.Drawing.Size(144, 28);
             this.label3.TabIndex = 5;
             this.label3.Text = "ID Nhân viên";
             // 
@@ -194,7 +195,7 @@
             this.label2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label2.Location = new System.Drawing.Point(79, 118);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 22);
+            this.label2.Size = new System.Drawing.Size(176, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "ID Lịch làm việc";
             // 
@@ -203,7 +204,7 @@
             this.txtCaLam.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtCaLam.Location = new System.Drawing.Point(906, 204);
             this.txtCaLam.Name = "txtCaLam";
-            this.txtCaLam.Size = new System.Drawing.Size(176, 30);
+            this.txtCaLam.Size = new System.Drawing.Size(176, 35);
             this.txtCaLam.TabIndex = 3;
             this.txtCaLam.TextChanged += new System.EventHandler(this.txtCaLam_TextChanged);
             // 
@@ -212,7 +213,7 @@
             this.txtIDNhanVien.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDNhanVien.Location = new System.Drawing.Point(906, 115);
             this.txtIDNhanVien.Name = "txtIDNhanVien";
-            this.txtIDNhanVien.Size = new System.Drawing.Size(176, 30);
+            this.txtIDNhanVien.Size = new System.Drawing.Size(176, 35);
             this.txtIDNhanVien.TabIndex = 1;
             this.txtIDNhanVien.TextChanged += new System.EventHandler(this.txtIDNhanVien_TextChanged);
             // 
@@ -221,7 +222,7 @@
             this.txtIDlichlamviec.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDlichlamviec.Location = new System.Drawing.Point(274, 113);
             this.txtIDlichlamviec.Name = "txtIDlichlamviec";
-            this.txtIDlichlamviec.Size = new System.Drawing.Size(329, 30);
+            this.txtIDlichlamviec.Size = new System.Drawing.Size(329, 35);
             this.txtIDlichlamviec.TabIndex = 0;
             this.txtIDlichlamviec.TextChanged += new System.EventHandler(this.txtIDlichlamviec_TextChanged);
             // 
@@ -242,9 +243,9 @@
             this.lsvDsLichLamViec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvDsLichLamViec.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.lsvDsLichLamViec.HideSelection = false;
-            this.lsvDsLichLamViec.Location = new System.Drawing.Point(3, 26);
+            this.lsvDsLichLamViec.Location = new System.Drawing.Point(3, 31);
             this.lsvDsLichLamViec.Name = "lsvDsLichLamViec";
-            this.lsvDsLichLamViec.Size = new System.Drawing.Size(1163, 297);
+            this.lsvDsLichLamViec.Size = new System.Drawing.Size(1163, 292);
             this.lsvDsLichLamViec.TabIndex = 0;
             this.lsvDsLichLamViec.UseCompatibleStateImageBehavior = false;
             this.lsvDsLichLamViec.SelectedIndexChanged += new System.EventHandler(this.lsvDsLichLamViec_SelectedIndexChanged);
@@ -268,7 +269,7 @@
             this.label7.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label7.Location = new System.Drawing.Point(92, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 22);
+            this.label7.Size = new System.Drawing.Size(95, 28);
             this.label7.TabIndex = 11;
             this.label7.Text = "Tổng số ";
             // 
@@ -300,7 +301,7 @@
             this.label1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label1.Location = new System.Drawing.Point(52, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 22);
+            this.label1.Size = new System.Drawing.Size(214, 28);
             this.label1.TabIndex = 12;
             this.label1.Text = "Tìm kiếm nhân viên";
             // 
@@ -309,7 +310,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTimKiem.Location = new System.Drawing.Point(10, 87);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(287, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(287, 35);
             this.txtTimKiem.TabIndex = 11;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 

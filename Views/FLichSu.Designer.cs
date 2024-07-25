@@ -78,7 +78,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTimKiem.Location = new System.Drawing.Point(11, 69);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(287, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(287, 35);
             this.txtTimKiem.TabIndex = 11;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -88,7 +88,7 @@
             this.label9.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label9.Location = new System.Drawing.Point(53, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 22);
+            this.label9.Size = new System.Drawing.Size(182, 28);
             this.label9.TabIndex = 10;
             this.label9.Text = "Tìm kiếm lịch sử";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -113,7 +113,7 @@
             this.label8.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label8.Location = new System.Drawing.Point(115, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 22);
+            this.label8.Size = new System.Drawing.Size(95, 28);
             this.label8.TabIndex = 11;
             this.label8.Text = "Tổng số ";
             // 
@@ -143,9 +143,9 @@
             this.lsvLichSu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvLichSu.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.lsvLichSu.HideSelection = false;
-            this.lsvLichSu.Location = new System.Drawing.Point(3, 26);
+            this.lsvLichSu.Location = new System.Drawing.Point(3, 31);
             this.lsvLichSu.Name = "lsvLichSu";
-            this.lsvLichSu.Size = new System.Drawing.Size(1255, 357);
+            this.lsvLichSu.Size = new System.Drawing.Size(1255, 352);
             this.lsvLichSu.TabIndex = 0;
             this.lsvLichSu.UseCompatibleStateImageBehavior = false;
             this.lsvLichSu.SelectedIndexChanged += new System.EventHandler(this.lsvLichSu_SelectedIndexChanged);
@@ -177,7 +177,7 @@
             this.txtIDKhachHang.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDKhachHang.Location = new System.Drawing.Point(230, 127);
             this.txtIDKhachHang.Name = "txtIDKhachHang";
-            this.txtIDKhachHang.Size = new System.Drawing.Size(587, 30);
+            this.txtIDKhachHang.Size = new System.Drawing.Size(587, 35);
             this.txtIDKhachHang.TabIndex = 16;
             // 
             // txtIDPhong
@@ -185,7 +185,7 @@
             this.txtIDPhong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDPhong.Location = new System.Drawing.Point(632, 70);
             this.txtIDPhong.Name = "txtIDPhong";
-            this.txtIDPhong.Size = new System.Drawing.Size(185, 30);
+            this.txtIDPhong.Size = new System.Drawing.Size(185, 35);
             this.txtIDPhong.TabIndex = 14;
             // 
             // label7
@@ -194,7 +194,7 @@
             this.label7.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label7.Location = new System.Drawing.Point(55, 235);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 22);
+            this.label7.Size = new System.Drawing.Size(99, 28);
             this.label7.TabIndex = 13;
             this.label7.Text = "Ngày trả";
             // 
@@ -204,7 +204,7 @@
             this.label6.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label6.Location = new System.Drawing.Point(55, 182);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 22);
+            this.label6.Size = new System.Drawing.Size(120, 28);
             this.label6.TabIndex = 12;
             this.label6.Text = "Ngày nhận";
             // 
@@ -214,7 +214,7 @@
             this.label5.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label5.Location = new System.Drawing.Point(55, 130);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(128, 22);
+            this.label5.Size = new System.Drawing.Size(163, 28);
             this.label5.TabIndex = 11;
             this.label5.Text = "ID Khách Hàng";
             // 
@@ -224,7 +224,7 @@
             this.label2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label2.Location = new System.Drawing.Point(480, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 22);
+            this.label2.Size = new System.Drawing.Size(106, 28);
             this.label2.TabIndex = 8;
             this.label2.Text = "ID Phòng";
             // 
@@ -234,24 +234,26 @@
             this.label1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label1.Location = new System.Drawing.Point(55, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 22);
+            this.label1.Size = new System.Drawing.Size(117, 28);
             this.label1.TabIndex = 7;
             this.label1.Text = "ID Lịch Sử";
             // 
             // txtNgayTra
             // 
             this.txtNgayTra.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.txtNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayTra.Location = new System.Drawing.Point(230, 230);
             this.txtNgayTra.Name = "txtNgayTra";
-            this.txtNgayTra.Size = new System.Drawing.Size(587, 30);
+            this.txtNgayTra.Size = new System.Drawing.Size(587, 35);
             this.txtNgayTra.TabIndex = 6;
             // 
             // txtNgayNhan
             // 
             this.txtNgayNhan.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.txtNgayNhan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtNgayNhan.Location = new System.Drawing.Point(230, 177);
             this.txtNgayNhan.Name = "txtNgayNhan";
-            this.txtNgayNhan.Size = new System.Drawing.Size(587, 30);
+            this.txtNgayNhan.Size = new System.Drawing.Size(587, 35);
             this.txtNgayNhan.TabIndex = 5;
             // 
             // txtIDLichSu
@@ -259,7 +261,7 @@
             this.txtIDLichSu.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDLichSu.Location = new System.Drawing.Point(230, 72);
             this.txtIDLichSu.Name = "txtIDLichSu";
-            this.txtIDLichSu.Size = new System.Drawing.Size(185, 30);
+            this.txtIDLichSu.Size = new System.Drawing.Size(185, 35);
             this.txtIDLichSu.TabIndex = 0;
             // 
             // panel1
