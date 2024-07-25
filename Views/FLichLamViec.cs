@@ -63,51 +63,45 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                // Kiểm tra dữ liệu nhập vào
-                if (string.IsNullOrEmpty(txtIDlichlamviec.Text) || string.IsNullOrEmpty(txtIDNhanVien.Text) || string.IsNullOrEmpty(txtCaLam.Text))
-                {
-                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
-                    return;
-                }
-
-                CNhanVien nhanVien = new CNhanVien
-                {
-                    NhanvienID = int.Parse(txtIDNhanVien.Text)
-                };
-
+                // Tạo đối tượng CLichLamViec và gán giá trị từ các điều khiển đầu vào
                 CLichLamViec lichLamViec = new CLichLamViec
                 {
                     LichLamViecID = int.Parse(txtIDlichlamviec.Text),
-                    NhanVienID = nhanVien,
-                    NgayLam = dtpNgayLam.Value,
+                    NhanVienID = new CNhanVien { NhanvienID = int.Parse(txtIDNhanVien.Text) }, // Giả sử bạn có trường nhập liệu cho ID nhân viên
+                    NgayLam = DateTime.Parse(dtpNgayLam.Text),
                     CaLam = txtCaLam.Text
                 };
 
+                // Thêm đối tượng vào cơ sở dữ liệu thông qua phương thức insert
                 if (ctrLichLamViec.insert(lichLamViec))
                 {
-                    MessageBox.Show("Thêm thành công");
-                    dsLichLamViec.Add(lichLamViec);
-                    // Refresh ListView or other control
-                    string[] obj = {
+                    // Thêm đối tượng vào ListView
+                    string[] obj =
+                    {
                 lichLamViec.LichLamViecID.ToString(),
                 lichLamViec.NhanVienID.NhanvienID.ToString(),
-                lichLamViec.NgayLam.ToString(),
+                lichLamViec.NgayLam.ToShortDateString(), // Sử dụng ToShortDateString() để dễ đọc hơn
                 lichLamViec.CaLam
             };
                     ListViewItem item = new ListViewItem(obj);
                     lsvDsLichLamViec.Items.Add(item);
+
+                    // Thêm đối tượng vào danh sách dữ liệu
+                    dsLichLamViec.Add(lichLamViec);
+
+                    // Cập nhật số lượng mục trong ListView
                     txtTongSo.Text = lsvDsLichLamViec.Items.Count.ToString();
+
+                    MessageBox.Show("Thêm thành công");
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thất bại");
+                    MessageBox.Show("Thêm không thành công");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
-                // Ghi lại chi tiết lỗi vào log hoặc file text để kiểm tra sau này
-                System.IO.File.AppendAllText("error_log.txt", DateTime.Now.ToString() + ": " + ex.ToString() + Environment.NewLine);
+                MessageBox.Show("Lỗi khi thêm: " + ex.Message);
             }
         }
 
@@ -183,6 +177,109 @@ namespace QL_KHACHSAN.Views
         private void dtpNgayLam_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có mục nào được chọn không
+                if (lsvDsLichLamViec.SelectedItems.Count > 0)
+                {
+                    // Lấy mục được chọn từ ListView
+                    ListViewItem item = lsvDsLichLamViec.SelectedItems[0];
+                    int lichLamViecID = int.Parse(item.SubItems[0].Text);
+
+                    // Tìm đối tượng CLichLamViec tương ứng trong danh sách dsLichLamViec
+                    CLichLamViec lichLamViec = dsLichLamViec.FirstOrDefault(v => v.LichLamViecID == lichLamViecID);
+
+                    if (lichLamViec != null)
+                    {
+                        // Cập nhật thông tin đối tượng
+                        lichLamViec.LichLamViecID = int.Parse(txtIDlichlamviec.Text);
+                        lichLamViec.NhanVienID = new CNhanVien { NhanvienID = int.Parse(txtIDNhanVien.Text) }; // Tạo đối tượng CNhanVien
+                        lichLamViec.NgayLam = DateTime.Parse(dtpNgayLam.Text);
+                        lichLamViec.CaLam = txtCaLam.Text;
+
+                        // Cập nhật cơ sở dữ liệu
+                        if (ctrLichLamViec.update(lichLamViec))
+                        {
+                            // Cập nhật ListView
+                            item.SubItems[0].Text = lichLamViec.LichLamViecID.ToString();
+                            item.SubItems[1].Text = lichLamViec.NhanVienID.NhanvienID.ToString();
+                            item.SubItems[2].Text = lichLamViec.NgayLam.ToShortDateString();
+                            item.SubItems[3].Text = lichLamViec.CaLam;
+
+                            MessageBox.Show("Cập nhật thành công.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật không thành công.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin lịch làm việc.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một mục để cập nhật.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật: " + ex.Message);
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có mục nào được chọn không
+                if (lsvDsLichLamViec.SelectedItems.Count > 0)
+                {
+                    // Lấy mục được chọn từ ListView
+                    ListViewItem item = lsvDsLichLamViec.SelectedItems[0];
+                    int lichLamViecID = int.Parse(item.SubItems[0].Text);
+
+                    // Tạo đối tượng CLichLamViec với ID đã chọn
+                    CLichLamViec lichLamViec = dsLichLamViec.FirstOrDefault(v => v.LichLamViecID == lichLamViecID);
+
+                    if (lichLamViec != null)
+                    {
+                        // Xóa khỏi cơ sở dữ liệu
+                        if (ctrLichLamViec.delete(lichLamViec))
+                        {
+                            // Xóa khỏi danh sách dsLichLamViec và ListView
+                            dsLichLamViec.Remove(lichLamViec);
+                            lsvDsLichLamViec.Items.Remove(item);
+
+                            // Cập nhật số lượng lịch làm việc
+                            txtTongSo.Text = lsvDsLichLamViec.Items.Count.ToString();
+
+                            MessageBox.Show("Xóa thành công.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không thành công.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin lịch làm việc.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một mục để xóa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa: " + ex.Message);
+            }
         }
     }
 }

@@ -62,21 +62,107 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "insert into lichlamviec values (@lichlamviecID, @nhanVienID, @ngayLam, @caLam)";
-                SqlCommand cmd = new SqlCommand(sql);
+                string sql = "INSERT INTO lichlamviec (lichlamviecID, nhanvienID, ngaylam, calam) " +
+                             "VALUES (@lichlamviecID, @nhanvienID, @ngaylam, @calam)";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
                 cmd.Parameters.AddWithValue("@lichlamviecID", obj.LichLamViecID);
-                cmd.Parameters.AddWithValue("@nhanVienID", obj.NhanVienID);
-                cmd.Parameters.AddWithValue("@ngayLam", obj.NgayLam);
-                cmd.Parameters.AddWithValue("@caLam", obj.CaLam);
-                cmd.Connection = cnn;
+                cmd.Parameters.AddWithValue("@nhanvienID", obj.NhanVienID.NhanvienID);
+                cmd.Parameters.AddWithValue("@ngaylam", obj.NgayLam);
+                cmd.Parameters.AddWithValue("@calam", obj.CaLam);
+
+                // Đảm bảo kết nối mở trước khi thực hiện lệnh
+                if (cnn.State != System.Data.ConnectionState.Open)
+                {
+                    cnn.Open();
+                }
+
                 int n = cmd.ExecuteNonQuery();
                 return (n > 0);
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine("Lỗi khi thêm lịch làm việc vào cơ sở dữ liệu: " + ex.Message);
                 return false;
             }
+            finally
+            {
+                // Đảm bảo kết nối được đóng sau khi hoàn tất
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
         }
+
+        public bool update(CLichLamViec obj)
+        {
+            try
+            {
+                string sql = "UPDATE lichlamviec SET nhanvienID = @nhanvienID, ngaylam = @ngaylam, calam = @calam " +
+                             "WHERE lichlamviecID = @lichlamviecID";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@nhanvienID", obj.NhanVienID.NhanvienID); // Gán giá trị ID của nhân viên
+                cmd.Parameters.AddWithValue("@ngaylam", obj.NgayLam);
+                cmd.Parameters.AddWithValue("@calam", obj.CaLam);
+                cmd.Parameters.AddWithValue("@lichlamviecID", obj.LichLamViecID);
+
+                // Đảm bảo kết nối mở trước khi thực hiện lệnh
+                if (cnn.State != System.Data.ConnectionState.Open)
+                {
+                    cnn.Open();
+                }
+
+                int n = cmd.ExecuteNonQuery();
+                return (n > 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi cập nhật lịch làm việc vào cơ sở dữ liệu: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                // Đảm bảo kết nối được đóng sau khi hoàn tất
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+        }
+
+        public bool delete(CLichLamViec obj)
+        {
+            try
+            {
+                string sql = "DELETE FROM lichlamviec WHERE lichlamviecID = @lichlamviecID";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@lichlamviecID", obj.LichLamViecID);
+
+                // Đảm bảo kết nối mở trước khi thực hiện lệnh
+                if (cnn.State != System.Data.ConnectionState.Open)
+                {
+                    cnn.Open();
+                }
+
+                int n = cmd.ExecuteNonQuery();
+                return (n > 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi xóa lịch làm việc khỏi cơ sở dữ liệu: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                // Đảm bảo kết nối được đóng sau khi hoàn tất
+                if (cnn.State == System.Data.ConnectionState.Open)
+                {
+                    cnn.Close();
+                }
+            }
+        }
+
+
         public List<CLichLamViec> findCriteria(string DK)
         {
             string sql = "select * from lichlamviec where lichlamviecid like @dk " +
