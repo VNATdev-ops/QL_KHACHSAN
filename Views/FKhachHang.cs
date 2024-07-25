@@ -231,7 +231,7 @@ namespace QL_KHACHSAN.Views
                 if (khach != null)
                 {
                     khach.KhachHangID1 = int.Parse(txtIDkhachhang.Text);
-                    khach.TenKhachHang1 = txtIDkhachhang.Text;
+                    khach.TenKhachHang1 = txttenkhachhang.Text;
                     khach.SoDienThoai1 = txtsdt.Text;
                     khach.DiaChi1 = txtdiachi.Text;
                     khach.Email1 = txtemail.Text;
