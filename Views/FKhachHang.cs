@@ -240,7 +240,7 @@ namespace QL_KHACHSAN.Views
                     {
                         MessageBox.Show("Cập nhật thông tin phòng thành công.");
                         item.SubItems[1].Text = khach.KhachHangID1.ToString();
-                        item.SubItems[2].Text = khach.TenKhachHang1;
+                        item.SubItems[2].Text = khach.TenKhachHang1.ToString();
                         item.SubItems[3].Text = khach.SoDienThoai1;
                         item.SubItems[4].Text = khach.DiaChi1;
                         item.SubItems[5].Text = khach.Email1;

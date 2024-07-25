@@ -109,7 +109,7 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "update khach set khachhangid=@khachhangid, tenkhachhang=@tenkhachhang, sodienthoai=@sodienthoai, diachi=@diachi, where email=@email";
+                string sql = "update khachhang set khachhangid=@khachhangid, tenkhachhang=@tenkhachhang, sodienthoai=@sodienthoai, diachi=@diachi, where email=@email";
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Parameters.AddWithValue("@khachhangid", obj.KhachHangID1);
                 cmd.Parameters.AddWithValue("@tenkhachhang", obj.TenKhachHang1);
