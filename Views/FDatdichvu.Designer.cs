@@ -124,10 +124,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpTimeDV);
             this.groupBox1.Controls.Add(this.cmbPhong);
             this.groupBox1.Controls.Add(this.cmbDV);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dtpTimeDV);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.IDDatDichVu);
             this.groupBox1.Controls.Add(this.label2);
@@ -171,7 +171,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.label6.Location = new System.Drawing.Point(71, 154);
+            this.label6.Location = new System.Drawing.Point(39, 154);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 22);
@@ -181,7 +181,8 @@
             // dtpTimeDV
             // 
             this.dtpTimeDV.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.dtpTimeDV.Location = new System.Drawing.Point(160, 149);
+            this.dtpTimeDV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTimeDV.Location = new System.Drawing.Point(160, 159);
             this.dtpTimeDV.Name = "dtpTimeDV";
             this.dtpTimeDV.Size = new System.Drawing.Size(222, 30);
             this.dtpTimeDV.TabIndex = 13;
@@ -215,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.label2.Location = new System.Drawing.Point(39, 86);
+            this.label2.Location = new System.Drawing.Point(18, 86);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(94, 22);

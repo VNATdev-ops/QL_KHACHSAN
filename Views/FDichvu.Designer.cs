@@ -39,7 +39,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNhapMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -94,7 +93,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.label3.Location = new System.Drawing.Point(446, 92);
+            this.label3.Location = new System.Drawing.Point(485, 93);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 22);
@@ -118,14 +117,14 @@
             this.txtGiatien.Location = new System.Drawing.Point(178, 158);
             this.txtGiatien.Margin = new System.Windows.Forms.Padding(2);
             this.txtGiatien.Name = "txtGiatien";
-            this.txtGiatien.Size = new System.Drawing.Size(185, 30);
+            this.txtGiatien.Size = new System.Drawing.Size(218, 30);
             this.txtGiatien.TabIndex = 2;
             this.txtGiatien.TextChanged += new System.EventHandler(this.txtGiatien_TextChanged);
             // 
             // txtTendichvu
             // 
             this.txtTendichvu.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.txtTendichvu.Location = new System.Drawing.Point(575, 91);
+            this.txtTendichvu.Location = new System.Drawing.Point(614, 92);
             this.txtTendichvu.Margin = new System.Windows.Forms.Padding(2);
             this.txtTendichvu.Name = "txtTendichvu";
             this.txtTendichvu.Size = new System.Drawing.Size(185, 30);
@@ -138,7 +137,7 @@
             this.txtIDDichvu.Location = new System.Drawing.Point(178, 89);
             this.txtIDDichvu.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDDichvu.Name = "txtIDDichvu";
-            this.txtIDDichvu.Size = new System.Drawing.Size(185, 30);
+            this.txtIDDichvu.Size = new System.Drawing.Size(218, 30);
             this.txtIDDichvu.TabIndex = 0;
             this.txtIDDichvu.TextChanged += new System.EventHandler(this.txtIDDichvu_TextChanged);
             // 
@@ -165,7 +164,7 @@
             // btnNhapMoi
             // 
             this.btnNhapMoi.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnNhapMoi.Location = new System.Drawing.Point(36, 192);
+            this.btnNhapMoi.Location = new System.Drawing.Point(36, 152);
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(165, 35);
@@ -177,7 +176,7 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnXoa.Location = new System.Drawing.Point(36, 70);
+            this.btnXoa.Location = new System.Drawing.Point(36, 84);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(165, 35);
@@ -185,18 +184,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnCapNhat.Location = new System.Drawing.Point(36, 129);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(165, 35);
-            this.btnCapNhat.TabIndex = 1;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThem
             // 
@@ -216,7 +203,6 @@
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.btnNhapMoi);
             this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.panel2.Location = new System.Drawing.Point(1080, 26);
@@ -229,7 +215,7 @@
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.Window;
             this.btnExit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(36, 253);
+            this.btnExit.Location = new System.Drawing.Point(36, 222);
             this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(165, 35);
@@ -244,11 +230,11 @@
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox4.Location = new System.Drawing.Point(1080, 436);
+            this.groupBox4.Location = new System.Drawing.Point(1080, 403);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox4.Size = new System.Drawing.Size(230, 89);
+            this.groupBox4.Size = new System.Drawing.Size(230, 130);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";
@@ -310,7 +296,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnNhapMoi;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;

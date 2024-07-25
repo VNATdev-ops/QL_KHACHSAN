@@ -311,5 +311,10 @@ namespace QL_KHACHSAN
             txtIDDatDichVu.Text = string.Empty;
             txtIDDatDichVu.Focus();
         }
+
+        private void txtNgayNhan_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
