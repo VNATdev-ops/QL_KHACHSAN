@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QL_KHACHSAN.Controller
 {
@@ -106,24 +107,26 @@ namespace QL_KHACHSAN.Controller
             reader.Close();
             return arrs;
         }
+
         public bool update(CLichSu obj)
         {
             try
             {
-                string sql = "update lichsukhachhang set lichsuid=@lichsuid, khachhangid=@khachhangid, phongid=@phongid, ngaynhan=@ngaynhan, where ngaytra=@ngaytra";
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Parameters.AddWithValue("@lichsuid", obj.LichSuID1);
-                cmd.Parameters.AddWithValue("@khachhangid", obj.KhachHangID1);
-                cmd.Parameters.AddWithValue("@phongid", obj.PhongID1);
-                cmd.Parameters.AddWithValue("@ngaynhan", obj.NgayNhan1);
-                cmd.Parameters.AddWithValue("@ngaytra", obj.NgayTra1);
-
-                cmd.Connection = cnn;
+                string sql = "UPDATE LichSuKhachHang SET KhachHangID = @KhachHangID, PhongID = @PhongID, NgayNhan = @NgayNhan, NgayTra = @NgayTra WHERE LichSuID = @LichSuID";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
+                cmd.Parameters.AddWithValue("@LichSuID", obj.LichSuID1);
+                cmd.Parameters.AddWithValue("@KhachHangID", obj.KhachHangID1);
+                cmd.Parameters.AddWithValue("@PhongID", obj.PhongID1);
+                cmd.Parameters.AddWithValue("@NgayNhan", obj.NgayNhan1);
+                cmd.Parameters.AddWithValue("@NgayTra", obj.NgayTra1);
                 int n = cmd.ExecuteNonQuery();
-                return (n > 0);
+                return n > 0;
             }
-            catch { return false; }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi khi cập nhật lịch sử khách hàng: " + ex.Message);
+                return false;
+            }
         }
     }
 }

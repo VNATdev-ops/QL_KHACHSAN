@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QL_KHACHSAN.Controller
 {
@@ -105,24 +106,28 @@ namespace QL_KHACHSAN.Controller
             reader.Close();
             return arrs;
         }
-        public bool update(CKhachHang obj)
+        public bool Update(CKhachHang khachHang)
         {
             try
             {
-                string sql = "update khachhang set khachhangid=@khachhangid, tenkhachhang=@tenkhachhang, sodienthoai=@sodienthoai, diachi=@diachi, where email=@email";
-                SqlCommand cmd = new SqlCommand(sql);
-                cmd.Parameters.AddWithValue("@khachhangid", obj.KhachHangID1);
-                cmd.Parameters.AddWithValue("@tenkhachhang", obj.TenKhachHang1);
-                cmd.Parameters.AddWithValue("@sodienthoai", obj.SoDienThoai1);
-                cmd.Parameters.AddWithValue("@diachi", obj.DiaChi1);
-                cmd.Parameters.AddWithValue("@email", obj.Email1);
+                string sql = "UPDATE KhachHang SET TenKhachHang = @TenKhachHang, SoDienThoai = @SoDienThoai, DiaChi = @DiaChi, Email = @Email WHERE KhachHangID = @KhachHangID";
+                SqlCommand cmd = new SqlCommand(sql, cnn);
 
-                cmd.Connection = cnn;
+                cmd.Parameters.AddWithValue("@KhachHangID", khachHang.KhachHangID1);
+                cmd.Parameters.AddWithValue("@TenKhachHang", khachHang.TenKhachHang1);
+                cmd.Parameters.AddWithValue("@SoDienThoai", khachHang.SoDienThoai1);
+                cmd.Parameters.AddWithValue("@DiaChi", khachHang.DiaChi1);
+                cmd.Parameters.AddWithValue("@Email", khachHang.Email1);
+
                 int n = cmd.ExecuteNonQuery();
                 return (n > 0);
             }
-            catch { return false; }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật thông tin khách hàng: " + ex.Message);
+                return false;
+            }
         }
+
     }
 }

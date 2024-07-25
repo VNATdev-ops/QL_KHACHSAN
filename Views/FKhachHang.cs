@@ -34,6 +34,21 @@ namespace QL_KHACHSAN.Views
         {
             txtTongSo.Text = dsKhachHang.Count.ToString();
         }
+
+        private void LoadDanhSachKhachHang()
+        {
+            List<CKhachHang> danhSachKhachHang = ctrlKhachhang.findall();
+            lsvKhachHang.Items.Clear();
+            foreach (var baoCao in danhSachKhachHang)
+            {
+                ListViewItem item = new ListViewItem(baoCao.KhachHangID1.ToString());
+                item.SubItems.Add(baoCao.TenKhachHang1.ToString());
+                item.SubItems.Add(baoCao.DiaChi1.ToString());
+                item.SubItems.Add(baoCao.SoDienThoai1);
+                item.SubItems.Add(baoCao.Email1);
+                lsvKhachHang.Items.Add(item);
+            }
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -224,32 +239,26 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                ListViewItem item = lsvKhachHang.SelectedItems[0];
-                int khachId = int.Parse(item.SubItems[0].Text);
-                CKhachHang khach = dsKhachHang.FirstOrDefault(p => p.KhachHangID1 == khachId);
+                // Lấy thông tin khách hàng từ các TextBox
+                int khachHangID = int.Parse(txtIDkhachhang.Text);
+                string tenKhachHang = txttenkhachhang.Text;
+                string soDienThoai = txtsdt.Text;
+                string diaChi = txtdiachi.Text;
+                string email = txtemail.Text;
 
-                if (khach != null)
+                // Tạo đối tượng khách hàng với thông tin mới
+                CKhachHang khachHang = new CKhachHang(khachHangID, tenKhachHang, soDienThoai, diaChi, email);
+
+                // Gọi phương thức cập nhật từ lớp điều khiển
+                if (ctrlKhachhang.Update(khachHang))
                 {
-                    khach.KhachHangID1 = int.Parse(txtIDkhachhang.Text);
-                    khach.TenKhachHang1 = txttenkhachhang.Text;
-                    khach.SoDienThoai1 = txtsdt.Text;
-                    khach.DiaChi1 = txtdiachi.Text;
-                    khach.Email1 = txtemail.Text;
-
-                    if (ctrlKhachhang.update(khach))
-                    {
-                        MessageBox.Show("Cập nhật thông tin phòng thành công.");
-                        item.SubItems[1].Text = khach.KhachHangID1.ToString();
-                        item.SubItems[2].Text = khach.TenKhachHang1.ToString();
-                        item.SubItems[3].Text = khach.SoDienThoai1;
-                        item.SubItems[4].Text = khach.DiaChi1;
-                        item.SubItems[5].Text = khach.Email1;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật thông tin phòng thất bại.");
-                    }
-                    capNhatSoLuongKhach();
+                    MessageBox.Show("Cập nhật thông tin khách hàng thành công!");
+                    // Tải lại danh sách khách hàng để hiển thị thông tin mới nhất
+                    LoadDanhSachKhachHang();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin khách hàng thất bại!");
                 }
             }
             catch (Exception ex)

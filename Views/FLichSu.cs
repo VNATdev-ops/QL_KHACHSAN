@@ -29,6 +29,14 @@ namespace QL_KHACHSAN.Views
             lsvLichSu.View = View.Details;
             lsvLichSu.FullRowSelect = true;
         }
+
+        private void LoadLichSu()
+        {
+            // Phương thức để tải dữ liệu lịch sử từ cơ sở dữ liệu và hiển thị trên giao diện người dùng
+            dsLichSu = ctrlLichSu.findall();
+            // Cập nhật dữ liệu trên giao diện người dùng
+        }
+
         private void capNhatSoLuongLS()
         {
             txtTongSo.Text = dsLichSu.Count.ToString();
@@ -206,37 +214,30 @@ namespace QL_KHACHSAN.Views
         {
             try
             {
-                ListViewItem item = lsvLichSu.SelectedItems[0];
-                int lichsuId = int.Parse(item.SubItems[0].Text);
-                CLichSu lichsu = dsLichSu.FirstOrDefault(p => p.LichSuID1 == lichsuId);
+                // Lấy dữ liệu từ các điều khiển nhập liệu
+                int lichSuID = int.Parse(txtIDLichSu.Text);
+                int khachHangID = int.Parse(txtIDKhachHang.Text);
+                int phongID = int.Parse(txtIDPhong.Text);
+                DateTime ngayNhan = txtNgayNhan.Value;
+                DateTime ngayTra = txtNgayTra.Value;
 
-                if (lichsu != null)
+                // Tạo đối tượng lịch sử
+                CLichSu lichSu = new CLichSu(lichSuID, khachHangID, phongID, ngayNhan, ngayTra);
+
+                // Thực hiện cập nhật vào cơ sở dữ liệu
+                if (ctrlLichSu.update(lichSu))
                 {
-                    lichsu.LichSuID1 = int.Parse(txtIDLichSu.Text);
-                    lichsu.KhachHangID1 = int.Parse(txtIDKhachHang.Text);
-                    lichsu.PhongID1 = int.Parse(txtIDPhong.Text);
-                    lichsu.NgayNhan1 = txtNgayNhan.Value;
-                    lichsu.NgayTra1 = txtNgayTra.Value;
-
-                    if (ctrlLichSu.update(lichsu))
-                    {
-                        MessageBox.Show("Cập nhật thông tin phòng thành công.");
-                        item.SubItems[1].Text = lichsu.LichSuID1.ToString();
-                        item.SubItems[2].Text = lichsu.KhachHangID1.ToString();
-                        item.SubItems[3].Text = lichsu.PhongID1.ToString();
-                        item.SubItems[4].Text = lichsu.NgayNhan1.ToString();
-                        item.SubItems[5].Text = lichsu.NgayTra1.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cập nhật thông tin phòng thất bại.");
-                    }
-                    capNhatSoLuongLS();
+                    MessageBox.Show("Cập nhật lịch sử thành công.");
+                    LoadLichSu(); // Cập nhật giao diện nếu cần
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật lịch sử thất bại.");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+                MessageBox.Show("Lỗi khi cập nhật lịch sử: " + ex.Message);
             }
         }
     }
