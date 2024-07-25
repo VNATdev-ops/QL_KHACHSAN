@@ -129,7 +129,7 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "update phong set sophong=@sophong, loaiphong=@loaiphong, giatien=@giatien, tinhtrang=@tinhtrang, where phongid=@phongid";
+                string sql = "UPDATE phong SET sophong = @sophong, loaiphong = @loaiphong, giatien = @giatien, tinhtrang = @tinhtrang WHERE phongid = @phongid";
                 SqlCommand cmd = new SqlCommand(sql);
                 cmd.Parameters.AddWithValue("@sophong", obj.SoPhong);
                 cmd.Parameters.AddWithValue("@loaiphong", obj.LoaiPhong);

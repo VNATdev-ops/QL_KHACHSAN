@@ -126,21 +126,21 @@ namespace QL_KHACHSAN.Views
                     ListViewItem item = lsvDsNhanVien.SelectedItems[0];
                     int nhanVienID = int.Parse(item.SubItems[0].Text);
 
-                    // Tìm đối tượng CPhong tương ứng trong danh sách dsPhong
-                    CNhanVien datphong = dsNhanVien.FirstOrDefault(p => p.NhanvienID == nhanVienID);
+                    // Tìm đối tượng CNhanVien tương ứng trong danh sách dsNhanVien
+                    CNhanVien nhanVien = dsNhanVien.FirstOrDefault(p => p.NhanvienID == nhanVienID);
 
-                    if (datphong != null)
+                    if (nhanVien != null)
                     {
                         // Xóa khỏi cơ sở dữ liệu
-                        if (ctrNhanVien.delete(datphong))
+                        if (ctrNhanVien.delete(nhanVien))
                         {
                             MessageBox.Show("Xóa nhân viên thành công");
 
-                            // Xóa khỏi danh sách dsPhong và ListView
-                            dsNhanVien.Remove(datphong);
+                            // Xóa khỏi danh sách dsNhanVien và ListView
+                            dsNhanVien.Remove(nhanVien);
                             lsvDsNhanVien.Items.Remove(item);
 
-                            // Cập nhật số lượng phòng
+                            // Cập nhật số lượng nhân viên
                             txtTongSo.Text = lsvDsNhanVien.Items.Count.ToString();
                         }
                         else
@@ -151,7 +151,7 @@ namespace QL_KHACHSAN.Views
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn phòng để xóa");
+                    MessageBox.Show("Vui lòng chọn nhân viên để xóa");
                 }
             }
             catch (Exception ex)

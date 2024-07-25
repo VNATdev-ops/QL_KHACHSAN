@@ -207,7 +207,56 @@ namespace QL_KHACHSAN.Views
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (lsvDatPhong.SelectedItems.Count > 0)
+                {
+                    // Lấy thông tin từ ListViewItem đã chọn
+                    ListViewItem item = lsvDatPhong.SelectedItems[0];
+                    int datPhongID = int.Parse(item.SubItems[0].Text);
 
+                    // Tìm đối tượng CDatPhong tương ứng trong danh sách
+                    CDatPhong datphong = dsDatPhong.FirstOrDefault(p => p.DatPhongID == datPhongID);
+
+                    if (datphong != null)
+                    {
+                        // Cập nhật thông tin từ giao diện người dùng vào đối tượng datphong
+                        datphong.PhongID = int.Parse(txtIDphong.Text);
+                        datphong.KhachHangID = int.Parse(txtIDkhachhang.Text);
+                        datphong.NgayDat1 = txtNgayDat.Value;
+                        datphong.NgayNhan1 = txtNgayNhan.Value;
+                        datphong.NgayTra1 = txtNgayTra.Value;
+                        datphong.TinhTrang1 = txtTinhtrang.Text;
+
+                        // Gọi phương thức cập nhật từ lớp điều khiển
+                        if (ctrlDatPhong.update(datphong))
+                        {
+                            MessageBox.Show("Cập nhật thông tin đặt phòng thành công.");
+
+                            // Cập nhật lại thông tin trên ListView
+                            item.SubItems[1].Text = datphong.PhongID.ToString();
+                            item.SubItems[2].Text = datphong.KhachHangID.ToString();
+                            item.SubItems[3].Text = datphong.NgayDat1.ToShortDateString();
+                            item.SubItems[4].Text = datphong.NgayNhan1.ToShortDateString();
+                            item.SubItems[5].Text = datphong.NgayTra1.ToShortDateString();
+                            item.SubItems[6].Text = datphong.TinhTrang1;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Cập nhật thông tin đặt phòng thất bại.");
+                        }
+                        capNhatSoLuongPhong();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn đặt phòng để cập nhật.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
         }
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
