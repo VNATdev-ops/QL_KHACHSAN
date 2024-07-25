@@ -309,12 +309,49 @@ namespace QL_KHACHSAN
         private void btnNhapMoi_Click_1(object sender, EventArgs e)
         {
             txtIDDatDichVu.Text = string.Empty;
+            cmbDV.Text = string.Empty;
             txtIDDatDichVu.Focus();
+            cmbPhong.Text = string.Empty;
+            dtpTimeDV.Value = DateTime.Today;
         }
 
         private void txtNgayNhan_ValueChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void btnCapNhat_Click_1(object sender, EventArgs e)
+        {
+            // Giả sử bạn có các điều khiển cho các thuộc tính
+            int datDichVuID = Convert.ToInt32(cmbDV.Text);
+            int dichVuID = Convert.ToInt32(txtIDDatDichVu.Text);
+            int phongID = Convert.ToInt32(cmbPhong.Text);
+            DateTime ngayDat = dtpTimeDV.Value;
+
+            // Tạo đối tượng CDatDichVu với các thuộc tính đã được nhập
+            CDatDichVu datDichVu = new CDatDichVu
+            {
+                DatDichVuID = datDichVuID,
+                DichVuID = new CDichvu { DichVuID1 = dichVuID }, // Giả sử bạn đã có cách khởi tạo CDichvu
+                DatPhongID = new CPhong { PhongId = phongID }, // Giả sử bạn đã có cách khởi tạo CPhong
+                NgayDat = ngayDat
+            };
+
+            // Tạo đối tượng điều khiển
+            CtrlDatDichVu ctrl = new CtrlDatDichVu();
+
+            // Cập nhật dữ liệu
+            bool result = ctrl.update(datDichVu);
+
+            // Thông báo kết quả
+            if (result)
+            {
+                MessageBox.Show("Cập nhật thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật không thành công!");
+            }
         }
     }
 }
