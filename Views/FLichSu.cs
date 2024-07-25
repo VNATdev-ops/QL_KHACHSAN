@@ -118,8 +118,8 @@ namespace QL_KHACHSAN.Views
                         s.LichSuID1.ToString(),
                         s.KhachHangID1.ToString(),
                         s.PhongID1.ToString(),
-                        s.NgayNhan1.ToString(),
-                        s.NgayTra1.ToString(),
+                        s.NgayNhan1.Date.ToString(),
+                        s.NgayTra1.Date.ToString(),
                     };
                     ListViewItem item = new ListViewItem(obj);
                     lsvLichSu.Items.Add(item);
@@ -128,6 +128,7 @@ namespace QL_KHACHSAN.Views
                     MessageBox.Show("Thêm thành công");
                 }
                 capNhatSoLuongLS();
+
             }
             catch
             {
@@ -198,6 +199,44 @@ namespace QL_KHACHSAN.Views
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListViewItem item = lsvLichSu.SelectedItems[0];
+                int lichsuId = int.Parse(item.SubItems[0].Text);
+                CLichSu lichsu = dsLichSu.FirstOrDefault(p => p.LichSuID1 == lichsuId);
+
+                if (lichsu != null)
+                {
+                    lichsu.LichSuID1 = int.Parse(txtIDLichSu.Text);
+                    lichsu.KhachHangID1 = int.Parse(txtIDKhachHang.Text);
+                    lichsu.PhongID1 = int.Parse(txtIDPhong.Text);
+                    lichsu.NgayNhan1 = txtNgayNhan.Value;
+                    lichsu.NgayTra1 = txtNgayTra.Value;
+
+                    if (ctrlLichSu.update(lichsu))
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thành công.");
+                        item.SubItems[1].Text = lichsu.LichSuID1.ToString();
+                        item.SubItems[2].Text = lichsu.KhachHangID1.ToString();
+                        item.SubItems[3].Text = lichsu.PhongID1.ToString();
+                        item.SubItems[4].Text = lichsu.NgayNhan1.ToString();
+                        item.SubItems[5].Text = lichsu.NgayTra1.ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thông tin phòng thất bại.");
+                    }
+                    capNhatSoLuongLS();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
     }
