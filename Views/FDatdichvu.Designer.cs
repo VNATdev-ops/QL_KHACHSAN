@@ -43,14 +43,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDDatDichVu = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnNhapMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -59,10 +63,10 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox3.Location = new System.Drawing.Point(1045, 482);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(1045, 371);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(230, 85);
             this.groupBox3.TabIndex = 25;
             this.groupBox3.TabStop = false;
@@ -83,21 +87,22 @@
             // 
             this.txtTongSo.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTongSo.Location = new System.Drawing.Point(10, 45);
-            this.txtTongSo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTongSo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongSo.Name = "txtTongSo";
             this.txtTongSo.Size = new System.Drawing.Size(215, 29);
             this.txtTongSo.TabIndex = 0;
             this.txtTongSo.UseVisualStyleBackColor = true;
+            this.txtTongSo.Click += new System.EventHandler(this.txtTongSo_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lsvDSDVDaDat);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(94, 302);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(94, 329);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(849, 265);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
@@ -110,7 +115,7 @@
             this.lsvDSDVDaDat.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.lsvDSDVDaDat.HideSelection = false;
             this.lsvDSDVDaDat.Location = new System.Drawing.Point(2, 25);
-            this.lsvDSDVDaDat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvDSDVDaDat.Margin = new System.Windows.Forms.Padding(2);
             this.lsvDSDVDaDat.Name = "lsvDSDVDaDat";
             this.lsvDSDVDaDat.Size = new System.Drawing.Size(845, 238);
             this.lsvDSDVDaDat.TabIndex = 0;
@@ -130,9 +135,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.groupBox1.Location = new System.Drawing.Point(94, 43);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(849, 254);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
@@ -144,7 +149,7 @@
             this.cmbPhong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.cmbPhong.FormattingEnabled = true;
             this.cmbPhong.Location = new System.Drawing.Point(574, 147);
-            this.cmbPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbPhong.Margin = new System.Windows.Forms.Padding(2);
             this.cmbPhong.Name = "cmbPhong";
             this.cmbPhong.Size = new System.Drawing.Size(222, 30);
             this.cmbPhong.TabIndex = 16;
@@ -156,7 +161,7 @@
             this.cmbDV.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.cmbDV.FormattingEnabled = true;
             this.cmbDV.Location = new System.Drawing.Point(160, 86);
-            this.cmbDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbDV.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDV.Name = "cmbDV";
             this.cmbDV.Size = new System.Drawing.Size(222, 30);
             this.cmbDV.TabIndex = 15;
@@ -222,7 +227,7 @@
             this.txtIDDatDichVu.BackColor = System.Drawing.SystemColors.Window;
             this.txtIDDatDichVu.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDDatDichVu.Location = new System.Drawing.Point(574, 86);
-            this.txtIDDatDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIDDatDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.txtIDDatDichVu.Name = "txtIDDatDichVu";
             this.txtIDDatDichVu.Size = new System.Drawing.Size(222, 30);
             this.txtIDDatDichVu.TabIndex = 1;
@@ -237,29 +242,43 @@
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.panel2.Location = new System.Drawing.Point(1045, 47);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 400);
+            this.panel2.Size = new System.Drawing.Size(230, 292);
             this.panel2.TabIndex = 22;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.Window;
+            this.btnExit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(34, 215);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(165, 35);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnNhapMoi
             // 
             this.btnNhapMoi.BackColor = System.Drawing.SystemColors.Window;
             this.btnNhapMoi.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnNhapMoi.Location = new System.Drawing.Point(34, 164);
-            this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNhapMoi.Location = new System.Drawing.Point(34, 150);
+            this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(165, 35);
             this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập Mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click_1);
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.Window;
             this.btnXoa.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnXoa.Location = new System.Drawing.Point(34, 110);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Location = new System.Drawing.Point(34, 96);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(165, 35);
             this.btnXoa.TabIndex = 2;
@@ -271,8 +290,8 @@
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.Window;
             this.btnThem.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnThem.Location = new System.Drawing.Point(34, 57);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Location = new System.Drawing.Point(34, 37);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(165, 35);
             this.btnThem.TabIndex = 0;
@@ -280,18 +299,41 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnExit
+            // groupBox4
             // 
-            this.btnExit.BackColor = System.Drawing.SystemColors.Window;
-            this.btnExit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(34, 226);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(165, 35);
-            this.btnExit.TabIndex = 6;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.groupBox4.BackColor = System.Drawing.SystemColors.Window;
+            this.groupBox4.Controls.Add(this.txtTimKiem);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(1045, 477);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(230, 103);
+            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tìm kiếm";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(4, 56);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(226, 28);
+            this.txtTimKiem.TabIndex = 11;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(42, 30);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(147, 24);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Tìm kiếm phòng";
             // 
             // FDatdichvu
             // 
@@ -299,6 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(1364, 628);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -312,6 +355,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -337,5 +382,8 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Label label9;
     }
 }
