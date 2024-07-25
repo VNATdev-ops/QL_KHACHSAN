@@ -104,6 +104,7 @@
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -148,7 +149,7 @@
             this.label7.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label7.Location = new System.Drawing.Point(94, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 22);
+            this.label7.Size = new System.Drawing.Size(95, 28);
             this.label7.TabIndex = 11;
             this.label7.Text = "Tổng số ";
             // 
@@ -187,7 +188,7 @@
             this.txtTongTien.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTongTien.Location = new System.Drawing.Point(802, 186);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(237, 30);
+            this.txtTongTien.Size = new System.Drawing.Size(237, 35);
             this.txtTongTien.TabIndex = 9;
             // 
             // dtpNgayLap
@@ -197,7 +198,7 @@
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayLap.Location = new System.Drawing.Point(802, 118);
             this.dtpNgayLap.Name = "dtpNgayLap";
-            this.dtpNgayLap.Size = new System.Drawing.Size(237, 30);
+            this.dtpNgayLap.Size = new System.Drawing.Size(237, 35);
             this.dtpNgayLap.TabIndex = 8;
             // 
             // label4
@@ -206,7 +207,7 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label4.Location = new System.Drawing.Point(668, 194);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 22);
+            this.label4.Size = new System.Drawing.Size(107, 28);
             this.label4.TabIndex = 7;
             this.label4.Text = "Tổng tiền";
             // 
@@ -216,7 +217,7 @@
             this.label3.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label3.Location = new System.Drawing.Point(672, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 22);
+            this.label3.Size = new System.Drawing.Size(101, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ngày lập";
             // 
@@ -226,7 +227,7 @@
             this.label2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label2.Location = new System.Drawing.Point(90, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(151, 28);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mã đặt phòng";
             // 
@@ -236,7 +237,7 @@
             this.label1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label1.Location = new System.Drawing.Point(105, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 22);
+            this.label1.Size = new System.Drawing.Size(132, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Mã hóa đơn";
             // 
@@ -245,7 +246,7 @@
             this.txtIDdatphong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDdatphong.Location = new System.Drawing.Point(255, 186);
             this.txtIDdatphong.Name = "txtIDdatphong";
-            this.txtIDdatphong.Size = new System.Drawing.Size(237, 30);
+            this.txtIDdatphong.Size = new System.Drawing.Size(237, 35);
             this.txtIDdatphong.TabIndex = 1;
             this.txtIDdatphong.TextChanged += new System.EventHandler(this.txtIDdatphong_TextChanged);
             // 
@@ -254,7 +255,7 @@
             this.txtIDHoaDon.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtIDHoaDon.Location = new System.Drawing.Point(255, 118);
             this.txtIDHoaDon.Name = "txtIDHoaDon";
-            this.txtIDHoaDon.Size = new System.Drawing.Size(237, 30);
+            this.txtIDHoaDon.Size = new System.Drawing.Size(237, 35);
             this.txtIDHoaDon.TabIndex = 0;
             this.txtIDHoaDon.TextChanged += new System.EventHandler(this.txtIDHoaDon_TextChanged);
             // 
@@ -276,9 +277,9 @@
             this.listViewHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewHoaDon.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.listViewHoaDon.HideSelection = false;
-            this.listViewHoaDon.Location = new System.Drawing.Point(3, 26);
+            this.listViewHoaDon.Location = new System.Drawing.Point(3, 31);
             this.listViewHoaDon.Name = "listViewHoaDon";
-            this.listViewHoaDon.Size = new System.Drawing.Size(1160, 297);
+            this.listViewHoaDon.Size = new System.Drawing.Size(1160, 292);
             this.listViewHoaDon.TabIndex = 0;
             this.listViewHoaDon.UseCompatibleStateImageBehavior = false;
             this.listViewHoaDon.SelectedIndexChanged += new System.EventHandler(this.listViewHoaDon_SelectedIndexChanged);
@@ -302,7 +303,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTimKiem.Location = new System.Drawing.Point(11, 68);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(287, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(287, 35);
             this.txtTimKiem.TabIndex = 11;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -312,7 +313,7 @@
             this.label9.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label9.Location = new System.Drawing.Point(56, 37);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(140, 22);
+            this.label9.Size = new System.Drawing.Size(178, 28);
             this.label9.TabIndex = 10;
             this.label9.Text = "Tìm kiếm phòng";
             // 
