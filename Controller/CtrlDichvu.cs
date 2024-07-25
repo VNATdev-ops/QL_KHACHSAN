@@ -77,7 +77,7 @@ namespace QL_KHACHSAN.Controller
         {
             try
             {
-                string sql = "delete from dichvu where DIchVuID=@ID";
+                string sql = "delete from dichvu where DichVuID=@ID";
                 SqlCommand cmd = new SqlCommand(sql);
 
                 cmd.Parameters.AddWithValue("@ID", obj.DichVuID1);

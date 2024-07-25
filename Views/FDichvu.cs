@@ -227,5 +227,29 @@ namespace QL_KHACHSAN
         {
             Application.Exit();
         }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    string dkFind = txtTimKiem.Text;
+                    dsDichVu = ctrlDichVu.findCriteria(dkFind);
+
+                    lsvDanhSachDichVu.Items.Clear();
+                    foreach (CDichvu s in dsDichVu)
+                    {
+
+                        string[] obj = { s.DichVuID1.ToString(), s.TenDichVu1, s.GiaTien1.ToString() };
+                        ListViewItem item = new ListViewItem(obj);
+                        lsvDanhSachDichVu.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
+        }
     }
 }
