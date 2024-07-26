@@ -69,9 +69,9 @@
             this.panel1.Controls.Add(this.btnCapNhat);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.panel1.Location = new System.Drawing.Point(1427, 55);
+            this.panel1.Location = new System.Drawing.Point(1300, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(306, 326);
+            this.panel1.Size = new System.Drawing.Size(332, 326);
             this.panel1.TabIndex = 6;
             // 
             // btnExit
@@ -148,7 +148,7 @@
             this.groupBox1.Controls.Add(this.txtIDLichBaoTri);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(91, 55);
+            this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1256, 326);
             this.groupBox1.TabIndex = 7;
@@ -251,7 +251,7 @@
             this.groupBox2.Controls.Add(this.lsvLichBaoTri);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(91, 409);
+            this.groupBox2.Location = new System.Drawing.Point(12, 403);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1256, 319);
             this.groupBox2.TabIndex = 8;
@@ -276,9 +276,9 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox3.Location = new System.Drawing.Point(1427, 452);
+            this.groupBox3.Location = new System.Drawing.Point(1300, 446);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(299, 105);
+            this.groupBox3.Size = new System.Drawing.Size(300, 105);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thống kê";
@@ -309,9 +309,9 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox4.Location = new System.Drawing.Point(1427, 578);
+            this.groupBox4.Location = new System.Drawing.Point(1300, 572);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(299, 109);
+            this.groupBox4.Size = new System.Drawing.Size(300, 109);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";

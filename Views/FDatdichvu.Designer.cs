@@ -43,13 +43,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDDatDichVu = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnNhapMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -63,7 +63,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox3.Location = new System.Drawing.Point(1393, 457);
+            this.groupBox3.Location = new System.Drawing.Point(1299, 456);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -98,7 +98,7 @@
             this.groupBox2.Controls.Add(this.lsvDSDVDaDat);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(125, 405);
+            this.groupBox2.Location = new System.Drawing.Point(31, 404);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -133,7 +133,7 @@
             this.groupBox1.Controls.Add(this.txtIDDatDichVu);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(125, 53);
+            this.groupBox1.Location = new System.Drawing.Point(31, 52);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -147,7 +147,7 @@
             this.dtpTimeDV.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.dtpTimeDV.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpTimeDV.Location = new System.Drawing.Point(213, 196);
-            this.dtpTimeDV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTimeDV.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTimeDV.Name = "dtpTimeDV";
             this.dtpTimeDV.Size = new System.Drawing.Size(295, 35);
             this.dtpTimeDV.TabIndex = 13;
@@ -238,11 +238,24 @@
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.panel2.Location = new System.Drawing.Point(1393, 58);
+            this.panel2.Location = new System.Drawing.Point(1299, 57);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(307, 359);
             this.panel2.TabIndex = 22;
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.SystemColors.Window;
+            this.btnCapNhat.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.btnCapNhat.Location = new System.Drawing.Point(45, 252);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(220, 43);
+            this.btnCapNhat.TabIndex = 4;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
             // 
             // btnNhapMoi
             // 
@@ -289,7 +302,7 @@
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(1393, 587);
+            this.groupBox4.Location = new System.Drawing.Point(1299, 586);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -318,19 +331,6 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Tìm kiếm phòng";
             // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.BackColor = System.Drawing.SystemColors.Window;
-            this.btnCapNhat.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.btnCapNhat.Location = new System.Drawing.Point(45, 252);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(220, 43);
-            this.btnCapNhat.TabIndex = 4;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = false;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
-            // 
             // FDatdichvu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -342,7 +342,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FDatdichvu";
             this.Text = "FĐatichvu1";
             this.Load += new System.EventHandler(this.FDatdichvu_Load_1);

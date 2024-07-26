@@ -23,10 +23,10 @@ namespace QL_KHACHSAN.Views
             int width = lsvDatPhong.Width;
             lsvDatPhong.Columns.Add("Mã đặt phòng", 90);
             lsvDatPhong.Columns.Add("Mã phòng", 90);
-            lsvDatPhong.Columns.Add("Ngày đặt", 150);
+            lsvDatPhong.Columns.Add("Mã khách hàng", 90);
             lsvDatPhong.Columns.Add("Ngày nhận", 150);
             lsvDatPhong.Columns.Add("Ngày trả", 150);
-            lsvDatPhong.Columns.Add("Mã khách hàng", 90);
+            lsvDatPhong.Columns.Add("Ngày đặt", 150);
             lsvDatPhong.Columns.Add("Tình trạng", 130);
 
             lsvDatPhong.View = View.Details;
@@ -276,7 +276,7 @@ namespace QL_KHACHSAN.Views
                     s.KhachHangID.ToString(),
                     s.NgayDat1.ToShortDateString(),
                     s.NgayNhan1.ToShortDateString(),
-                    s.NgayTra1.ToShortTimeString(),
+                    s.NgayTra1.ToShortDateString(),
                     s.TinhTrang1.ToString(),
                 };
                     ListViewItem item = new ListViewItem(obj);
@@ -301,7 +301,7 @@ namespace QL_KHACHSAN.Views
             s.KhachHangID.ToString(),
             s.NgayDat1.ToShortDateString(),
             s.NgayNhan1.ToShortDateString(),
-            s.NgayTra1.ToShortTimeString(),
+            s.NgayTra1.ToShortDateString(),
             s.TinhTrang1.ToString(),
         };
                 ListViewItem item = new ListViewItem(obj);
@@ -311,6 +311,11 @@ namespace QL_KHACHSAN.Views
         }
 
         private void txtTongSo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

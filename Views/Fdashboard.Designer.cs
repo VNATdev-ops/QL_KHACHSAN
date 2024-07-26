@@ -326,9 +326,9 @@
             this.Tittle.AutoSize = true;
             this.Tittle.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Tittle.ForeColor = System.Drawing.SystemColors.Window;
-            this.Tittle.Location = new System.Drawing.Point(795, 49);
+            this.Tittle.Location = new System.Drawing.Point(690, 49);
             this.Tittle.Name = "Tittle";
-            this.Tittle.Size = new System.Drawing.Size(80, 28);
+            this.Tittle.Size = new System.Drawing.Size(101, 36);
             this.Tittle.TabIndex = 0;
             this.Tittle.Text = "label1";
             this.Tittle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -339,7 +339,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(2260, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainer_Body);
             this.Controls.Add(this.panel_Left);
@@ -347,6 +347,7 @@
             this.Name = "Fdashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fdashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Fdashboard_FormClosing);
             this.Load += new System.EventHandler(this.Fdashboard_Load);
             this.panel_Left.ResumeLayout(false);

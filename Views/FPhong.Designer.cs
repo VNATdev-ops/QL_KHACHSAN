@@ -78,7 +78,7 @@
             this.label5.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label5.Location = new System.Drawing.Point(58, 216);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 22);
+            this.label5.Size = new System.Drawing.Size(123, 28);
             this.label5.TabIndex = 9;
             this.label5.Text = "Tình Trạng";
             // 
@@ -88,7 +88,7 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label4.Location = new System.Drawing.Point(58, 150);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 22);
+            this.label4.Size = new System.Drawing.Size(126, 28);
             this.label4.TabIndex = 8;
             this.label4.Text = "Loại phòng";
             // 
@@ -98,7 +98,7 @@
             this.label3.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label3.Location = new System.Drawing.Point(545, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 22);
+            this.label3.Size = new System.Drawing.Size(91, 28);
             this.label3.TabIndex = 7;
             this.label3.Text = "Giá tiền";
             // 
@@ -108,7 +108,7 @@
             this.label2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label2.Location = new System.Drawing.Point(545, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 22);
+            this.label2.Size = new System.Drawing.Size(106, 28);
             this.label2.TabIndex = 6;
             this.label2.Text = "Số phòng";
             // 
@@ -118,7 +118,7 @@
             this.label1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label1.Location = new System.Drawing.Point(58, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 22);
+            this.label1.Size = new System.Drawing.Size(113, 28);
             this.label1.TabIndex = 5;
             this.label1.Text = "Mã phòng";
             // 
@@ -127,7 +127,7 @@
             this.txtTinhTrang.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTinhTrang.Location = new System.Drawing.Point(214, 212);
             this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(745, 30);
+            this.txtTinhTrang.Size = new System.Drawing.Size(745, 35);
             this.txtTinhTrang.TabIndex = 4;
             // 
             // txtGiaTien
@@ -135,7 +135,7 @@
             this.txtGiaTien.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtGiaTien.Location = new System.Drawing.Point(698, 150);
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(261, 30);
+            this.txtGiaTien.Size = new System.Drawing.Size(261, 35);
             this.txtGiaTien.TabIndex = 3;
             // 
             // txtSoPhong
@@ -143,7 +143,7 @@
             this.txtSoPhong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtSoPhong.Location = new System.Drawing.Point(698, 82);
             this.txtSoPhong.Name = "txtSoPhong";
-            this.txtSoPhong.Size = new System.Drawing.Size(261, 30);
+            this.txtSoPhong.Size = new System.Drawing.Size(261, 35);
             this.txtSoPhong.TabIndex = 2;
             // 
             // btnExit
@@ -191,7 +191,7 @@
             this.panel1.Controls.Add(this.btnCapNhat);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.panel1.Location = new System.Drawing.Point(1384, 39);
+            this.panel1.Location = new System.Drawing.Point(1178, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(306, 326);
             this.panel1.TabIndex = 5;
@@ -213,7 +213,7 @@
             this.txtLoaiPhong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtLoaiPhong.Location = new System.Drawing.Point(214, 146);
             this.txtLoaiPhong.Name = "txtLoaiPhong";
-            this.txtLoaiPhong.Size = new System.Drawing.Size(261, 30);
+            this.txtLoaiPhong.Size = new System.Drawing.Size(261, 35);
             this.txtLoaiPhong.TabIndex = 1;
             // 
             // groupBox2
@@ -221,7 +221,7 @@
             this.groupBox2.Controls.Add(this.lsvDSPhong);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(177, 367);
+            this.groupBox2.Location = new System.Drawing.Point(12, 383);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1034, 332);
             this.groupBox2.TabIndex = 4;
@@ -234,9 +234,9 @@
             this.lsvDSPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lsvDSPhong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.lsvDSPhong.HideSelection = false;
-            this.lsvDSPhong.Location = new System.Drawing.Point(3, 26);
+            this.lsvDSPhong.Location = new System.Drawing.Point(3, 31);
             this.lsvDSPhong.Name = "lsvDSPhong";
-            this.lsvDSPhong.Size = new System.Drawing.Size(1028, 303);
+            this.lsvDSPhong.Size = new System.Drawing.Size(1028, 298);
             this.lsvDSPhong.TabIndex = 0;
             this.lsvDSPhong.UseCompatibleStateImageBehavior = false;
             this.lsvDSPhong.SelectedIndexChanged += new System.EventHandler(this.lsvDSPhong_SelectedIndexChanged);
@@ -246,7 +246,7 @@
             this.txtMaPhong.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtMaPhong.Location = new System.Drawing.Point(214, 78);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(261, 30);
+            this.txtMaPhong.Size = new System.Drawing.Size(261, 35);
             this.txtMaPhong.TabIndex = 0;
             // 
             // groupBox1
@@ -264,7 +264,7 @@
             this.groupBox1.Controls.Add(this.txtMaPhong);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(177, 48);
+            this.groupBox1.Location = new System.Drawing.Point(12, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1034, 301);
             this.groupBox1.TabIndex = 3;
@@ -277,7 +277,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox3.Location = new System.Drawing.Point(1384, 412);
+            this.groupBox3.Location = new System.Drawing.Point(1178, 437);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(299, 105);
             this.groupBox3.TabIndex = 0;
@@ -290,7 +290,7 @@
             this.label7.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label7.Location = new System.Drawing.Point(94, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 22);
+            this.label7.Size = new System.Drawing.Size(95, 28);
             this.label7.TabIndex = 11;
             this.label7.Text = "Tổng số ";
             // 
@@ -310,7 +310,7 @@
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox4.Location = new System.Drawing.Point(1384, 548);
+            this.groupBox4.Location = new System.Drawing.Point(1178, 573);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(299, 109);
             this.groupBox4.TabIndex = 8;
@@ -322,7 +322,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.txtTimKiem.Location = new System.Drawing.Point(6, 69);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(293, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(293, 35);
             this.txtTimKiem.TabIndex = 11;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
@@ -332,7 +332,7 @@
             this.label6.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.label6.Location = new System.Drawing.Point(56, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 22);
+            this.label6.Size = new System.Drawing.Size(178, 28);
             this.label6.TabIndex = 10;
             this.label6.Text = "Tìm kiếm phòng";
             // 

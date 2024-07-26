@@ -33,8 +33,19 @@ namespace QL_KHACHSAN.Views
         private void LoadLichSu()
         {
             // Phương thức để tải dữ liệu lịch sử từ cơ sở dữ liệu và hiển thị trên giao diện người dùng
-            dsLichSu = ctrlLichSu.findall();
+            //dsLichSu = ctrlLichSu.findall();
             // Cập nhật dữ liệu trên giao diện người dùng
+            List<CLichSu> danhsachLichSu = ctrlLichSu.findall();
+            lsvLichSu.Items.Clear();
+            foreach (var baoCao in danhsachLichSu)
+            {
+                ListViewItem item = new ListViewItem(baoCao.LichSuID1.ToString());
+                item.SubItems.Add(baoCao.KhachHangID1.ToString());
+                item.SubItems.Add(baoCao.PhongID1.ToString());
+                item.SubItems.Add(baoCao.NgayNhan1.ToShortDateString());
+                item.SubItems.Add(baoCao.NgayTra1.ToShortDateString());
+                lsvLichSu.Items.Add(item);
+            }
         }
 
         private void capNhatSoLuongLS()

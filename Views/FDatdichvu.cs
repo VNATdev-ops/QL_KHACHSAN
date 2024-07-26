@@ -41,7 +41,7 @@ namespace QL_KHACHSAN
             dsDDV = ctrlDDV.findall();
             foreach (CDatDichVu s in dsDDV)
             {
-                string[] obj = { s.DatDichVuID + "", s.DichVuID.DichVuID1 + "", s.DatPhongID.PhongId + "", s.NgayDat + "" };
+                string[] obj = { s.DatDichVuID + "", s.DichVuID.DichVuID1 + "", s.DatPhongID.PhongId + "", s.NgayDat.ToShortDateString(), };
                 ListViewItem item = new ListViewItem(obj);
                 lsvDSDVDaDat.Items.Add(item);
             }
@@ -73,7 +73,7 @@ namespace QL_KHACHSAN
                     cmbDV.Text = dichVu.DichVuID.DichVuID1 + "";
                     txtIDDatDichVu.Text = dichVu.DatDichVuID + " ";
                     cmbPhong.Text = dichVu.DatPhongID.PhongId + "";
-                    dtpTimeDV.Text = dichVu.NgayDat + "";
+                    dtpTimeDV.Text = dichVu.NgayDat.ToShortDateString();
                 }
             }
             catch
@@ -101,7 +101,7 @@ namespace QL_KHACHSAN
 
             if (ctrlDDV.insert(DDV))
             {
-                string[] obj = { DDV.DatDichVuID + "", DDV.DatPhongID.PhongId + "", DDV.DichVuID.DichVuID1 + "", DDV.NgayDat + "" };
+                string[] obj = { DDV.DatDichVuID + "", DDV.DatPhongID.PhongId + "", DDV.DichVuID.DichVuID1 + "", DDV.NgayDat.ToShortDateString() };
                 ListViewItem item = new ListViewItem(obj);
                 lsvDSDVDaDat.Items.Add(item);
                 MessageBox.Show("Đặt thành công");
@@ -194,7 +194,7 @@ namespace QL_KHACHSAN
                 {
                     item.SubItems[1].Text = dichVuDaDat.DichVuID + "";
                     item.SubItems[2].Text = dichVuDaDat.DatPhongID + "";
-                    item.SubItems[3].Text = dichVuDaDat.NgayDat + "";
+                    item.SubItems[3].Text = dichVuDaDat.NgayDat.ToShortDateString();
                     MessageBox.Show("Cập nhật thành công!");
                 }
                 else
@@ -223,7 +223,7 @@ namespace QL_KHACHSAN
             dsDDV = ctrlDDV.findall();
             foreach (CDatDichVu s in dsDDV)
             {
-                string[] obj = { s.DatDichVuID + "", s.DichVuID.DichVuID1 + "", s.DatPhongID.PhongId + "", s.NgayDat + "" };
+                string[] obj = { s.DatDichVuID + "", s.DichVuID.DichVuID1 + "", s.DatPhongID.PhongId + "", s.NgayDat.ToShortDateString(), };
                 ListViewItem item = new ListViewItem(obj);
                 lsvDSDVDaDat.Items.Add(item);
             }

@@ -38,6 +38,7 @@
             this.txtTongSo = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lsvDsBaoCaoSuCo = new System.Windows.Forms.ListView();
@@ -52,7 +53,6 @@
             this.dtpNgayBaoCao = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMoTa = new System.Windows.Forms.TextBox();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -69,7 +69,7 @@
             this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(1393, 58);
+            this.panel2.Location = new System.Drawing.Point(1292, 64);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(306, 326);
             this.panel2.TabIndex = 7;
@@ -139,7 +139,7 @@
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(1393, 452);
+            this.groupBox3.Location = new System.Drawing.Point(1292, 458);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(306, 105);
             this.groupBox3.TabIndex = 9;
@@ -172,12 +172,21 @@
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(1393, 586);
+            this.groupBox4.Location = new System.Drawing.Point(1292, 592);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(306, 109);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tìm kiếm";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
+            this.txtTimKiem.Location = new System.Drawing.Point(7, 62);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(293, 35);
+            this.txtTimKiem.TabIndex = 13;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // label1
             // 
@@ -194,7 +203,7 @@
             this.groupBox2.Controls.Add(this.lsvDsBaoCaoSuCo);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(240)))));
-            this.groupBox2.Location = new System.Drawing.Point(126, 372);
+            this.groupBox2.Location = new System.Drawing.Point(25, 378);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1132, 326);
             this.groupBox2.TabIndex = 14;
@@ -314,7 +323,7 @@
             this.groupBox1.Controls.Add(this.txtIDSuCo);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(249)))), ((int)(((byte)(240)))));
-            this.groupBox1.Location = new System.Drawing.Point(126, 53);
+            this.groupBox1.Location = new System.Drawing.Point(25, 59);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1132, 313);
             this.groupBox1.TabIndex = 13;
@@ -330,15 +339,6 @@
             this.txtMoTa.Size = new System.Drawing.Size(309, 35);
             this.txtMoTa.TabIndex = 11;
             this.txtMoTa.TextChanged += new System.EventHandler(this.txtMoTa_TextChanged);
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.txtTimKiem.Location = new System.Drawing.Point(7, 62);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(293, 35);
-            this.txtTimKiem.TabIndex = 13;
-            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // FBaoCaoSuCo
             // 

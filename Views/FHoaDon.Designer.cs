@@ -67,7 +67,7 @@
             this.panel2.Controls.Add(this.btnCapNhat);
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.panel2.Location = new System.Drawing.Point(1414, 47);
+            this.panel2.Location = new System.Drawing.Point(1218, 49);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(306, 326);
             this.panel2.TabIndex = 8;
@@ -136,7 +136,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtTongSo);
             this.groupBox3.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox3.Location = new System.Drawing.Point(1414, 432);
+            this.groupBox3.Location = new System.Drawing.Point(1218, 434);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(306, 105);
             this.groupBox3.TabIndex = 10;
@@ -176,7 +176,7 @@
             this.groupBox1.Controls.Add(this.txtIDHoaDon);
             this.groupBox1.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(116, 47);
+            this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1166, 326);
             this.groupBox1.TabIndex = 11;
@@ -264,7 +264,7 @@
             this.groupBox2.Controls.Add(this.listViewHoaDon);
             this.groupBox2.Font = new System.Drawing.Font("Cambria", 14.25F);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox2.Location = new System.Drawing.Point(116, 379);
+            this.groupBox2.Location = new System.Drawing.Point(12, 381);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1166, 326);
             this.groupBox2.TabIndex = 12;
@@ -290,7 +290,7 @@
             this.groupBox4.Controls.Add(this.txtTimKiem);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Font = new System.Drawing.Font("Cambria", 14.25F);
-            this.groupBox4.Location = new System.Drawing.Point(1414, 552);
+            this.groupBox4.Location = new System.Drawing.Point(1218, 554);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(306, 109);
             this.groupBox4.TabIndex = 11;
